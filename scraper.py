@@ -213,7 +213,7 @@ def main():
         ))
 
     # 2. NUEVA PÁGINA: Estado del Tiempo Hoy (Ciudades + Fenómenos resaltados)
-    with open('tiempo_hoy_ciudades.html', 'w', encoding='utf-8') as f:
+    with open('index.html', 'w', encoding='utf-8') as f:
         f.write(env.get_template('tiempo_hoy_ciudades_template.html').render(
             fenomenos=index_fenomenos, 
             map_data=map_temps, 
