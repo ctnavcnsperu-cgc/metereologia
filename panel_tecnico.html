@@ -239,7 +239,7 @@
                 </nav>
                 <div class="text-right monospace">
                     <p class="text-xs font-bold uppercase">Sincronización</p>
-                    <p class="text-xl font-bold">02/03/2026 17:51</p>
+                    <p class="text-xl font-bold">02/03/2026 17:58</p>
                 </div>
             </div>
         </header>
@@ -271,6 +271,38 @@
                 <div class="space-y-4">
                     
                     <div class="border-2 border-[--tech-border] bg-white/50 dark:bg-slate-900/50 p-4 hover:border-sky-400 transition-all cursor-pointer group shadow-sm"
+                        onclick="zoomToStation(-3.552, -80.379, 'SPTU')">
+                        <!-- Header Row: ICAO + Time -->
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-blue-900 dark:text-sky-400 font-mono group-hover:underline italic">SPTU</span>
+                                <span class="text-[10px] uppercase text-slate-500 font-semibold tracking-wide">Aeropuerto de Pto Maldonado/Padre Aldamiz</span>
+                            </div>
+                            <span class="text-[10px] font-bold bg-sky-900 text-white px-2 py-0.5">20:00 UTCo15:00 hrs. (Local)</span>
+                        </div>
+                        <!-- Data Row: Wind + Visibility -->
+                        <div class="grid grid-cols-2 gap-4 text-[12px] mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Viento">&#x1F4A8;</span>
+                                <span class="font-bold border-l-2 border-sky-500 pl-2">Noroeste / 04 KT</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Visibilidad">&#x1F441;&#xFE0F;</span>
+                                <span
+                                    class="font-bold text-emerald-600 dark:text-emerald-400 border-l-2 border-emerald-500 pl-2">10 km a más</span>
+                            </div>
+                        </div>
+                        <!-- Conditions Row: Sky + Phenomena -->
+                        <div
+                            class="flex items-center gap-2 text-[10px] uppercase font-bold italic opacity-80 border-t border-[--tech-border] pt-2 mt-2">
+                            <span class="condition-icon text-sm" data-fen="No hay fenómeno meteorológico"
+                                data-nub="Nublado"></span>
+                            <span>Nublado | No hay fenómeno meteorológico</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-2 border-[--tech-border] bg-white/50 dark:bg-slate-900/50 p-4 hover:border-sky-400 transition-all cursor-pointer group shadow-sm"
                         onclick="zoomToStation(-4.442, -81.224, 'SPME')">
                         <!-- Header Row: ICAO + Time -->
                         <div class="flex justify-between items-start mb-3">
@@ -299,6 +331,38 @@
                             <span class="condition-icon text-sm" data-fen="No hay fenómeno meteorológico"
                                 data-nub="Sin nubes bajo los 1500m"></span>
                             <span>Sin nubes bajo los 1500m | No hay fenómeno meteorológico</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-2 border-[--tech-border] bg-white/50 dark:bg-slate-900/50 p-4 hover:border-sky-400 transition-all cursor-pointer group shadow-sm"
+                        onclick="zoomToStation(-4.58, -81.251, 'SPYL')">
+                        <!-- Header Row: ICAO + Time -->
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-blue-900 dark:text-sky-400 font-mono group-hover:underline italic">SPYL</span>
+                                <span class="text-[10px] uppercase text-slate-500 font-semibold tracking-wide">Aeropuerto de Talara/Capitan Montes</span>
+                            </div>
+                            <span class="text-[10px] font-bold bg-sky-900 text-white px-2 py-0.5">20:00 UTCo15:00 hrs. (Local)</span>
+                        </div>
+                        <!-- Data Row: Wind + Visibility -->
+                        <div class="grid grid-cols-2 gap-4 text-[12px] mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Viento">&#x1F4A8;</span>
+                                <span class="font-bold border-l-2 border-sky-500 pl-2">Oeste / 11 KT</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Visibilidad">&#x1F441;&#xFE0F;</span>
+                                <span
+                                    class="font-bold text-emerald-600 dark:text-emerald-400 border-l-2 border-emerald-500 pl-2">10 km a más</span>
+                            </div>
+                        </div>
+                        <!-- Conditions Row: Sky + Phenomena -->
+                        <div
+                            class="flex items-center gap-2 text-[10px] uppercase font-bold italic opacity-80 border-t border-[--tech-border] pt-2 mt-2">
+                            <span class="condition-icon text-sm" data-fen="No hay fenómeno meteorológico"
+                                data-nub="Nublado"></span>
+                            <span>Nublado | No hay fenómeno meteorológico</span>
                         </div>
                     </div>
                     
@@ -478,6 +542,38 @@
                             <div class="flex items-center gap-2">
                                 <span class="text-base" title="Viento">&#x1F4A8;</span>
                                 <span class="font-bold border-l-2 border-sky-500 pl-2">Calma / 0</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Visibilidad">&#x1F441;&#xFE0F;</span>
+                                <span
+                                    class="font-bold text-emerald-600 dark:text-emerald-400 border-l-2 border-emerald-500 pl-2">10 km a más</span>
+                            </div>
+                        </div>
+                        <!-- Conditions Row: Sky + Phenomena -->
+                        <div
+                            class="flex items-center gap-2 text-[10px] uppercase font-bold italic opacity-80 border-t border-[--tech-border] pt-2 mt-2">
+                            <span class="condition-icon text-sm" data-fen="No hay fenómeno meteorológico"
+                                data-nub="Cielo cubierto"></span>
+                            <span>Cielo cubierto | No hay fenómeno meteorológico</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-2 border-[--tech-border] bg-white/50 dark:bg-slate-900/50 p-4 hover:border-sky-400 transition-all cursor-pointer group shadow-sm"
+                        onclick="zoomToStation(-8.378, -74.574, 'SPCL')">
+                        <!-- Header Row: ICAO + Time -->
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-blue-900 dark:text-sky-400 font-mono group-hover:underline italic">SPCL</span>
+                                <span class="text-[10px] uppercase text-slate-500 font-semibold tracking-wide">Aeropuerto de Pucallpa/Intl. David Abensur Rengifo</span>
+                            </div>
+                            <span class="text-[10px] font-bold bg-sky-900 text-white px-2 py-0.5">20:00 UTCo15:00 hrs. (Local)</span>
+                        </div>
+                        <!-- Data Row: Wind + Visibility -->
+                        <div class="grid grid-cols-2 gap-4 text-[12px] mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Viento">&#x1F4A8;</span>
+                                <span class="font-bold border-l-2 border-sky-500 pl-2">Norte / 03 KT</span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <span class="text-base" title="Visibilidad">&#x1F441;&#xFE0F;</span>
@@ -751,6 +847,38 @@
                     </div>
                     
                     <div class="border-2 border-[--tech-border] bg-white/50 dark:bg-slate-900/50 p-4 hover:border-sky-400 transition-all cursor-pointer group shadow-sm"
+                        onclick="zoomToStation(-18.053, -70.276, 'SPTN')">
+                        <!-- Header Row: ICAO + Time -->
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-blue-900 dark:text-sky-400 font-mono group-hover:underline italic">SPTN</span>
+                                <span class="text-[10px] uppercase text-slate-500 font-semibold tracking-wide">Aeropuerto de Tacna/Intl. Coronel FAP Carlos Ciriani Santa Rosa</span>
+                            </div>
+                            <span class="text-[10px] font-bold bg-sky-900 text-white px-2 py-0.5">20:00 UTCo15:00 hrs. (Local)</span>
+                        </div>
+                        <!-- Data Row: Wind + Visibility -->
+                        <div class="grid grid-cols-2 gap-4 text-[12px] mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Viento">&#x1F4A8;</span>
+                                <span class="font-bold border-l-2 border-sky-500 pl-2">Suroeste / 10 KT</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Visibilidad">&#x1F441;&#xFE0F;</span>
+                                <span
+                                    class="font-bold text-emerald-600 dark:text-emerald-400 border-l-2 border-emerald-500 pl-2">10 km a más</span>
+                            </div>
+                        </div>
+                        <!-- Conditions Row: Sky + Phenomena -->
+                        <div
+                            class="flex items-center gap-2 text-[10px] uppercase font-bold italic opacity-80 border-t border-[--tech-border] pt-2 mt-2">
+                            <span class="condition-icon text-sm" data-fen="No hay fenómeno meteorológico"
+                                data-nub="Sin nubes bajo los 1500m"></span>
+                            <span>Sin nubes bajo los 1500m | No hay fenómeno meteorológico</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-2 border-[--tech-border] bg-white/50 dark:bg-slate-900/50 p-4 hover:border-sky-400 transition-all cursor-pointer group shadow-sm"
                         onclick="zoomToStation(-13.535, -71.939, 'SPZO')">
                         <!-- Header Row: ICAO + Time -->
                         <div class="flex justify-between items-start mb-3">
@@ -792,6 +920,17 @@
         const airports = [
             
         {
+            icao: "SPTU",
+                nombre: "Aeropuerto de Pto Maldonado/Padre Aldamiz",
+                    lat: -3.552,
+            lon: -80.379,
+            vis: "10 km a más",
+                viento: "Noroeste / 04 KT",
+                    nubosidad: "Nublado",
+                        fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
             icao: "SPME",
                 nombre: "Aeropuerto de Tumbes/Pedro Canga",
                     lat: -4.442,
@@ -799,6 +938,17 @@
             vis: "10 km a más",
                 viento: "Oeste / 08 KT",
                     nubosidad: "Sin nubes bajo los 1500m",
+                        fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPYL",
+                nombre: "Aeropuerto de Talara/Capitan Montes",
+                    lat: -4.58,
+            lon: -81.251,
+            vis: "10 km a más",
+                viento: "Oeste / 11 KT",
+                    nubosidad: "Nublado",
                         fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -864,6 +1014,17 @@
             lon: -76.372,
             vis: "10 km a más",
                 viento: "Calma / 0",
+                    nubosidad: "Cielo cubierto",
+                        fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPCL",
+                nombre: "Aeropuerto de Pucallpa/Intl. David Abensur Rengifo",
+                    lat: -8.378,
+            lon: -74.574,
+            vis: "10 km a más",
+                viento: "Norte / 03 KT",
                     nubosidad: "Cielo cubierto",
                         fenomenos: "No hay fenómeno meteorológico"
         },
@@ -953,6 +1114,17 @@
             vis: "10 km a más",
                 viento: "Este / 09 KT",
                     nubosidad: "Despejado",
+                        fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPTN",
+                nombre: "Aeropuerto de Tacna/Intl. Coronel FAP Carlos Ciriani Santa Rosa",
+                    lat: -18.053,
+            lon: -70.276,
+            vis: "10 km a más",
+                viento: "Suroeste / 10 KT",
+                    nubosidad: "Sin nubes bajo los 1500m",
                         fenomenos: "No hay fenómeno meteorológico"
         },
         
