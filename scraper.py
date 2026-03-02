@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import os
 import time
 from jinja2 import Environment, FileSystemLoader
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import re
 import urllib3
 
@@ -201,7 +201,9 @@ def main():
         
     # Render
     env = Environment(loader=FileSystemLoader('templates'))
-    ahora = datetime.now().strftime("%d/%m/%Y %H:%M")
+    # Forzar hora de Perú (UTC-5)
+    peru_tz = timezone(timedelta(hours=-5))
+    ahora = datetime.now(peru_tz).strftime("%d/%m/%Y %H:%M")
     
     # 1. Dashboard Principal (ICAO)
     with open('tiempo_hoy.html', 'w', encoding='utf-8') as f:
