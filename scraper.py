@@ -10,7 +10,7 @@ import urllib3
 # Desactivar advertencias
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Códigos internos de CORPAC y Coordenadas GPS
+# Códigos internos de  y Coordenadas GPS
 AIRPORT_MAPPING = [
     # (ICAO, ID_POST, LAT, LON)
     ('SPTU', 'sptu', -3.552, -80.379), ('SPME', 'spme', -4.442, -81.224),
