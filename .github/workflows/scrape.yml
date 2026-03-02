@@ -2,7 +2,7 @@ name: Actualizar Meteorología
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Cada 30 minutos
+    - cron: '*/10 * * * *' # Cada 10 minutos
   workflow_dispatch: # Permite ejecutar manualmente
 
 jobs:
