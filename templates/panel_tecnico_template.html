@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="300">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Navegación Técnica Aeronáutica - Consola Técnica</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -313,8 +317,8 @@
         {
             icao: "{{ air.icao }}",
                 nombre: "{{ air.nombre }}",
-                    lat: {{ air.lat }},
-            lon: {{ air.lon }},
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "{{ air.visibilidad }}",
                 viento: "{{ air.viento }}",
                     nubosidad: "{{ air.nubosidad }}",
