@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Estaciones - Consola Técnica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'IBM Plex Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --tech-border: #074e8c;
+            --tech-bg: #dbeafe;
+        }
+
+        .dark {
+            --tech-border: #60a5fa;
+            --tech-bg: #0f172a;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--tech-bg);
+        }
+
+        .tech-grid {
+            border: 2px solid var(--tech-border);
+        }
+
+        .tech-cell {
+            border: 1px solid var(--tech-border);
+            padding: 0.75rem;
+        }
+
+        .tech-header {
+            background: linear-gradient(180deg, #074e8c 0%, #033663 100%);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .tech-header {
+            background: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
+            color: #38bdf8;
+        }
+
+        .monospace {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .table-row-hover:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .table-row-hover:hover {
+            background-color: rgba(56, 189, 248, 0.05);
+        }
+
+        /* Botón Imprimir */
+        .btn-print {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: linear-gradient(135deg, #074e8c, #033663);
+            color: white;
+            border: 2px solid #074e8c;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-print:hover {
+            background: linear-gradient(135deg, #0369a1, #074e8c);
+            box-shadow: 0 0 12px rgba(7, 78, 140, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .btn-print:active {
+            transform: translateY(0);
+        }
+
+        /* ===== ESTILOS DE IMPRESIÓN ===== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 10mm 8mm;
+            }
+
+            /* Ocultar todo lo que no sea la tabla */
+            header,
+            footer,
+            .btn-print {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .max-w-\[1800px\] {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Título del reporte encima de la tabla */
+            .print-title {
+                display: block !important;
+            }
+
+            /* Tabla ocupa todo el ancho */
+            .tech-grid {
+                border: 1.5px solid #074e8c !important;
+                width: 100% !important;
+            }
+
+            table {
+                width: 100% !important;
+                min-width: unset !important;
+                font-size: 9px !important;
+            }
+
+            .tech-cell {
+                padding: 4px 6px !important;
+                border: 1px solid #074e8c !important;
+            }
+
+            .tech-header {
+                background: #074e8c !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* Evitar corte de filas entre páginas */
+            tr {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* El título de impresión está oculto en pantalla */
+        .print-title {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen p-4 md:p-8 text-slate-900 dark:text-slate-200">
+    <div class="max-w-[1800px] mx-auto">
+        <!-- Header -->
+        <header class="flex justify-between items-end mb-8">
+            <div class="flex items-center gap-4">
+                <div class="text-blue-900 dark:text-sky-400">
+                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        <path d="M12 11h4"></path>
+                        <path d="M12 16h4"></path>
+                        <path d="M8 11h.01"></path>
+                        <path d="M8 16h.01"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-black uppercase tracking-tighter">REPORTE TÉCNICO</h1>
+                    <p class="text-sm font-bold opacity-80 uppercase">ESTACIONES METEOROLÓGICAS</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <!-- Menú de Navegación -->
+                <nav class="flex gap-2">
+                    <a href="tiempo_hoy_ciudades.html"
+                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
+                        title="Estado del Tiempo Hoy">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span class="text-[10px] font-black uppercase">Tiempo Hoy</span>
+                    </a>
+                    <a href="tiempo_hoy.html"
+                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
+                        title="Dashboard Principal">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8.286 3.407A1.5 1.5 0 0 0 6 4.684v14.632a1.5 1.5 0 0 0 2.286 1.277l11.888-7.316a1.5 1.5 0 0 0 0-2.555L8.286 3.407z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 21v-3m0-4.5v-3m0-4.5V3" />
+                        </svg>
+                        <span class="text-[10px] font-black uppercase">Vig-Metereológica</span>
+                    </a>
+                    <a href="panel_alerta.html"
+                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
+                        title="Sistema de Alerta">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <span class="text-[10px] font-black uppercase">Sis-Alerta</span>
+                    </a>
+                    <a href="panel_tecnico.html"
+                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
+                        title="Navegación Técnica">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                        </svg>
+                        <span class="text-[10px] font-black uppercase">Nav-Técnica</span>
+                    </a>
+                    <a href="tiempo_aeropuertos.html"
+                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] bg-[--tech-border] text-white transition-all"
+                        title="Reporte Técnico">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                        <span class="text-[10px] font-black uppercase">Rep-Técnico</span>
+                    </a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <!-- Botón Imprimir (exclusivo de esta página) -->
+                    <button class="btn-print" onclick="window.print()" title="Imprimir Reporte como PDF">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                        </svg>
+                        Imprimir PDF
+                    </button>
+                    <div class="text-right monospace">
+                        <p class="text-xs font-bold uppercase">Sincronización</p>
+                        <p class="text-xl font-bold">{{ last_update }}</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Título visible solo al imprimir -->
+        <div class="print-title" style="margin-bottom: 8mm;">
+            <div
+                style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase; letter-spacing: -0.5px;">
+                REPORTE TÉCNICO — ESTACIONES METEOROLÓGICAS</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; opacity: 0.7; margin-top: 2px;">
+                Sincronización: {{ last_update }} &nbsp;|&nbsp; Generado automáticamente por CORPAC DGAC</div>
+        </div>
+
+        <!-- Technical Table -->
+        <div class="tech-grid bg-white dark:bg-transparent overflow-x-auto">
+            <table class="w-full text-left border-collapse min-w-[1000px]">
+                <thead>
+                    <tr class="tech-header text-[12px]">
+                        <th class="tech-cell">AEROPUERTO / ICAO</th>
+                        <th class="tech-cell">HORA LOCAL</th>
+                        <th class="tech-cell text-center">VIENTO (DIR/INT)</th>
+                        <th class="tech-cell text-center">VISIBILIDAD</th>
+                        <th class="tech-cell text-center">TEMP / ROCÍO</th>
+                        <th class="tech-cell text-center">HUMEDAD (%)</th>
+                        <th class="tech-cell text-center">QNH (hPa)</th>
+                        <th class="tech-cell">FENÓMENOS / NUBOSIDAD</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-current">
+                    {% for air in airports %}
+                    <tr class="table-row-hover monospace text-[13px]">
+                        <td class="tech-cell">
+                            <div class="font-black text-[15px]">{{ air.icao }}</div>
+                            <div class="text-[11px] uppercase opacity-60 leading-tight w-48">{{ air.nombre }}</div>
+                        </td>
+                        <td class="tech-cell font-bold text-[11px]">{{ air.hora }}</td>
+                        <td class="tech-cell text-center">
+                            <div class="font-black text-blue-800 dark:text-sky-400 text-[13px]">
+                                {{ air.viento.split(' / ')[0] if ' / ' in air.viento else 'CALMA' }}
+                            </div>
+                            <div class="text-[11px] opacity-70">
+                                {{ air.viento.split(' / ')[1] if ' / ' in air.viento else air.viento }}
+                            </div>
+                        </td>
+                        <td class="tech-cell text-center">{{ air.visibilidad }}</td>
+                        <td class="tech-cell text-center font-black">
+                            <span class="text-indigo-600 dark:text-sky-400">{{ air.temperatura.replace(' °C','')
+                                }}°</span>
+                            <span class="opacity-30">/</span>
+                            <span class="opacity-60">{{ air.rocio.replace(' °C','') }}°</span>
+                        </td>
+                        <td
+                            class="tech-cell text-center font-black text-blue-600 dark:text-blue-400 bg-blue-50/30 dark:bg-blue-900/10 text-[14px]">
+                            {{ air.humedad }}
+                        </td>
+                        <td class="tech-cell text-center font-bold text-emerald-600 dark:text-emerald-400 text-[14px]">
+                            {{ air.presion.replace(' hPa','') }}</td>
+                        <td class="tech-cell">
+                            <div
+                                class="text-[11px] font-bold uppercase text-slate-700 dark:text-slate-300 leading-tight">
+                                {{ air.nubosidad }}</div>
+                            <div
+                                class="text-[11px] italic text-red-600 dark:text-red-400 font-bold uppercase leading-tight">
+                                {{ air.fenomenos }}</div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="mt-12 flex justify-between items-center monospace text-[10px] font-bold uppercase">
+            <div>SISTEMA TÉCNICO DE REFERENCIA AERONÁUTICA</div>
+            <div>&copy; 2026 TERMINAL_v2.0</div>
+        </footer>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

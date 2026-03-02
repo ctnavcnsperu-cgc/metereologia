@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Meteorológico - Consola Técnica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'IBM Plex Mono', 'monospace'],
+                        technical: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --tech-border: #074e8c;
+            --tech-bg: #dbeafe;
+            --tech-accent: #074e8c;
+        }
+
+        .dark {
+            --tech-border: #60a5fa;
+            --tech-bg: #0f172a;
+            --tech-accent: #38bdf8;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--tech-bg);
+            transition: all 0.3s ease;
+        }
+
+        .tech-grid {
+            border: 2px solid var(--tech-border);
+        }
+
+        .tech-cell {
+            border: 1px solid var(--tech-border);
+            padding: 0.5rem;
+        }
+
+        .tech-header {
+            background: linear-gradient(180deg, #074e8c 0%, #033663 100%);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dark {
+            background-color: #0f172a !important;
+        }
+
+        .dark .tech-header {
+            background: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
+            color: #38bdf8;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--tech-border);
+            background: #aad3df;
+            /* Leaflet blue */
+        }
+
+        .map-wrapper {
+            position: sticky;
+            top: 2rem;
+            height: calc(100vh - 4rem);
+        }
+
+        .dark #map {
+            filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+        }
+
+        .station-card {
+            margin-bottom: 2rem;
+            scroll-margin-top: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .station-card.highlight {
+            box-shadow: 0 0 20px var(--tech-border);
+            outline: 3px solid var(--tech-accent);
+        }
+
+        .monospace {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: var(--tech-border);
+            border-radius: 0px;
+        }
+
+        .leaflet-control-layers {
+            background: var(--tech-bg) !important;
+            border: 2px solid var(--tech-border) !important;
+            border-radius: 0 !important;
+        }
+
+        /* Minimalist ICAO Markers */
+        .icao-marker {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .icao-marker .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #000000;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+            flex-shrink: 0;
+        }
+
+        .icao-marker .label {
+            color: #d00000;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 900;
+            margin-left: 4px;
+            text-shadow:
+                -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px 1px 0 #fff,
+                0 0 3px #fff;
+            /* Halo / Glow effect for legibility */
+        }
+
+        .dark .icao-marker .dot {
+            background-color: #ffffff;
+            border-color: #000000;
+        }
+
+        .dark .icao-marker .label {
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 3px #000;
+        }
+
+        .icao-marker:hover .label {
+            color: #ff0000;
+            transform: scale(1.1);
+            transition: all 0.2s ease;
+        }
+
+        /* Weather Animations */
+        @keyframes sun-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes sun-glow {
+            0% {
+                filter: drop-shadow(0 0 2px #ffd700);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 10px #ffae00);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 2px #ffd700);
+            }
+        }
+
+        .sun-animation {
+            display: inline-block;
+            animation: sun-spin 20s linear infinite, sun-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes rain-drop {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(3px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .rain-animation {
+            display: inline-block;
+            animation: rain-drop 0.8s ease-in-out infinite;
+        }
+
+        @keyframes storm-flash {
+
+            0%,
+            90% {
+                filter: brightness(1);
+            }
+
+            92% {
+                filter: brightness(3) drop-shadow(0 0 10px white);
+            }
+
+            94% {
+                filter: brightness(1);
+            }
+
+            96% {
+                filter: brightness(3) drop-shadow(0 0 10px white);
+            }
+
+            98%,
+            100% {
+                filter: brightness(1);
+            }
+        }
+
+        .storm-animation {
+            display: inline-block;
+            animation: storm-flash 4s step-end infinite;
+        }
+
+        @keyframes cloud-float {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(4px, -2px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .cloud-animation {
+            display: inline-block;
+            animation: cloud-float 5s ease-in-out infinite;
+        }
+
+        @keyframes fog-drift {
+            0% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.4;
+            }
+        }
+
+        .fog-animation {
+            display: inline-block;
+            animation: fog-drift 4s ease-in-out infinite;
+        }
+
+        /* Map Controls Custom Styling */
+        .leaflet-control-layers {
+            background: var(--tech-bg) !important;
+            border: 2px solid var(--tech-border) !important;
+            color: currentColor !important;
+            font-family: 'JetBrains Mono', monospace !important;
+            border-radius: 0 !important;
+            font-size: 10px !important;
+            font-weight: bold !important;
+            padding: 5px !important;
+        }
+
+        .leaflet-bar a {
+            background-color: var(--tech-bg) !important;
+            color: var(--tech-border) !important;
+            border-bottom: 1px solid var(--tech-border) !important;
+            border-radius: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 30px !important;
+            height: 30px !important;
+            line-height: 30px !important;
+        }
+
+        .leaflet-bar a:hover {
+            background-color: var(--tech-accent) !important;
+            color: white !important;
+        }
+
+        .map-home-btn {
+            font-size: 16px !important;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen p-4 md:p-8 text-slate-900 dark:text-slate-200">
+
+    <div class="max-w-[1800px] mx-auto">
+        <header class="flex justify-between items-end mb-8">
+            <div class="flex items-center gap-4">
+                <div class="text-blue-900 dark:text-sky-400">
+                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13 7 9 3 5 7l4 4Z" />
+                        <path d="m17 11 4 4-4 4-4-4Z" />
+                        <path d="m4.5 15.5 2 2" />
+                        <path d="m15.5 4.5 2 2" />
+                        <path d="M2 22 9.1 14.9" />
+                        <path d="M14.9 9.1 22 2" />
+                        <circle cx="12" cy="12" r="2" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-black uppercase tracking-tighter">VIGILANCIA METEOROLÓGICA</h1>
+                    <p class="text-sm font-bold opacity-80 uppercase">ESTADO DEL TIEMPO ACTUAL</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <!-- Menú de Navegación -->
+                <nav class="flex gap-2">
+                    <a href="tiempo_hoy_ciudades.html"
+                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
+                        title="Estado del Tiempo Hoy">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span class="text-[10px] font-black uppercase">Tiempo Hoy</span>
+                    </a>
+                    <a href="tiempo_hoy.html"
+                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] bg-[--tech-border] text-white transition-all"
+                        title="Dashboard Principal">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8.286 3.407A1.5 1.5 0 0 0 6 4.684v14.632a1.5 1.5 0 0 0 2.286 1.277l11.888-7.316a1.5 1.5 0 0 0 0-2.555L8.286 3.407z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 21v-3m0-4.5v-3m0-4.5V3" />
+                        </svg>
+                        <span class="text-[10px] font-black uppercase">Vig-Metereológica</span>
+                    </a>
+                    <a href="panel_alerta.html"
+                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
+                        title="Sistema de Alerta">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <span class="text-[10px] font-black uppercase">Sis-Alerta</span>
+                    </a>
+                    <a href="panel_tecnico.html"
+                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
+                        title="Navegación Técnica">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                        </svg>
+                        <span class="text-[10px] font-black uppercase">Nav-Técnica</span>
+                    </a>
+                    <a href="tiempo_aeropuertos.html"
+                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
+                        title="Reporte Técnico">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                        <span class="text-[10px] font-black uppercase">Rep-Técnico</span>
+                    </a>
+                </nav>
+                <div class="text-right monospace">
+                    <p class="text-xs font-bold uppercase">Sincronización</p>
+                    <p class="text-xl font-bold">{{ last_update }}</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="w-full lg:w-1/2 lg:block">
+                <div class="map-wrapper">
+                    <div id="map" class="rounded-sm"></div>
+                </div>
+            </div>
+
+            <div id="cards-container"
+                class="w-full lg:w-1/2 h-[calc(100vh-4rem)] overflow-y-auto pr-4 custom-scrollbar scroll-smooth">
+                {% for air in airports %}
+                <div id="card-{{ air.icao }}" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
+                    <div class="flex">
+                        <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H3l-2 1v3.5l1.5 1.5H6L7 19l3-2 3.5 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1Z" />
+                            </svg>
+                            <span>AEROPUERTO: {{ air.nombre }}</span>
+                        </div>
+                        <div class="w-1/3 tech-cell monospace text-right font-bold text-sm">
+                            <span class="opacity-60 mr-2 text-[10px]">ICAO:</span> {{ air.icao }}
+                        </div>
+                    </div>
+
+                    <div
+                        class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
+                        <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
+                        <span class="italic truncate tracking-tight">{{ air.icao }} {{ last_update | replace('/', '') |
+                            replace(':', '') | replace(' ', '') }}Z {{ air.viento | replace(' / ', '') }} 9999 {{
+                            air.nubosidad }} {{ air.temperatura | replace(' °C', '') }}/{{ air.rocio | replace(' °C',
+                            '') }} Q{{ air.presion | replace(' hPa', '') }}</span>
+                    </div>
+
+                    <!-- Instrumentos -->
+                    <div
+                        class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
+                        <span>INSTRUMENTO: VIENTO</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: {{ air.hora }}</span>
+                    </div>
+
+                    <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
+                        <tbody>
+                            <tr>
+                                <td class="w-1/2 p-4 text-center border-r border-b"
+                                    style="border-color: var(--tech-border);">
+                                    <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
+                                    <span class="text-xl font-black uppercase monospace">{{ air.viento.split(' / ')[0]
+                                        }}</span>
+                                    <div class="mt-2 text-4xl">🧭</div>
+                                </td>
+                                <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
+                                    <span class="text-2xl font-black monospace">{{ air.viento.split(' / ')[1] }}</span>
+                                    <div class="mt-2 text-4xl">🚩</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border-r border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
+                                        <span class="text-3xl">🌡️</span>
+                                    </div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">{{
+                                        air.temperatura }}</div>
+                                </td>
+                                <td class="p-3 border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-[10px] font-bold opacity-70 uppercase">Rocío</span>
+                                        <span class="text-3xl">💧</span>
+                                    </div>
+                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">{{
+                                        air.rocio }}</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-slate-50/50 dark:bg-slate-900/20">
+                                <td class="p-3 border-r" style="border-color: var(--tech-border);">
+                                    <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Nubosidad</span>
+                                    <span class="text-sm font-bold uppercase">{{ air.nubosidad }}</span>
+                                </td>
+                                <td class="p-3">
+                                    <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
+                                    <span class="text-sm font-bold uppercase text-red-600 dark:text-red-400">{{
+                                        air.fenomenos }}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const airports = [
+            {% for air in airports %}
+        {
+            icao: "{{ air.icao }}",
+                nombre: "{{ air.nombre }}",
+                    lat: "{{ air.lat }}",
+                        lon: "{{ air.lon }}",
+                            temp: "{{ air.temperatura }}",
+                                viento: "{{ air.viento }}",
+                                    fenomenos: "{{ air.fenomenos }}",
+                                        nubosidad: "{{ air.nubosidad }}"
+        },
+        {% endfor %}
+        ];
+
+        // Expanded bounds to allow tiles to fill the DIV aspect ratio
+        const peruBounds = [
+            [-30.0, -100.0], // SW
+            [10.0, -50.0]    // NE
+        ];
+
+        const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap',
+            noWrap: true
+        });
+
+        const topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenTopoMap',
+            noWrap: true
+        });
+
+        const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Esri',
+            noWrap: true
+        });
+
+        const map = L.map('map', {
+            center: [-9.19, -75.01],
+            zoom: 6,
+            minZoom: 5,
+            maxZoom: 12,
+            maxBounds: peruBounds,
+            maxBoundsViscosity: 1.0,
+            layers: [osm]
+        });
+
+        const baseMaps = {
+            "Navegación": osm,
+            "Cordilleras": topo,
+            "Satélite": satellite
+        };
+
+        L.control.layers(baseMaps, null, { collapsed: true, position: 'topright' }).addTo(map);
+
+        // PE Centering Button
+        const homeControl = L.Control.extend({
+            options: { position: 'topleft' },
+            onAdd: function (map) {
+                const btn = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+                btn.innerHTML = '<a href="#" title="Reset View" class="map-home-btn">🎯</a>';
+                btn.onclick = function (e) {
+                    e.preventDefault();
+                    map.fitBounds([[-18.5, -81.5], [0.0, -68.5]]);
+                };
+                return btn;
+            }
+        });
+        map.addControl(new homeControl());
+
+
+        const markers = {};
+        airports.forEach(air => {
+            if (air.lat && air.lon && parseFloat(air.lat) !== 0) {
+                const customIcon = L.divIcon({
+                    className: 'custom-div-icon',
+                    html: `<div class="icao-marker"><div class="dot"></div><div class="label">${air.icao}</div></div>`,
+                    iconSize: [100, 20],
+                    iconAnchor: [4, 10]
+                });
+                const marker = L.marker([air.lat, air.lon], { icon: customIcon }).addTo(map);
+                marker.bindPopup(`<b>${air.icao}</b><br>${air.nombre}<br>${air.temp}`);
+                marker.on('click', () => {
+                    const card = document.getElementById(`card-${air.icao}`);
+                    if (card) {
+                        document.querySelectorAll('.station-card').forEach(c => c.classList.remove('highlight'));
+                        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        card.classList.add('highlight');
+                        setTimeout(() => card.classList.remove('highlight'), 3000);
+                    }
+                });
+                markers[air.icao] = marker;
+            }
+        });
+
+        // Initialize view
+        setTimeout(() => {
+            map.invalidateSize();
+            map.fitBounds([[-18.5, -81.5], [0.0, -68.5]]);
+        }, 300);
+    </script>
+</body>
+
+</html>

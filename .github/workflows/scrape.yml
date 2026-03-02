@@ -1,0 +1,33 @@
+name: Actualizar Meteorología
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # Cada 30 minutos
+  workflow_dispatch: # Permite ejecutar manualmente
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 jinja2
+
+      - name: Run Scraper
+        run: python scraper.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Actualización automática: $(date)" || exit 0
+          git push
