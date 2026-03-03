@@ -407,7 +407,7 @@
                 </nav>
                 <div class="text-right monospace">
                     <p class="text-xs font-bold uppercase">Sincronización</p>
-                    <p class="text-xl font-bold">03/03/2026 07:01</p>
+                    <p class="text-xl font-bold">03/03/2026 07:11</p>
                 </div>
             </div>
         </header>
@@ -440,14 +440,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPTU 030320260701Z Variable01 KT 9999 Cielo cubierto 24/24 Q1007</span>
+                        <span class="italic truncate tracking-tight">SPTU 030320260711Z Variable02 KT 9999 Cielo cubierto 25/24 Q1008</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -461,7 +461,7 @@
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">01 KT</span>
+                                    <span class="text-2xl font-black monospace">02 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -471,7 +471,7 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">24 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">25 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
@@ -488,7 +488,80 @@
                                 </td>
                                 <td class="p-3">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
-                                    <span class="text-sm font-bold uppercase text-red-600 dark:text-red-400">Tormenta eléctrica</span>
+                                    <span class="text-sm font-bold uppercase text-red-600 dark:text-red-400">Tormeta con lluvia</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div id="card-SPYL" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
+                    <div class="flex">
+                        <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H3l-2 1v3.5l1.5 1.5H6L7 19l3-2 3.5 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1Z" />
+                            </svg>
+                            <span>AEROPUERTO: Aeropuerto de Talara/Capitan Montes</span>
+                        </div>
+                        <div class="w-1/3 tech-cell monospace text-right font-bold text-sm">
+                            <span class="opacity-60 mr-2 text-[10px]">ICAO:</span> SPYL
+                        </div>
+                    </div>
+
+                    <div
+                        class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
+                        <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
+                        <span class="italic truncate tracking-tight">SPYL 030320260711Z Sureste10 KT 9999 Nublado 26/21 Q1008</span>
+                    </div>
+
+                    <!-- Instrumentos -->
+                    <div
+                        class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
+                        <span>INSTRUMENTO: VIENTO</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
+                    </div>
+
+                    <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
+                        <tbody>
+                            <tr>
+                                <td class="w-1/2 p-4 text-center border-r border-b"
+                                    style="border-color: var(--tech-border);">
+                                    <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
+                                    <span class="text-xl font-black uppercase monospace">Sureste</span>
+                                    <div class="mt-2 text-4xl">🧭</div>
+                                </td>
+                                <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
+                                    <span class="text-2xl font-black monospace">10 KT</span>
+                                    <div class="mt-2 text-4xl">🚩</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border-r border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
+                                        <span class="text-3xl">🌡️</span>
+                                    </div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">26 °C</div>
+                                </td>
+                                <td class="p-3 border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-[10px] font-bold opacity-70 uppercase">Rocío</span>
+                                        <span class="text-3xl">💧</span>
+                                    </div>
+                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">21 °C</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-slate-50/50 dark:bg-slate-900/20">
+                                <td class="p-3 border-r" style="border-color: var(--tech-border);">
+                                    <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Nubosidad</span>
+                                    <span class="text-sm font-bold uppercase">Nublado</span>
+                                </td>
+                                <td class="p-3">
+                                    <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
+                                    <span class="text-sm font-bold uppercase text-red-600 dark:text-red-400">No hay fenómeno meteorológico</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -513,14 +586,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPUR 030320260701Z Este02 KT 9999 Sin nubes bajo los 1500m 25/21 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPUR 030320260711Z Sur03 KT 9999 Sin nubes bajo los 1500m 26/21 Q1009</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -529,12 +602,12 @@
                                 <td class="w-1/2 p-4 text-center border-r border-b"
                                     style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
-                                    <span class="text-xl font-black uppercase monospace">Este</span>
+                                    <span class="text-xl font-black uppercase monospace">Sur</span>
                                     <div class="mt-2 text-4xl">🧭</div>
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">02 KT</span>
+                                    <span class="text-2xl font-black monospace">03 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -544,7 +617,7 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">25 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">26 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
@@ -586,14 +659,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPHI 030320260701Z Sur09 KT 9999 Sin nubes bajo los 1500m 23/20 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPHI 030320260711Z Sur07 KT 9999 Sin nubes bajo los 1500m 23/20 Q1008</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -607,7 +680,7 @@
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">09 KT</span>
+                                    <span class="text-2xl font-black monospace">07 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -659,14 +732,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPJR 030320260701Z Este03 KT 9999 Despejado 10/10 Q1024</span>
+                        <span class="italic truncate tracking-tight">SPJR 030320260711Z Variable02 KT 9999 Despejado 11/10 Q1025</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -675,12 +748,12 @@
                                 <td class="w-1/2 p-4 text-center border-r border-b"
                                     style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
-                                    <span class="text-xl font-black uppercase monospace">Este</span>
+                                    <span class="text-xl font-black uppercase monospace">Variable</span>
                                     <div class="mt-2 text-4xl">🧭</div>
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">03 KT</span>
+                                    <span class="text-2xl font-black monospace">02 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -690,7 +763,7 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">10 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">11 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
@@ -732,14 +805,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPRU 030320260701Z Sureste04 KT 9999 Nublado 21/21 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPRU 030320260711Z Sureste04 KT 9999 Nublado 21/21 Q1009</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -805,14 +878,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPQT 030320260701Z Suroeste03 KT 9999 Cielo cubierto 24/24 Q1006</span>
+                        <span class="italic truncate tracking-tight">SPQT 030320260711Z Variable01 KT 9999 Cielo cubierto 25/24 Q1007</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -821,12 +894,12 @@
                                 <td class="w-1/2 p-4 text-center border-r border-b"
                                     style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
-                                    <span class="text-xl font-black uppercase monospace">Suroeste</span>
+                                    <span class="text-xl font-black uppercase monospace">Variable</span>
                                     <div class="mt-2 text-4xl">🧭</div>
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">03 KT</span>
+                                    <span class="text-2xl font-black monospace">01 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -836,7 +909,7 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">24 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">25 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
@@ -878,14 +951,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPST 030320260701Z Este01 KT 9999 Nublado 22/22 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPST 030320260711Z Sur02 KT 9999 Cielo cubierto 22/22 Q1009</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -894,12 +967,12 @@
                                 <td class="w-1/2 p-4 text-center border-r border-b"
                                     style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
-                                    <span class="text-xl font-black uppercase monospace">Este</span>
+                                    <span class="text-xl font-black uppercase monospace">Sur</span>
                                     <div class="mt-2 text-4xl">🧭</div>
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">01 KT</span>
+                                    <span class="text-2xl font-black monospace">02 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -922,7 +995,7 @@
                             <tr class="bg-slate-50/50 dark:bg-slate-900/20">
                                 <td class="p-3 border-r" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Nubosidad</span>
-                                    <span class="text-sm font-bold uppercase">Nublado</span>
+                                    <span class="text-sm font-bold uppercase">Cielo cubierto</span>
                                 </td>
                                 <td class="p-3">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
@@ -951,14 +1024,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPCL 030320260701Z Calma0 9999 Cielo cubierto 24/23 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPCL 030320260711Z Calma0 9999 Cielo cubierto 24/23 Q1008</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -999,7 +1072,7 @@
                                 </td>
                                 <td class="p-3">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
-                                    <span class="text-sm font-bold uppercase text-red-600 dark:text-red-400">No hay fenómeno meteorológico</span>
+                                    <span class="text-sm font-bold uppercase text-red-600 dark:text-red-400">Niebla</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -1024,14 +1097,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPHZ 030320260701Z Norte13 KT 9999 Cielo cubierto 20/10 Q1022</span>
+                        <span class="italic truncate tracking-tight">SPHZ 030320260711Z Sureste04 KT 9999 Cielo cubierto 12/09 Q1025</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 20:00 UTCo15:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -1040,12 +1113,12 @@
                                 <td class="w-1/2 p-4 text-center border-r border-b"
                                     style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
-                                    <span class="text-xl font-black uppercase monospace">Norte</span>
+                                    <span class="text-xl font-black uppercase monospace">Sureste</span>
                                     <div class="mt-2 text-4xl">🧭</div>
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">13 KT</span>
+                                    <span class="text-2xl font-black monospace">04 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -1055,14 +1128,14 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">20 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">12 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Rocío</span>
                                         <span class="text-3xl">💧</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">10 °C</div>
+                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">09 °C</div>
                                 </td>
                             </tr>
                             <tr class="bg-slate-50/50 dark:bg-slate-900/20">
@@ -1072,7 +1145,7 @@
                                 </td>
                                 <td class="p-3">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
-                                    <span class="text-sm font-bold uppercase text-red-600 dark:text-red-400">Chubasco en la vecindad</span>
+                                    <span class="text-sm font-bold uppercase text-red-600 dark:text-red-400">No hay fenómeno meteorológico</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -1097,14 +1170,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPJC 030320260701Z Sur06 KT 9999 Parcialmente nublado 21/18 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPJC 030320260711Z Sur06 KT 9999 Nublado 21/18 Q1009</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -1141,7 +1214,7 @@
                             <tr class="bg-slate-50/50 dark:bg-slate-900/20">
                                 <td class="p-3 border-r" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Nubosidad</span>
-                                    <span class="text-sm font-bold uppercase">Parcialmente nublado</span>
+                                    <span class="text-sm font-bold uppercase">Nublado</span>
                                 </td>
                                 <td class="p-3">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
@@ -1170,14 +1243,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPJJ 030320260701Z Norte04 KT 9999 Nublado 09/09 Q1029</span>
+                        <span class="italic truncate tracking-tight">SPJJ 030320260711Z Norte03 KT 9999 Nublado 10/08 Q1030</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -1191,7 +1264,7 @@
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">04 KT</span>
+                                    <span class="text-2xl font-black monospace">03 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -1201,14 +1274,14 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">09 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">10 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Rocío</span>
                                         <span class="text-3xl">💧</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">09 °C</div>
+                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">08 °C</div>
                                 </td>
                             </tr>
                             <tr class="bg-slate-50/50 dark:bg-slate-900/20">
@@ -1243,14 +1316,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPSO 030320260701Z Variable01 KT 9999 Sin nubes de importancia 19/16 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPSO 030320260711Z Suroeste02 KT 9999 Sin nubes bajo los 1500m 20/17 Q1008</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -1259,12 +1332,12 @@
                                 <td class="w-1/2 p-4 text-center border-r border-b"
                                     style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
-                                    <span class="text-xl font-black uppercase monospace">Variable</span>
+                                    <span class="text-xl font-black uppercase monospace">Suroeste</span>
                                     <div class="mt-2 text-4xl">🧭</div>
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">01 KT</span>
+                                    <span class="text-2xl font-black monospace">02 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -1274,20 +1347,20 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">19 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">20 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Rocío</span>
                                         <span class="text-3xl">💧</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">16 °C</div>
+                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">17 °C</div>
                                 </td>
                             </tr>
                             <tr class="bg-slate-50/50 dark:bg-slate-900/20">
                                 <td class="p-3 border-r" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Nubosidad</span>
-                                    <span class="text-sm font-bold uppercase">Sin nubes de importancia</span>
+                                    <span class="text-sm font-bold uppercase">Sin nubes bajo los 1500m</span>
                                 </td>
                                 <td class="p-3">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
@@ -1316,14 +1389,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPZA 030320260701Z Oeste03 KT 9999 Sin nubes de importancia 19/14 Q1010</span>
+                        <span class="italic truncate tracking-tight">SPZA 030320260711Z Noreste03 KT 9999 Sin nubes bajo los 1500m 20/14 Q1011</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -1332,7 +1405,7 @@
                                 <td class="w-1/2 p-4 text-center border-r border-b"
                                     style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
-                                    <span class="text-xl font-black uppercase monospace">Oeste</span>
+                                    <span class="text-xl font-black uppercase monospace">Noreste</span>
                                     <div class="mt-2 text-4xl">🧭</div>
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
@@ -1347,7 +1420,7 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">19 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">20 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
@@ -1360,7 +1433,80 @@
                             <tr class="bg-slate-50/50 dark:bg-slate-900/20">
                                 <td class="p-3 border-r" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Nubosidad</span>
-                                    <span class="text-sm font-bold uppercase">Sin nubes de importancia</span>
+                                    <span class="text-sm font-bold uppercase">Sin nubes bajo los 1500m</span>
+                                </td>
+                                <td class="p-3">
+                                    <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
+                                    <span class="text-sm font-bold uppercase text-red-600 dark:text-red-400">No hay fenómeno meteorológico</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div id="card-SPJL" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
+                    <div class="flex">
+                        <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H3l-2 1v3.5l1.5 1.5H6L7 19l3-2 3.5 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1Z" />
+                            </svg>
+                            <span>AEROPUERTO: Aeropuerto de Juliaca/Intl. Inca Manco Capac</span>
+                        </div>
+                        <div class="w-1/3 tech-cell monospace text-right font-bold text-sm">
+                            <span class="opacity-60 mr-2 text-[10px]">ICAO:</span> SPJL
+                        </div>
+                    </div>
+
+                    <div
+                        class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
+                        <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
+                        <span class="italic truncate tracking-tight">SPJL 030320260711Z Oeste02 KT 9999 Despejado 07/-05 Q1033</span>
+                    </div>
+
+                    <!-- Instrumentos -->
+                    <div
+                        class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
+                        <span>INSTRUMENTO: VIENTO</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
+                    </div>
+
+                    <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
+                        <tbody>
+                            <tr>
+                                <td class="w-1/2 p-4 text-center border-r border-b"
+                                    style="border-color: var(--tech-border);">
+                                    <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
+                                    <span class="text-xl font-black uppercase monospace">Oeste</span>
+                                    <div class="mt-2 text-4xl">🧭</div>
+                                </td>
+                                <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
+                                    <span class="text-2xl font-black monospace">02 KT</span>
+                                    <div class="mt-2 text-4xl">🚩</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border-r border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
+                                        <span class="text-3xl">🌡️</span>
+                                    </div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">07 °C</div>
+                                </td>
+                                <td class="p-3 border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="text-[10px] font-bold opacity-70 uppercase">Rocío</span>
+                                        <span class="text-3xl">💧</span>
+                                    </div>
+                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">-05 °C</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-slate-50/50 dark:bg-slate-900/20">
+                                <td class="p-3 border-r" style="border-color: var(--tech-border);">
+                                    <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Nubosidad</span>
+                                    <span class="text-sm font-bold uppercase">Despejado</span>
                                 </td>
                                 <td class="p-3">
                                     <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
@@ -1389,14 +1535,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPQU 030320260701Z Norte05 KT 9999 Sin nubes bajo los 1500m 10/03 Q1022</span>
+                        <span class="italic truncate tracking-tight">SPQU 030320260711Z Norte04 KT 9999 Sin nubes bajo los 1500m 14/04 Q1023</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -1410,7 +1556,7 @@
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">05 KT</span>
+                                    <span class="text-2xl font-black monospace">04 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -1420,14 +1566,14 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">10 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">14 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Rocío</span>
                                         <span class="text-3xl">💧</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">03 °C</div>
+                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">04 °C</div>
                                 </td>
                             </tr>
                             <tr class="bg-slate-50/50 dark:bg-slate-900/20">
@@ -1462,14 +1608,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPTN 030320260701Z Noreste07 KT 9999 Sin nubes bajo los 1500m 19/13 Q1011</span>
+                        <span class="italic truncate tracking-tight">SPTN 030320260711Z Norte07 KT 9999 Sin nubes bajo los 1500m 20/14 Q1011</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -1478,7 +1624,7 @@
                                 <td class="w-1/2 p-4 text-center border-r border-b"
                                     style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
-                                    <span class="text-xl font-black uppercase monospace">Noreste</span>
+                                    <span class="text-xl font-black uppercase monospace">Norte</span>
                                     <div class="mt-2 text-4xl">🧭</div>
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
@@ -1493,14 +1639,14 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">19 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">20 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Rocío</span>
                                         <span class="text-3xl">💧</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">13 °C</div>
+                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">14 °C</div>
                                 </td>
                             </tr>
                             <tr class="bg-slate-50/50 dark:bg-slate-900/20">
@@ -1535,14 +1681,14 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPZO 030320260701Z Calma0 9999 Cielo cubierto 08/07 Q1029</span>
+                        <span class="italic truncate tracking-tight">SPZO 030320260711Z Este04 KT 9999 Cielo cubierto 09/07 Q1029</span>
                     </div>
 
                     <!-- Instrumentos -->
                     <div
                         class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
                         <span>INSTRUMENTO: VIENTO</span>
-                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 11:00 UTCo6:00 hrs. (Local)</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 12:00 UTCo7:00 hrs. (Local)</span>
                     </div>
 
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
@@ -1551,12 +1697,12 @@
                                 <td class="w-1/2 p-4 text-center border-r border-b"
                                     style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
-                                    <span class="text-xl font-black uppercase monospace">Calma</span>
+                                    <span class="text-xl font-black uppercase monospace">Este</span>
                                     <div class="mt-2 text-4xl">🧭</div>
                                 </td>
                                 <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
                                     <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">0</span>
+                                    <span class="text-2xl font-black monospace">04 KT</span>
                                     <div class="mt-2 text-4xl">🚩</div>
                                 </td>
                             </tr>
@@ -1566,7 +1712,7 @@
                                         <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
                                         <span class="text-3xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">08 °C</div>
+                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">09 °C</div>
                                 </td>
                                 <td class="p-3 border-b" style="border-color: var(--tech-border);">
                                     <div class="flex justify-between items-center mb-1">
@@ -1604,10 +1750,21 @@
                 nombre: "Aeropuerto de Pto Maldonado/Padre Aldamiz",
                     lat: "-3.552",
                         lon: "-80.379",
-                            temp: "24 °C",
-                                viento: "Variable / 01 KT",
-                                    fenomenos: "Tormenta eléctrica",
+                            temp: "25 °C",
+                                viento: "Variable / 02 KT",
+                                    fenomenos: "Tormeta con lluvia",
                                         nubosidad: "Cielo cubierto"
+        },
+        
+        {
+            icao: "SPYL",
+                nombre: "Aeropuerto de Talara/Capitan Montes",
+                    lat: "-4.58",
+                        lon: "-81.251",
+                            temp: "26 °C",
+                                viento: "Sureste / 10 KT",
+                                    fenomenos: "No hay fenómeno meteorológico",
+                                        nubosidad: "Nublado"
         },
         
         {
@@ -1615,8 +1772,8 @@
                 nombre: "Aeropuerto de Piura/Capitan FAP Guillemo Concha Iberico",
                     lat: "-5.209",
                         lon: "-80.616",
-                            temp: "25 °C",
-                                viento: "Este / 02 KT",
+                            temp: "26 °C",
+                                viento: "Sur / 03 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
                                         nubosidad: "Sin nubes bajo los 1500m"
         },
@@ -1627,7 +1784,7 @@
                     lat: "-6.787",
                         lon: "-79.828",
                             temp: "23 °C",
-                                viento: "Sur / 09 KT",
+                                viento: "Sur / 07 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
                                         nubosidad: "Sin nubes bajo los 1500m"
         },
@@ -1637,8 +1794,8 @@
                 nombre: "Aeropuerto de Cajamarca/Mayor Gral.FAP Armando Revoredo Iglesias",
                     lat: "-7.139",
                         lon: "-78.489",
-                            temp: "10 °C",
-                                viento: "Este / 03 KT",
+                            temp: "11 °C",
+                                viento: "Variable / 02 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
                                         nubosidad: "Despejado"
         },
@@ -1659,8 +1816,8 @@
                 nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
                     lat: "-3.785",
                         lon: "-73.309",
-                            temp: "24 °C",
-                                viento: "Suroeste / 03 KT",
+                            temp: "25 °C",
+                                viento: "Variable / 01 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
                                         nubosidad: "Cielo cubierto"
         },
@@ -1671,9 +1828,9 @@
                     lat: "-6.509",
                         lon: "-76.372",
                             temp: "22 °C",
-                                viento: "Este / 01 KT",
+                                viento: "Sur / 02 KT",
                                     fenomenos: "Niebla",
-                                        nubosidad: "Nublado"
+                                        nubosidad: "Cielo cubierto"
         },
         
         {
@@ -1683,7 +1840,7 @@
                         lon: "-74.574",
                             temp: "24 °C",
                                 viento: "Calma / 0",
-                                    fenomenos: "No hay fenómeno meteorológico",
+                                    fenomenos: "Niebla",
                                         nubosidad: "Cielo cubierto"
         },
         
@@ -1692,9 +1849,9 @@
                 nombre: "Aeropuerto de Anta - Huaraz/Cmdte. FAP German Arias Grazziani",
                     lat: "-9.347",
                         lon: "-77.598",
-                            temp: "20 °C",
-                                viento: "Norte / 13 KT",
-                                    fenomenos: "Chubasco en la vecindad",
+                            temp: "12 °C",
+                                viento: "Sureste / 04 KT",
+                                    fenomenos: "No hay fenómeno meteorológico",
                                         nubosidad: "Cielo cubierto"
         },
         
@@ -1706,7 +1863,7 @@
                             temp: "21 °C",
                                 viento: "Sur / 06 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
-                                        nubosidad: "Parcialmente nublado"
+                                        nubosidad: "Nublado"
         },
         
         {
@@ -1714,8 +1871,8 @@
                 nombre: "Aeropuerto de Jauja",
                     lat: "-11.783",
                         lon: "-75.473",
-                            temp: "09 °C",
-                                viento: "Norte / 04 KT",
+                            temp: "10 °C",
+                                viento: "Norte / 03 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
                                         nubosidad: "Nublado"
         },
@@ -1725,10 +1882,10 @@
                 nombre: "Aeropuerto de Pisco/Intl. Pisco",
                     lat: "-13.744",
                         lon: "-76.222",
-                            temp: "19 °C",
-                                viento: "Variable / 01 KT",
+                            temp: "20 °C",
+                                viento: "Suroeste / 02 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
-                                        nubosidad: "Sin nubes de importancia"
+                                        nubosidad: "Sin nubes bajo los 1500m"
         },
         
         {
@@ -1736,10 +1893,21 @@
                 nombre: "Aeropuerto de Nazca/Maria Reiche",
                     lat: "-14.853",
                         lon: "-74.962",
-                            temp: "19 °C",
-                                viento: "Oeste / 03 KT",
+                            temp: "20 °C",
+                                viento: "Noreste / 03 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
-                                        nubosidad: "Sin nubes de importancia"
+                                        nubosidad: "Sin nubes bajo los 1500m"
+        },
+        
+        {
+            icao: "SPJL",
+                nombre: "Aeropuerto de Juliaca/Intl. Inca Manco Capac",
+                    lat: "-15.467",
+                        lon: "-70.158",
+                            temp: "07 °C",
+                                viento: "Oeste / 02 KT",
+                                    fenomenos: "No hay fenómeno meteorológico",
+                                        nubosidad: "Despejado"
         },
         
         {
@@ -1747,8 +1915,8 @@
                 nombre: "Aeropuerto de Arequipa/Intl. Rodriguez Ballon",
                     lat: "-16.341",
                         lon: "-71.571",
-                            temp: "10 °C",
-                                viento: "Norte / 05 KT",
+                            temp: "14 °C",
+                                viento: "Norte / 04 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
                                         nubosidad: "Sin nubes bajo los 1500m"
         },
@@ -1758,8 +1926,8 @@
                 nombre: "Aeropuerto de Tacna/Intl. Coronel FAP Carlos Ciriani Santa Rosa",
                     lat: "-18.053",
                         lon: "-70.276",
-                            temp: "19 °C",
-                                viento: "Noreste / 07 KT",
+                            temp: "20 °C",
+                                viento: "Norte / 07 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
                                         nubosidad: "Sin nubes bajo los 1500m"
         },
@@ -1769,8 +1937,8 @@
                 nombre: "Aeropuerto de Cuzco/Intl. Velasco Astete",
                     lat: "-13.535",
                         lon: "-71.939",
-                            temp: "08 °C",
-                                viento: "Calma / 0",
+                            temp: "09 °C",
+                                viento: "Este / 04 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
                                         nubosidad: "Cielo cubierto"
         },
