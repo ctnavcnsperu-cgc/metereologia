@@ -12,24 +12,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --tech-border: #074e8c;
-            --tech-bg: #dbeafe;
-            --tech-accent: #074e8c;
-        }
-
-        .dark {
-            --tech-border: #60a5fa;
-            --tech-bg: #0f172a;
-            --tech-accent: #38bdf8;
+            --bg-principal: #0f1115;
+            --card-bg: #1a1d23;
+            --header-bg: #21262e;
+            --accent-tech: #e2e8f0;
+            --text-bright: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-dark: #334155;
+            --punto-alerta: #ff3e3e;
+            --tech-border: var(--border-dark);
+            --tech-bg: var(--bg-principal);
+            --tech-accent: var(--accent-tech);
         }
 
         body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--tech-bg);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--text-bright);
             transition: all 0.3s ease;
         }
 
@@ -37,17 +40,14 @@
             width: 100%;
             height: 100%;
             border: 1px solid var(--tech-border);
-            background: #aad3df;
+            background: #0f1115;
+            filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
         }
 
         .map-wrapper {
             position: sticky;
             top: 2rem;
             height: calc(100vh - 4rem);
-        }
-
-        .dark #map {
-            filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
         }
 
         .monospace {
@@ -67,13 +67,9 @@
         }
 
         .tech-header {
-            background: linear-gradient(180deg, #074e8c 0%, #0c3a66 100%);
-            color: white;
-        }
-
-        .dark .tech-header {
-            background: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
-            color: #38bdf8;
+            background: var(--header-bg);
+            color: var(--accent-tech);
+            border-bottom: 2px solid var(--border-dark);
         }
 
         .tech-cell {
@@ -90,7 +86,6 @@
             align-items: center;
             justify-content: center;
             font-weight: 400;
-            /* Letras sin negrita para mayor claridad */
             font-size: 11px;
             color: white;
             transition: transform 0.2s;
@@ -212,7 +207,7 @@
                 </nav>
                 <div class="text-right monospace">
                     <p class="text-xs font-bold uppercase">Sincronización</p>
-                    <p class="text-xl font-bold">05/03/2026 18:51</p>
+                    <p class="text-xl font-bold">05/03/2026 18:55</p>
                 </div>
             </div>
         </header>
@@ -703,8 +698,8 @@
         {
             icao: "SPTU",
                 nombre: "Aeropuerto de Pto Maldonado/Padre Aldamiz",
-                    lat: -3.552,
-            lon: -80.379,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "26 °C",
                     viento: "Norte / 03 KT",
@@ -715,8 +710,8 @@
         {
             icao: "SPME",
                 nombre: "Aeropuerto de Tumbes/Pedro Canga",
-                    lat: -4.442,
-            lon: -81.224,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "27 °C",
                     viento: "Oeste / 04 KT",
@@ -727,8 +722,8 @@
         {
             icao: "SPYL",
                 nombre: "Aeropuerto de Talara/Capitan Montes",
-                    lat: -4.58,
-            lon: -81.251,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "28 °C",
                     viento: "Sur / 08 KT",
@@ -739,8 +734,8 @@
         {
             icao: "SPUR",
                 nombre: "Aeropuerto de Piura/Capitan FAP Guillemo Concha Iberico",
-                    lat: -5.209,
-            lon: -80.616,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "30 °C",
                     viento: "Suroeste / 06 KT",
@@ -751,8 +746,8 @@
         {
             icao: "SPHI",
                 nombre: "Aeropuerto de Chiclayo/Intl. Cap. Jose Abelardo Quinones Gonzales",
-                    lat: -6.787,
-            lon: -79.828,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "27 °C",
                     viento: "Sur / 10 KT",
@@ -763,8 +758,8 @@
         {
             icao: "SPJR",
                 nombre: "Aeropuerto de Cajamarca/Mayor Gral.FAP Armando Revoredo Iglesias",
-                    lat: -7.139,
-            lon: -78.489,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "17 °C",
                     viento: "Sureste / 04 KT",
@@ -775,8 +770,8 @@
         {
             icao: "SPRU",
                 nombre: "Aeropuerto de Trujillo/Intl. Cap.Carlos Martinez de Pinillos",
-                    lat: -8.082,
-            lon: -79.109,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "7 km",
                 temp: "23 °C",
                     viento: "Sur / 07 KT",
@@ -787,8 +782,8 @@
         {
             icao: "SPQT",
                 nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
-                    lat: -3.785,
-            lon: -73.309,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "26 °C",
                     viento: "Noreste / 04 KT",
@@ -799,8 +794,8 @@
         {
             icao: "SPST",
                 nombre: "Aeropuerto de Tarapoto/Cadete Guillermo del Castillo Paredes",
-                    lat: -6.509,
-            lon: -76.372,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "27 °C",
                     viento: "Sureste / 02 KT",
@@ -811,8 +806,8 @@
         {
             icao: "SPCL",
                 nombre: "Aeropuerto de Pucallpa/Intl. David Abensur Rengifo",
-                    lat: -8.378,
-            lon: -74.574,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "25 °C",
                     viento: "Noreste / 03 KT",
@@ -823,8 +818,8 @@
         {
             icao: "SPMF",
                 nombre: "Aeropuerto de Mazamari",
-                    lat: -11.325,
-            lon: -74.536,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "28 °C",
                     viento: "Sur / 04 KT",
@@ -835,8 +830,8 @@
         {
             icao: "SPJC",
                 nombre: "Aeropuerto de Lima/Intl. Jorge Chavez",
-                    lat: -12.022,
-            lon: -77.114,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "23 °C",
                     viento: "Sur / 10 KT",
@@ -847,8 +842,8 @@
         {
             icao: "SPJJ",
                 nombre: "Aeropuerto de Jauja",
-                    lat: -11.783,
-            lon: -75.473,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "15 °C",
                     viento: "Noroeste / 09 KT",
@@ -859,8 +854,8 @@
         {
             icao: "SPSO",
                 nombre: "Aeropuerto de Pisco/Intl. Pisco",
-                    lat: -13.744,
-            lon: -76.222,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "24 °C",
                     viento: "Suroeste / 13 KT",
@@ -871,8 +866,8 @@
         {
             icao: "SPZA",
                 nombre: "Aeropuerto de Nazca/Maria Reiche",
-                    lat: -14.853,
-            lon: -74.962,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "9 km",
                 temp: "28 °C",
                     viento: "Sur / 13 KT",
@@ -883,8 +878,8 @@
         {
             icao: "SPJL",
                 nombre: "Aeropuerto de Juliaca/Intl. Inca Manco Capac",
-                    lat: -15.467,
-            lon: -70.158,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "14 °C",
                     viento: "Sureste / 14 KT",
@@ -895,8 +890,8 @@
         {
             icao: "SPQU",
                 nombre: "Aeropuerto de Arequipa/Intl. Rodriguez Ballon",
-                    lat: -16.341,
-            lon: -71.571,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "15 °C",
                     viento: "Oeste / 07 KT",
@@ -907,8 +902,8 @@
         {
             icao: "SPTN",
                 nombre: "Aeropuerto de Tacna/Intl. Coronel FAP Carlos Ciriani Santa Rosa",
-                    lat: -18.053,
-            lon: -70.276,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "23 °C",
                     viento: "Suroeste / 08 KT",
@@ -919,8 +914,8 @@
         {
             icao: "SPZO",
                 nombre: "Aeropuerto de Cuzco/Intl. Velasco Astete",
-                    lat: -13.535,
-            lon: -71.939,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 temp: "18 °C",
                     viento: "Este / 11 KT",

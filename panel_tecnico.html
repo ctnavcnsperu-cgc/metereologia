@@ -12,24 +12,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --tech-border: #074e8c;
-            --tech-bg: #dbeafe;
-            --tech-accent: #074e8c;
-        }
-
-        .dark {
-            --tech-border: #60a5fa;
-            --tech-bg: #0f172a;
-            --tech-accent: #38bdf8;
+            --bg-principal: #0f1115;
+            --card-bg: #1a1d23;
+            --header-bg: #21262e;
+            --accent-tech: #e2e8f0;
+            --text-bright: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-dark: #334155;
+            --punto-alerta: #ff3e3e;
+            --tech-border: var(--border-dark);
+            --tech-bg: var(--bg-principal);
+            --tech-accent: var(--accent-tech);
         }
 
         body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--tech-bg);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--text-bright);
             transition: all 0.3s ease;
         }
 
@@ -37,17 +40,14 @@
             width: 100%;
             height: 100%;
             border: 1px solid var(--tech-border);
-            background: #aad3df;
+            background: #0f1115;
+            filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
         }
 
         .map-wrapper {
             position: sticky;
             top: 2rem;
             height: calc(100vh - 4rem);
-        }
-
-        .dark #map {
-            filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
         }
 
         .monospace {
@@ -76,8 +76,8 @@
         .icao-marker .dot {
             width: 8px;
             height: 8px;
-            background-color: #000000;
-            border: 1px solid #ffffff;
+            background-color: #ffffff;
+            border: 1px solid #000000;
             border-radius: 50%;
             box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
             flex-shrink: 0;
@@ -89,20 +89,6 @@
             font-size: 13px;
             font-weight: 900;
             margin-left: 4px;
-            text-shadow:
-                -1px -1px 0 #fff,
-                1px -1px 0 #fff,
-                -1px 1px 0 #fff,
-                1px 1px 0 #fff,
-                0 0 3px #fff;
-        }
-
-        .dark .icao-marker .dot {
-            background-color: #ffffff;
-            border-color: #000000;
-        }
-
-        .dark .icao-marker .label {
             text-shadow:
                 -1px -1px 0 #000,
                 1px -1px 0 #000,
@@ -123,21 +109,12 @@
         }
 
         .icao-marker .detail-line {
-            color: #444;
+            color: #ccc;
             font-family: 'JetBrains Mono', monospace;
             font-size: 10px;
             font-weight: 700;
             margin-left: 12px;
             white-space: nowrap;
-            text-shadow:
-                -1px -1px 0 #fff,
-                1px -1px 0 #fff,
-                -1px 1px 0 #fff,
-                1px 1px 0 #fff;
-        }
-
-        .dark .icao-marker .detail-line {
-            color: #ccc;
             text-shadow:
                 -1px -1px 0 #000,
                 1px -1px 0 #000,
@@ -150,10 +127,10 @@
             top: 10px;
             right: 10px;
             z-index: 1000;
-            background: var(--tech-bg);
+            background: var(--card-bg);
             border: 1px solid var(--tech-border);
             padding: 8px;
-            color: var(--tech-border);
+            color: var(--accent-tech);
             font-family: 'JetBrains Mono', monospace;
             font-size: 10px;
             backdrop-filter: blur(4px);
@@ -239,7 +216,7 @@
                 </nav>
                 <div class="text-right monospace">
                     <p class="text-xs font-bold uppercase">Sincronización</p>
-                    <p class="text-xl font-bold">05/03/2026 18:51</p>
+                    <p class="text-xl font-bold">05/03/2026 18:55</p>
                 </div>
             </div>
         </header>
@@ -890,8 +867,8 @@
         {
             icao: "SPTU",
                 nombre: "Aeropuerto de Pto Maldonado/Padre Aldamiz",
-                    lat: -3.552,
-            lon: -80.379,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Norte / 03 KT",
                     nubosidad: "Despejado",
@@ -901,8 +878,8 @@
         {
             icao: "SPME",
                 nombre: "Aeropuerto de Tumbes/Pedro Canga",
-                    lat: -4.442,
-            lon: -81.224,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Oeste / 04 KT",
                     nubosidad: "Nublado",
@@ -912,8 +889,8 @@
         {
             icao: "SPYL",
                 nombre: "Aeropuerto de Talara/Capitan Montes",
-                    lat: -4.58,
-            lon: -81.251,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Sur / 08 KT",
                     nubosidad: "Nublado",
@@ -923,8 +900,8 @@
         {
             icao: "SPUR",
                 nombre: "Aeropuerto de Piura/Capitan FAP Guillemo Concha Iberico",
-                    lat: -5.209,
-            lon: -80.616,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Suroeste / 06 KT",
                     nubosidad: "Nublado",
@@ -934,8 +911,8 @@
         {
             icao: "SPHI",
                 nombre: "Aeropuerto de Chiclayo/Intl. Cap. Jose Abelardo Quinones Gonzales",
-                    lat: -6.787,
-            lon: -79.828,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Sur / 10 KT",
                     nubosidad: "Cielo cubierto",
@@ -945,8 +922,8 @@
         {
             icao: "SPJR",
                 nombre: "Aeropuerto de Cajamarca/Mayor Gral.FAP Armando Revoredo Iglesias",
-                    lat: -7.139,
-            lon: -78.489,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Sureste / 04 KT",
                     nubosidad: "Cielo cubierto",
@@ -956,8 +933,8 @@
         {
             icao: "SPRU",
                 nombre: "Aeropuerto de Trujillo/Intl. Cap.Carlos Martinez de Pinillos",
-                    lat: -8.082,
-            lon: -79.109,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "7 km",
                 viento: "Sur / 07 KT",
                     nubosidad: "Parcialmente nublado",
@@ -967,8 +944,8 @@
         {
             icao: "SPQT",
                 nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
-                    lat: -3.785,
-            lon: -73.309,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Noreste / 04 KT",
                     nubosidad: "Cielo cubierto",
@@ -978,8 +955,8 @@
         {
             icao: "SPST",
                 nombre: "Aeropuerto de Tarapoto/Cadete Guillermo del Castillo Paredes",
-                    lat: -6.509,
-            lon: -76.372,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Sureste / 02 KT",
                     nubosidad: "Nublado",
@@ -989,8 +966,8 @@
         {
             icao: "SPCL",
                 nombre: "Aeropuerto de Pucallpa/Intl. David Abensur Rengifo",
-                    lat: -8.378,
-            lon: -74.574,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Noreste / 03 KT",
                     nubosidad: "Cielo cubierto",
@@ -1000,8 +977,8 @@
         {
             icao: "SPMF",
                 nombre: "Aeropuerto de Mazamari",
-                    lat: -11.325,
-            lon: -74.536,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Sur / 04 KT",
                     nubosidad: "Nublado",
@@ -1011,8 +988,8 @@
         {
             icao: "SPJC",
                 nombre: "Aeropuerto de Lima/Intl. Jorge Chavez",
-                    lat: -12.022,
-            lon: -77.114,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Sur / 10 KT",
                     nubosidad: "Nublado",
@@ -1022,8 +999,8 @@
         {
             icao: "SPJJ",
                 nombre: "Aeropuerto de Jauja",
-                    lat: -11.783,
-            lon: -75.473,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Noroeste / 09 KT",
                     nubosidad: "Parcialmente nublado",
@@ -1033,8 +1010,8 @@
         {
             icao: "SPSO",
                 nombre: "Aeropuerto de Pisco/Intl. Pisco",
-                    lat: -13.744,
-            lon: -76.222,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Suroeste / 13 KT",
                     nubosidad: "Parcialmente nublado",
@@ -1044,8 +1021,8 @@
         {
             icao: "SPZA",
                 nombre: "Aeropuerto de Nazca/Maria Reiche",
-                    lat: -14.853,
-            lon: -74.962,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "9 km",
                 viento: "Sur / 13 KT",
                     nubosidad: "Nublado",
@@ -1055,8 +1032,8 @@
         {
             icao: "SPJL",
                 nombre: "Aeropuerto de Juliaca/Intl. Inca Manco Capac",
-                    lat: -15.467,
-            lon: -70.158,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Sureste / 14 KT",
                     nubosidad: "Cielo cubierto",
@@ -1066,8 +1043,8 @@
         {
             icao: "SPQU",
                 nombre: "Aeropuerto de Arequipa/Intl. Rodriguez Ballon",
-                    lat: -16.341,
-            lon: -71.571,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Oeste / 07 KT",
                     nubosidad: "Despejado",
@@ -1077,8 +1054,8 @@
         {
             icao: "SPTN",
                 nombre: "Aeropuerto de Tacna/Intl. Coronel FAP Carlos Ciriani Santa Rosa",
-                    lat: -18.053,
-            lon: -70.276,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Suroeste / 08 KT",
                     nubosidad: "Sin nubes bajo los 1500m",
@@ -1088,8 +1065,8 @@
         {
             icao: "SPZO",
                 nombre: "Aeropuerto de Cuzco/Intl. Velasco Astete",
-                    lat: -13.535,
-            lon: -71.939,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Este / 11 KT",
                     nubosidad: "Nublado",
