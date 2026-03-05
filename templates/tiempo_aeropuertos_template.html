@@ -23,32 +23,26 @@
         }
     </script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --bg-principal: #0f1115;
-            --card-bg: #1a1d23;
-            --header-bg: #21262e;
-            --accent-tech: #e2e8f0;
-            --text-bright: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-dark: #334155;
-            --punto-alerta: #ff3e3e;
-            --tech-border: var(--border-dark);
-            --tech-bg: var(--bg-principal);
-            --tech-accent: var(--accent-tech);
+            --tech-border: #074e8c;
+            --tech-bg: #dbeafe;
+        }
+
+        .dark {
+            --tech-border: #60a5fa;
+            --tech-bg: #0f172a;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-principal);
-            color: var(--text-bright);
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--tech-bg);
         }
 
         .tech-grid {
-            border: 1px solid var(--tech-border);
-            background: var(--card-bg);
+            border: 2px solid var(--tech-border);
         }
 
         .tech-cell {
@@ -57,13 +51,18 @@
         }
 
         .tech-header {
-            background: var(--header-bg);
-            color: var(--accent-tech);
+            background: linear-gradient(180deg, #074e8c 0%, #033663 100%);
+            color: white;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             font-size: 0.75rem;
-            border-bottom: 2px solid var(--border-dark);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dark .tech-header {
+            background: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
+            color: #38bdf8;
         }
 
         .monospace {
@@ -71,7 +70,11 @@
         }
 
         .table-row-hover:hover {
-            background-color: rgba(255, 255, 255, 0.03);
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .table-row-hover:hover {
+            background-color: rgba(56, 189, 248, 0.05);
         }
 
         /* Botón Imprimir */
@@ -80,22 +83,21 @@
             align-items: center;
             gap: 6px;
             padding: 8px 14px;
-            background: #334155;
+            background: linear-gradient(135deg, #074e8c, #033663);
             color: white;
-            border: 1px solid var(--border-dark);
-            font-family: 'Inter', sans-serif;
+            border: 2px solid #074e8c;
+            font-family: 'JetBrains Mono', monospace;
             font-size: 10px;
-            font-weight: 700;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             cursor: pointer;
             transition: all 0.2s ease;
-            border-radius: 4px;
         }
 
         .btn-print:hover {
-            background: #475569;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #0369a1, #074e8c);
+            box-shadow: 0 0 12px rgba(7, 78, 140, 0.5);
             transform: translateY(-1px);
         }
 
