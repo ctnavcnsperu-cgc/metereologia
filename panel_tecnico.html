@@ -164,6 +164,42 @@
             border: 2px solid var(--tech-border) !important;
             border-radius: 0 !important;
         }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            border: 2px solid var(--tech-border);
+            background-color: transparent;
+            color: var(--tech-border);
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--tech-border);
+            color: #ffffff !important;
+        }
+
+        .nav-btn.active {
+            background-color: var(--tech-border);
+            color: #ffffff !important;
+        }
+
+        .nav-btn svg {
+            flex-shrink: 0;
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .nav-btn span {
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
     </style>
 </head>
 
@@ -188,58 +224,48 @@
 
             <div class="flex items-center gap-6">
                 <!-- Menú de Navegación -->
-                <nav class="flex gap-2">
-                    <a href="index.html"
-                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
-                        title="Estado del Tiempo Hoy">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <nav class="flex flex-wrap gap-2">
+                    <a href="index.html" class="nav-btn" title="Estado del Tiempo Hoy">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        <span class="text-[10px] font-black uppercase">Tiempo Hoy</span>
+                        <span>Tiempo Hoy</span>
                     </a>
-                    <a href="tiempo_hoy.html"
-                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
-                        title="Dashboard Principal">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="tiempo_hoy.html" class="nav-btn" title="Dashboard Principal">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8.286 3.407A1.5 1.5 0 0 0 6 4.684v14.632a1.5 1.5 0 0 0 2.286 1.277l11.888-7.316a1.5 1.5 0 0 0 0-2.555L8.286 3.407z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 21v-3m0-4.5v-3m0-4.5V3" />
                         </svg>
-                        <span class="text-[10px] font-black uppercase">Vig-Metereolgica</span>
+                        <span>Vig-Metereológica</span>
                     </a>
-                    <a href="panel_alerta.html"
-                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
-                        title="Sistema de Alerta">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="panel_alerta.html" class="nav-btn" title="Sistema de Alerta">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                         </svg>
-                        <span class="text-[10px] font-black uppercase">Sis-Alerta</span>
+                        <span>Sis-Alerta</span>
                     </a>
-                    <a href="panel_tecnico.html"
-                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] bg-[--tech-border] text-white transition-all"
-                        title="Navegacin Tcnica">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="panel_tecnico.html" class="nav-btn active" title="Navegación Técnica">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                         </svg>
-                        <span class="text-[10px] font-black uppercase">Nav-Técnica</span>
+                        <span>Nav-Técnica</span>
                     </a>
-                    <a href="tiempo_aeropuertos.html"
-                        class="flex items-center gap-2 px-3 py-2 border-2 border-[--tech-border] hover:bg-[--tech-border] hover:text-white transition-all"
-                        title="Reporte Técnico">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="tiempo_aeropuertos.html" class="nav-btn" title="Reporte Técnico">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                         </svg>
-                        <span class="text-[10px] font-black uppercase">Rep-Técnico</span>
+                        <span>Rep-Técnico</span>
                     </a>
                 </nav>
                 <div class="text-right monospace">
                     <p class="text-xs font-bold uppercase">Sincronización</p>
-                    <p class="text-xl font-bold">05/03/2026 20:13</p>
+                    <p class="text-xl font-bold">05/03/2026 20:22</p>
                 </div>
             </div>
         </header>
@@ -698,8 +724,8 @@
         {
             icao: "SPME",
                 nombre: "Aeropuerto de Tumbes/Pedro Canga",
-                    lat: -4.442,
-            lon: -81.224,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "8 km",
                 viento: "Suroeste / 04 KT",
                     nubosidad: "Cielo cubierto",
@@ -709,8 +735,8 @@
         {
             icao: "SPYL",
                 nombre: "Aeropuerto de Talara/Capitan Montes",
-                    lat: -4.58,
-            lon: -81.251,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Sur / 10 KT",
                     nubosidad: "Nublado",
@@ -720,8 +746,8 @@
         {
             icao: "SPUR",
                 nombre: "Aeropuerto de Piura/Capitan FAP Guillemo Concha Iberico",
-                    lat: -5.209,
-            lon: -80.616,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Suroeste / 06 KT",
                     nubosidad: "Nublado",
@@ -731,8 +757,8 @@
         {
             icao: "SPHI",
                 nombre: "Aeropuerto de Chiclayo/Intl. Cap. Jose Abelardo Quinones Gonzales",
-                    lat: -6.787,
-            lon: -79.828,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Sur / 10 KT",
                     nubosidad: "Cielo cubierto",
@@ -742,8 +768,8 @@
         {
             icao: "SPRU",
                 nombre: "Aeropuerto de Trujillo/Intl. Cap.Carlos Martinez de Pinillos",
-                    lat: -8.082,
-            lon: -79.109,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "8 km",
                 viento: "Sureste / 07 KT",
                     nubosidad: "Nublado",
@@ -753,8 +779,8 @@
         {
             icao: "SPQT",
                 nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
-                    lat: -3.785,
-            lon: -73.309,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Variable / 02 KT",
                     nubosidad: "Nublado",
@@ -764,8 +790,8 @@
         {
             icao: "SPST",
                 nombre: "Aeropuerto de Tarapoto/Cadete Guillermo del Castillo Paredes",
-                    lat: -6.509,
-            lon: -76.372,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Variable / 01 KT",
                     nubosidad: "Despejado",
@@ -775,8 +801,8 @@
         {
             icao: "SPCL",
                 nombre: "Aeropuerto de Pucallpa/Intl. David Abensur Rengifo",
-                    lat: -8.378,
-            lon: -74.574,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Noreste / 03 KT",
                     nubosidad: "Cielo cubierto",
@@ -786,8 +812,8 @@
         {
             icao: "SPJC",
                 nombre: "Aeropuerto de Lima/Intl. Jorge Chavez",
-                    lat: -12.022,
-            lon: -77.114,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Sur / 07 KT",
                     nubosidad: "Despejado",
@@ -797,8 +823,8 @@
         {
             icao: "SPSO",
                 nombre: "Aeropuerto de Pisco/Intl. Pisco",
-                    lat: -13.744,
-            lon: -76.222,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Suroeste / 07 KT",
                     nubosidad: "Parcialmente nublado",
@@ -808,8 +834,8 @@
         {
             icao: "SPQU",
                 nombre: "Aeropuerto de Arequipa/Intl. Rodriguez Ballon",
-                    lat: -16.341,
-            lon: -71.571,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Oeste / 03 KT",
                     nubosidad: "Sin nubes bajo los 1500m",
@@ -819,8 +845,8 @@
         {
             icao: "SPTN",
                 nombre: "Aeropuerto de Tacna/Intl. Coronel FAP Carlos Ciriani Santa Rosa",
-                    lat: -18.053,
-            lon: -70.276,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Suroeste / 05 KT",
                     nubosidad: "Sin nubes bajo los 1500m",
@@ -830,8 +856,8 @@
         {
             icao: "SPZO",
                 nombre: "Aeropuerto de Cuzco/Intl. Velasco Astete",
-                    lat: -13.535,
-            lon: -71.939,
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "10 km a más",
                 viento: "Variable / 02 KT",
                     nubosidad: "Nublado",
