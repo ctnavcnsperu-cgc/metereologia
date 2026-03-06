@@ -74,17 +74,19 @@
             width: 100%;
             height: 100%;
             border: 1px solid var(--tech-border);
-            background: #aad3df;
+            background: #0b0e14;
+            /* Fondo oscuro para el contenedor */
+        }
+
+        /* Máscara oscura técnica para el mapa (Solo teselas) */
+        .leaflet-tile-pane {
+            filter: brightness(0.4) invert(100%) contrast(90%) hue-rotate(180deg) saturate(0.5) opacity(0.9);
         }
 
         .map-wrapper {
             position: sticky;
             top: 70px;
             height: calc(100vh - 80px);
-        }
-
-        .dark #map {
-            filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
         }
 
         .fenomeno-card {
