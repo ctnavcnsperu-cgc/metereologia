@@ -188,17 +188,112 @@
             color: #ffffff !important;
         }
 
-        .nav-btn svg {
-            flex-shrink: 0;
-            width: 1rem;
-            height: 1rem;
-        }
-
         .nav-btn span {
             font-size: 10px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.02em;
+        }
+
+        /* ── Modal Guía Técnica ── */
+        #tech-guide-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.55);
+            align-items: center;
+            justify-content: center;
+        }
+
+        #tech-guide-modal.open {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #fff;
+            border: 2px solid var(--tech-border);
+            width: 100%;
+            max-width: 500px;
+            padding: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            animation: modal-in 0.2s ease;
+        }
+
+        .dark .modal-box {
+            background: #0f172a;
+        }
+
+        @keyframes modal-in {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(180deg, #074e8c 0%, #033663 100%);
+            color: white;
+            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-close-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .guide-section {
+            padding: 1.25rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .dark .guide-section {
+            border-color: #1e293b;
+        }
+
+        .guide-section h4 {
+            font-weight: 900;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--tech-border);
+            margin-bottom: 0.5rem;
+        }
+
+        .dbz-scale {
+            display: flex;
+            height: 12px;
+            margin: 0.5rem 0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .info-trigger-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.65rem;
+            border: 2px solid var(--tech-border);
+            background: var(--tech-border);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -287,10 +382,19 @@
             <!-- Cards Section -->
             <div id="station-cards"
                 class="w-full lg:w-1/2 h-[calc(100vh-4rem)] overflow-y-auto pr-4 custom-scrollbar scroll-smooth">
-                <div class="p-6 bg-slate-50 dark:bg-slate-800/50 border-b-2 border-[--tech-border] mb-6">
+                <div
+                    class="p-6 bg-slate-50 dark:bg-slate-800/50 border-b-2 border-[--tech-border] mb-6 flex justify-between items-center">
                     <h2 class="text-2xl font-black uppercase text-blue-900 dark:text-sky-400 tracking-tighter">Monitor
-                        de
-                        Vigilancia Técnica</h2>
+                        de Vigilancia Técnica</h2>
+                    <button id="open-tech-guide" class="info-trigger-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="16" x2="12" y2="12" />
+                            <line x1="12" y1="8" x2="12.01" y2="8" />
+                        </svg>
+                        Ayuda Técnica
+                    </button>
                 </div>
 
                 <div class="space-y-4">
@@ -732,6 +836,50 @@
         </div>
     </div>
 
+    <!-- Modal: Guía Técnica -->
+    <div id="tech-guide-modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 class="font-black text-[11px] uppercase tracking-widest">🛰️ Guía de Vigilancia Técnica</h3>
+                <button class="modal-close-btn" id="close-tech-guide">&times;</button>
+            </div>
+            <div class="max-h-[70vh] overflow-y-auto custom-scrollbar">
+                <div class="guide-section">
+                    <h4>📡 Radar de Precipitación (dBZ)</h4>
+                    <p class="text-[11px] opacity-80 mb-2">Muestra la intensidad de la lluvia en tiempo casi real. Los
+                        colores indican el nivel de reflectividad (dBZ):</p>
+                    <div class="dbz-scale">
+                        <div style="flex:1; background:#00ff00;"></div>
+                        <div style="flex:1; background:#ffff00;"></div>
+                        <div style="flex:1; background:#ff9900;"></div>
+                        <div style="flex:1; background:#ff0000;"></div>
+                        <div style="flex:1; background:#ff00ff;"></div>
+                    </div>
+                    <div class="flex justify-between text-[9px] font-bold opacity-60">
+                        <span>Ligera</span>
+                        <span>Moderada</span>
+                        <span>Intensa</span>
+                    </div>
+                </div>
+                <div class="guide-section">
+                    <h4>🗺️ Capas Inteligentes</h4>
+                    <ul class="text-[11px] space-y-2 opacity-80">
+                        <li><b>Auto-Detalle:</b> Al hacer zoom (nivel 11+), el mapa cambia automáticamente a vista con
+                            nombres y muestra detalles de viento y visibilidad en cada aeropuerto.</li>
+                        <li><b>Rutas Aéreas:</b> Capa técnica que muestra las aerovías y puntos de notificación.</li>
+                        <li><b>Base Maps:</b> Puedes alternar entre vistas claras, oscuras o con relieve desde el
+                            selector superior derecho.</li>
+                    </ul>
+                </div>
+                <div class="guide-section">
+                    <h4>🔄 Sincronización Dinámica</h4>
+                    <p class="text-[11px] opacity-80">El radar se actualiza automáticamente cada 10 minutos consultando
+                        los últimos datos de satélite y radares terrestres (RainViewer API).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         const airports = [
@@ -943,13 +1091,31 @@
             noWrap: true
         });
 
-        // RainViewer Radar Overlay
-        const radarLayer = L.tileLayer('https://tilecache.rainviewer.com/v2/radar/nowcast/256/{z}/{x}/{y}/2/1_1.png', {
+        // RainViewer Radar Overlay (Dinámico)
+        const radarLayer = L.tileLayer('', {
             opacity: 0.6,
             attribution: 'RainViewer',
             noWrap: true,
             maxNativeZoom: 6
         }).addTo(map);
+
+        async function updateRadar() {
+            try {
+                const response = await fetch('https://api.rainviewer.com/public/weather-maps.json');
+                const data = await response.json();
+                if (data && data.radar && data.radar.past && data.radar.past.length > 0) {
+                    const latest = data.radar.past[data.radar.past.length - 1];
+                    const host = data.host || 'https://tilecache.rainviewer.com';
+                    const newUrl = `${host}${latest.path}/256/{z}/{x}/{y}/2/1_1.png`;
+                    radarLayer.setUrl(newUrl);
+                    console.log("Radar actualizado con éxito:", latest.time);
+                }
+            } catch (err) {
+                console.error("Error al actualizar el radar:", err);
+            }
+        }
+        updateRadar();
+        setInterval(updateRadar, 10 * 60 * 1000); // Auto-actualización cada 10 min
 
         L.control.layers(baseMaps, {
             "Radar Lluvia": radarLayer,
@@ -1034,6 +1200,11 @@
         });
         map.addControl(new homeControl());
 
+        // ── Modal Logica ──
+        const modal = document.getElementById('tech-guide-modal');
+        document.getElementById('open-tech-guide').addEventListener('click', () => modal.classList.add('open'));
+        document.getElementById('close-tech-guide').addEventListener('click', () => modal.classList.remove('open'));
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
 
     </script>
 
