@@ -52,7 +52,7 @@
 
         .tech-cell {
             border: 1px solid var(--tech-border);
-            padding: 0.5rem;
+            padding: 0.35rem 0.5rem;
         }
 
         .tech-header {
@@ -487,46 +487,45 @@
                     <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
                         <tbody>
                             <tr>
-                                <td class="w-1/2 p-4 text-center border-r border-b"
-                                    style="border-color: var(--tech-border);">
-                                    <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Dirección</span>
-                                    <span class="text-xl font-black uppercase monospace">{{ air.viento.split(' / ')[0]
-                                        }}</span>
-                                    <div class="mt-2 text-4xl">🧭</div>
+                                <td class="w-1/2 p-2 text-center border-r border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] uppercase font-bold opacity-70 mb-0.5 block">Dirección</span>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <span class="text-lg font-black uppercase monospace">{{ air.viento.split(' / ')[0] }}</span>
+                                        <span class="text-xl">🧭</span>
+                                    </div>
                                 </td>
-                                <td class="w-1/2 p-4 text-center border-b" style="border-color: var(--tech-border);">
-                                    <span class="text-[10px] uppercase font-bold opacity-70 mb-1 block">Velocidad</span>
-                                    <span class="text-2xl font-black monospace">{{ air.viento.split(' / ')[1] }}</span>
-                                    <div class="mt-2 text-4xl">🚩</div>
+                                <td class="w-1/2 p-2 text-center border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] uppercase font-bold opacity-70 mb-0.5 block">Velocidad</span>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <span class="text-xl font-black monospace">{{ air.viento.split(' / ')[1] }}</span>
+                                        <span class="text-xl">🚩</span>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="p-3 border-r border-b" style="border-color: var(--tech-border);">
-                                    <div class="flex justify-between items-center mb-1">
-                                        <span class="text-[10px] font-bold opacity-70 uppercase">Temperatura</span>
-                                        <span class="text-3xl">🌡️</span>
+                                <td class="p-2 border-r border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[9px] font-bold opacity-70 uppercase">Temperatura</span>
+                                        <span class="text-xl">🌡️</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-indigo-700 dark:text-sky-400">{{
-                                        air.temperatura }}</div>
+                                    <div class="text-xl font-black monospace text-indigo-700 dark:text-sky-400 mt-[-2px]">{{ air.temperatura }}</div>
                                 </td>
-                                <td class="p-3 border-b" style="border-color: var(--tech-border);">
-                                    <div class="flex justify-between items-center mb-1">
-                                        <span class="text-[10px] font-bold opacity-70 uppercase">Rocío</span>
-                                        <span class="text-3xl">💧</span>
+                                <td class="p-2 border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[9px] font-bold opacity-70 uppercase">Rocío</span>
+                                        <span class="text-xl">💧</span>
                                     </div>
-                                    <div class="text-2xl font-black monospace text-slate-500 dark:text-slate-400">{{
-                                        air.rocio }}</div>
+                                    <div class="text-xl font-black monospace text-slate-500 dark:text-slate-400 mt-[-2px]">{{ air.rocio }}</div>
                                 </td>
                             </tr>
                             <tr class="bg-slate-50/50 dark:bg-slate-900/20">
-                                <td class="p-3 border-r" style="border-color: var(--tech-border);">
-                                    <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Nubosidad</span>
-                                    <span class="text-sm font-bold uppercase">{{ air.nubosidad }}</span>
+                                <td class="p-2 border-r" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] font-bold opacity-70 block uppercase">Nubosidad</span>
+                                    <span class="text-xs font-bold uppercase">{{ air.nubosidad }}</span>
                                 </td>
-                                <td class="p-3">
-                                    <span class="text-[10px] font-bold opacity-70 block mb-1 uppercase">Fenómenos</span>
-                                    <span class="text-sm font-bold uppercase text-red-600 dark:text-red-400">{{
-                                        air.fenomenos }}</span>
+                                <td class="p-2">
+                                    <span class="text-[9px] font-bold opacity-70 block uppercase">Fenómenos</span>
+                                    <span class="text-xs font-bold uppercase text-red-600 dark:text-red-400">{{ air.fenomenos }}</span>
                                 </td>
                             </tr>
                         </tbody>
