@@ -171,16 +171,13 @@
 
         /* Ajustes específicos para Vista Satélite (Mejor Contraste) */
         .sat-active .weather-pin .city-label {
-            color: #ffff00 !important;
-            /* Amarillo Intenso */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 1), 0 0 4px rgba(0, 0, 0, 0.5) !important;
+            color: #ffff00 !important; /* Amarillo Intenso */
+            text-shadow: 1px 1px 3px rgba(0,0,0,1), 0 0 4px rgba(0,0,0,0.5) !important;
             font-weight: 700 !important;
         }
-
         .sat-active .weather-pin .temp {
-            color: #ffffff !important;
-            /* Blanco */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 1) !important;
+            color: #ffffff !important; /* Blanco */
+            text-shadow: 1px 1px 3px rgba(0,0,0,1) !important;
             font-weight: 700 !important;
         }
 
@@ -413,14 +410,13 @@
             </nav>
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">08/03/2026 17:00</p>
+                <p class="text-xl font-bold">08/03/2026 17:21</p>
             </div>
     </div>
     </header>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
-        <!-- Columna Izquierda: Fenómenos/Temperaturas -->
         <div class="lg:col-span-4 flex flex-col gap-6 h-[calc(100vh-80px)]">
             <!-- Fenómenos Meteorológicos -->
             <div
@@ -431,20 +427,8 @@
                     </span>
                 </div>
                 <div class="p-4 overflow-y-auto flex-grow custom-scrollbar">
-
+                    
                     <div class="space-y-3">
-
-                        <div
-                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span
-                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Tumbes</span>
-                                </div>
-                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">Chubasco en la vecindad.</p>
-                            </div>
-                            <span class="fen-weather-icon text-4xl flex-shrink-0" data-fen="Chubasco en la vecindad."></span>
-                        </div>
                         
                         <div
                             class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
@@ -475,44 +459,6 @@
                             <div class="flex-1 min-w-0">
                                 <div class="flex justify-between items-start mb-1">
                                     <span
-                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Nazca</span>
-                                </div>
-                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">Ventisca de polvo en la vecindad.</p>
-                            </div>
-                            <span class="fen-weather-icon text-4xl flex-shrink-0" data-fen="Ventisca de polvo en la vecindad."></span>
-                        </div>
-                        
-                        <div
-                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span
-                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Nazca</span>
-                                </div>
-                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">Ventisca de polvo en la vecindad.</p>
-                            </div>
-                            <span class="fen-weather-icon text-4xl flex-shrink-0" data-fen="Ventisca de polvo en la vecindad."></span>
-                        </div>
-                        
-                        <div
-                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span
-                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Cajamarca</span>
-                                </div>
-                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">Chubasco en la vecindad.
-                                </p>
-                            </div>
-                            <span class="fen-weather-icon text-4xl flex-shrink-0"
-                                data-fen="Chubasco en la vecindad."></span>
-                        </div>
-
-                        <div
-                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span
                                         class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Cajamarca</span>
                                 </div>
                                 <p class="text-xs text-slate-700 dark:text-slate-300 italic">Niebla en la vecindad.</p>
@@ -520,32 +466,6 @@
                             <span class="fen-weather-icon text-4xl flex-shrink-0" data-fen="Niebla en la vecindad."></span>
                         </div>
                         
-                        <div
-                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span
-                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Cajamarca</span>
-                                </div>
-                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">Niebla en la vecindad.</p>
-                            </div>
-                            <span class="fen-weather-icon text-4xl flex-shrink-0" data-fen="Niebla en la vecindad."></span>
-                        </div>
-                        
-                        <div
-                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span
-                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Cuzco</span>
-                                </div>
-                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">Chubasco en la vecindad.
-                                </p>
-                            </div>
-                            <span class="fen-weather-icon text-4xl flex-shrink-0"
-                                data-fen="Chubasco en la vecindad."></span>
-                        </div>
-
                         <div
                             class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
                             <div class="flex-1 min-w-0">
@@ -565,49 +485,6 @@
                                     <span
                                         class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Pto Maldonado</span>
                                 </div>
-                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">Chubasco en la vecindad.
-                                </p>
-                            </div>
-                            <span class="fen-weather-icon text-4xl flex-shrink-0"
-                                data-fen="Chubasco en la vecindad."></span>
-                        </div>
-<<<<<<< HEAD
-
-                    </div>
-
-=======
-                        
-                        <div
-                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span
-                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Pto Maldonado</span>
-                                </div>
-                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">Chubasco en la vecindad.</p>
-                            </div>
-                            <span class="fen-weather-icon text-4xl flex-shrink-0" data-fen="Chubasco en la vecindad."></span>
-                        </div>
-                        
-                        <div
-                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span
-                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Pto Maldonado</span>
-                                </div>
-                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">Tormenta en la vecindad.</p>
-                            </div>
-                            <span class="fen-weather-icon text-4xl flex-shrink-0" data-fen="Tormenta en la vecindad."></span>
-                        </div>
-                        
-                        <div
-                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span
-                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Pto Maldonado</span>
-                                </div>
                                 <p class="text-xs text-slate-700 dark:text-slate-300 italic">Tormentas eléctricas.</p>
                             </div>
                             <span class="fen-weather-icon text-4xl flex-shrink-0" data-fen="Tormentas eléctricas."></span>
@@ -615,210 +492,6 @@
                         
                     </div>
                     
-                </div>
-            </div>
-
-            <!-- Resumen de Temperaturas -->
-            <div
-                class="tech-grid bg-white dark:bg-slate-900 rounded-sm overflow-hidden shadow-none flex flex-col flex-[1] min-h-0">
-                <div class="tech-header p-3 bg-blue-800">
-                    🌡️ RESUMEN DE TEMPERATURAS
-                </div>
-                <div class="p-2 grid grid-cols-2 gap-2 overflow-y-auto custom-scrollbar flex-grow">
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Tumbes</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">29 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Piura</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">34 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Talara</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">28 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Chiclayo</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">29 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Trujillo</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">24 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Chimbote</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">-- °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Huaraz</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">-- °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Lima</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">26 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Pisco</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">26 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Nazca</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">32 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Arequipa</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">19 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Ilo</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">-- °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Tacna</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">25 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Cajamarca</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">19 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Jaen</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">-- °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Jauja</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">16 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Ayacucho</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">24 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Chachapoyas</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">-- °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Juanjui</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">-- °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Huanuco</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">23 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Tingomaria</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">-- °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Pucallpa</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">32 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Mazamari</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">-- °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Andahuaylas</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">-- °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Cuzco</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">18 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Tarapoto</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">33 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Rioja</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">-- °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Puertomaldonado</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">31 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Juliaca</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">17 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Iquitos</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">28 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Yurimaguas</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">32 °C</span>
-                    </div>
-                    
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">Atalaya</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">31 °C</span>
-                    </div>
-                    
->>>>>>> 7b0a57fb20248a25dee88393ffcd5a5b1e9f6ade
                 </div>
             </div>
         </div>
@@ -837,37 +510,12 @@
     <script>
         // Datos del Mapa de ciudades de  (Index)
         const cityData = [
-
-            {
-                name: "Tumbes",
+            
+        {
+            name: "Tumbes",
                 lat: "-3.566",
-<<<<<<< HEAD
-                lon: "-80.451",
-                temp: "31 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
-            },
-
-            {
-                name: "Piura",
-                lat: "-5.194",
-                lon: "-80.632",
-                temp: "33 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
-            },
-
-            {
-                name: "Talara",
-                lat: "-4.577",
-                lon: "-81.271",
-                temp: "32 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
-            },
-
-            {
-                name: "Chiclayo",
-=======
                     lon: "-80.451",
-                        temp: "29 °C",
+                        temp: "28 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
         },
         
@@ -875,7 +523,7 @@
             name: "Piura",
                 lat: "-5.194",
                     lon: "-80.632",
-                        temp: "34 °C",
+                        temp: "33 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
@@ -889,143 +537,105 @@
         
         {
             name: "Chiclayo",
->>>>>>> 7b0a57fb20248a25dee88393ffcd5a5b1e9f6ade
                 lat: "-6.771",
-                lon: "-79.844",
-                temp: "29 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
-            },
-
-            {
-                name: "Trujillo",
-                lat: "-8.116",
-                lon: "-79.029",
-                temp: "24 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
-            },
-
-            {
-                name: "Chimbote",
-                lat: "-9.085",
-                lon: "-78.578",
-                temp: "-- °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
-            },
-
-            {
-                name: "Huaraz",
-                lat: "-9.526",
-                lon: "-77.528",
-                temp: "-- °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
-            },
-
-            {
-                name: "Lima",
-                lat: "-12.046",
-                lon: "-77.042",
-                temp: "26 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
-            },
-
-            {
-                name: "Pisco",
-                lat: "-13.708",
-                lon: "-76.205",
-                temp: "26 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
-            },
-
-            {
-                name: "Nazca",
-                lat: "-14.83",
-                lon: "-74.938",
-                temp: "32 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
-            },
-
-            {
-                name: "Arequipa",
-                lat: "-16.409",
-<<<<<<< HEAD
-                lon: "-71.537",
-                temp: "20 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
-            },
-
-            {
-                name: "Ilo",
-=======
-                    lon: "-71.537",
-                        temp: "19 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
+                    lon: "-79.844",
+                        temp: "28 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
-            name: "Ilo",
->>>>>>> 7b0a57fb20248a25dee88393ffcd5a5b1e9f6ade
-                lat: "-17.641",
-                lon: "-71.341",
-                temp: "-- °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
-            },
-
-            {
-                name: "Tacna",
-                lat: "-18.014",
-<<<<<<< HEAD
-                lon: "-70.25",
-                temp: "29 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
-            },
-
-            {
-                name: "Cajamarca",
-=======
-                    lon: "-70.25",
+            name: "Trujillo",
+                lat: "-8.116",
+                    lon: "-79.029",
+                        temp: "24 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
+        },
+        
+        {
+            name: "Chimbote",
+                lat: "-9.085",
+                    lon: "-78.578",
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+        },
+        
+        {
+            name: "Huaraz",
+                lat: "-9.526",
+                    lon: "-77.528",
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+        },
+        
+        {
+            name: "Lima",
+                lat: "-12.046",
+                    lon: "-77.042",
                         temp: "25 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
+            name: "Pisco",
+                lat: "-13.708",
+                    lon: "-76.205",
+                        temp: "26 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
+        },
+        
+        {
+            name: "Nazca",
+                lat: "-14.83",
+                    lon: "-74.938",
+                        temp: "30 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
+        },
+        
+        {
+            name: "Arequipa",
+                lat: "-16.409",
+                    lon: "-71.537",
+                        temp: "18 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
+        },
+        
+        {
+            name: "Ilo",
+                lat: "-17.641",
+                    lon: "-71.341",
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+        },
+        
+        {
+            name: "Tacna",
+                lat: "-18.014",
+                    lon: "-70.25",
+                        temp: "24 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
+        },
+        
+        {
             name: "Cajamarca",
->>>>>>> 7b0a57fb20248a25dee88393ffcd5a5b1e9f6ade
                 lat: "-7.163",
-                lon: "-78.5",
-                temp: "19 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
-            },
-
-            {
-                name: "Jaen",
+                    lon: "-78.5",
+                        temp: "17 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
+        },
+        
+        {
+            name: "Jaen",
                 lat: "-5.708",
-                lon: "-78.807",
-                temp: "-- °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
-            },
-
-            {
-                name: "Jauja",
+                    lon: "-78.807",
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+        },
+        
+        {
+            name: "Jauja",
                 lat: "-11.777",
-<<<<<<< HEAD
-                lon: "-75.5",
-                temp: "18 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
-            },
-
-            {
-                name: "Ayacucho",
-                lat: "-13.158",
-                lon: "-74.223",
-                temp: "22 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
-            },
-
-            {
-                name: "Chachapoyas",
-=======
                     lon: "-75.5",
-                        temp: "16 °C",
+                        temp: "17 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
         },
         
@@ -1039,33 +649,23 @@
         
         {
             name: "Chachapoyas",
->>>>>>> 7b0a57fb20248a25dee88393ffcd5a5b1e9f6ade
                 lat: "-6.229",
-                lon: "-77.872",
-                temp: "-- °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
-            },
-
-            {
-                name: "Juanjui",
+                    lon: "-77.872",
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+        },
+        
+        {
+            name: "Juanjui",
                 lat: "-7.181",
-                lon: "-76.73",
-                temp: "-- °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
-            },
-
-            {
-                name: "Huanuco",
+                    lon: "-76.73",
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+        },
+        
+        {
+            name: "Huanuco",
                 lat: "-9.93",
-<<<<<<< HEAD
-                lon: "-76.24",
-                temp: "27 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
-            },
-
-            {
-                name: "Tingomaria",
-=======
                     lon: "-76.24",
                         temp: "23 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
@@ -1073,67 +673,31 @@
         
         {
             name: "Tingomaria",
->>>>>>> 7b0a57fb20248a25dee88393ffcd5a5b1e9f6ade
                 lat: "-9.293",
-                lon: "-76.002",
-                temp: "-- °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
-            },
-
-            {
-                name: "Pucallpa",
+                    lon: "-76.002",
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+        },
+        
+        {
+            name: "Pucallpa",
                 lat: "-8.379",
-<<<<<<< HEAD
-                lon: "-74.553",
-                temp: "32 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
-            },
-
-            {
-                name: "Mazamari",
-=======
                     lon: "-74.553",
                         temp: "32 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
         },
         
         {
             name: "Mazamari",
->>>>>>> 7b0a57fb20248a25dee88393ffcd5a5b1e9f6ade
                 lat: "-11.325",
-                lon: "-74.53",
-                temp: "-- °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
-            },
-
-            {
-                name: "Andahuaylas",
+                    lon: "-74.53",
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+        },
+        
+        {
+            name: "Andahuaylas",
                 lat: "-13.655",
-<<<<<<< HEAD
-                lon: "-73.387",
-                temp: "12 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/cubierto.gif"
-            },
-
-            {
-                name: "Cuzco",
-                lat: "-13.531",
-                lon: "-71.967",
-                temp: "19 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/cubierto.gif"
-            },
-
-            {
-                name: "Tarapoto",
-                lat: "-6.485",
-                lon: "-76.359",
-                temp: "32 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
-            },
-
-            {
-                name: "Rioja",
-=======
                     lon: "-73.387",
                         temp: "-- °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
@@ -1143,87 +707,47 @@
             name: "Cuzco",
                 lat: "-13.531",
                     lon: "-71.967",
-                        temp: "18 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/cubierto.gif"
+                        temp: "15 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/tormenta.gif"
         },
         
         {
             name: "Tarapoto",
                 lat: "-6.485",
                     lon: "-76.359",
-                        temp: "33 °C",
+                        temp: "32 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
             name: "Rioja",
->>>>>>> 7b0a57fb20248a25dee88393ffcd5a5b1e9f6ade
                 lat: "-6.062",
-                lon: "-77.166",
-                temp: "-- °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
-            },
-
-            {
-                name: "Puertomaldonado",
+                    lon: "-77.166",
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+        },
+        
+        {
+            name: "Puertomaldonado",
                 lat: "-12.593",
-<<<<<<< HEAD
-                lon: "-69.183",
-                temp: "32 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
-            },
-
-            {
-                name: "Juliaca",
-                lat: "-15.496",
-                lon: "-70.133",
-                temp: "16 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
-            },
-
-            {
-                name: "Iquitos",
-                lat: "-3.749",
-                lon: "-73.253",
-                temp: "31 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
-            },
-
-            {
-                name: "Yurimaguas",
-                lat: "-5.891",
-                lon: "-76.102",
-                temp: "31 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
-            },
-
-            {
-                name: "Atalaya",
-                lat: "-10.733",
-                lon: "-73.75",
-                temp: "30 °C",
-                icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
-            },
-
-=======
                     lon: "-69.183",
-                        temp: "31 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
+                        temp: "25 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/tormenta.gif"
         },
         
         {
             name: "Juliaca",
                 lat: "-15.496",
                     lon: "-70.133",
-                        temp: "17 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
+                        temp: "15 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/cubierto.gif"
         },
         
         {
             name: "Iquitos",
                 lat: "-3.749",
                     lon: "-73.253",
-                        temp: "28 °C",
+                        temp: "29 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/cubierto.gif"
         },
         
@@ -1231,23 +755,22 @@
             name: "Yurimaguas",
                 lat: "-5.891",
                     lon: "-76.102",
-                        temp: "32 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
         },
         
         {
             name: "Atalaya",
                 lat: "-10.733",
                     lon: "-73.75",
-                        temp: "31 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
         },
         
->>>>>>> 7b0a57fb20248a25dee88393ffcd5a5b1e9f6ade
         ];
 
         const peruBounds = [[-20.0, -85.0], [-0.0, -65.0]];
-
+        
         // Capas Base
         const layerEsriSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'ESRI Satellite',
