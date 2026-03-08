@@ -473,11 +473,12 @@
                 <div class="guide-section">
                     <h4>🗺️ Capas Inteligentes</h4>
                     <ul class="text-[11px] space-y-2 opacity-80">
-                        <li><b>Auto-Detalle:</b> Al hacer zoom (nivel 11+), el mapa cambia automáticamente a vista con
-                            nombres y muestra detalles de viento y visibilidad en cada aeropuerto.</li>
-                        <li><b>Rutas Aéreas:</b> Capa técnica que muestra las aerovías y puntos de notificación.</li>
-                        <li><b>Base Maps:</b> Puedes alternar entre vistas claras, oscuras o con relieve desde el
-                            selector superior derecho.</li>
+                        <li><b>Aero-Satélite (ESRI):</b> Vista fotográfica de alta resolución del terreno y aeródromos.
+                        </li>
+                        <li><b>NASA GOES-East:</b> Satélite espacial que muestra la cobertura de nubes real cada 10-15
+                            min.</li>
+                        <li><b>Auto-Detalle:</b> Al hacer zoom (11+), se activan nombres de calles y detalles de
+                            visibilidad.</li>
                     </ul>
                 </div>
                 <div class="guide-section">
@@ -496,8 +497,8 @@
         {
             icao: "{{ air.icao }}",
                 nombre: "{{ air.nombre }}",
-                    lat: {{ air.lat }},
-            lon: {{ air.lon }},
+                    lat: { { air.lat } },
+            lon: { { air.lon } },
             vis: "{{ air.visibilidad }}",
                 viento: "{{ air.viento }}",
                     nubosidad: "{{ air.nubosidad }}",
@@ -565,9 +566,15 @@
             attribution: ' CartoDB',
             noWrap: true
         });
-        layerNoLabels.addTo(map); // Capa activa por defecto
+        const layerEsriSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'ESRI Satellite',
+            noWrap: true
+        });
+
+        layerEsriSat.addTo(map); // Ahora empezamos con Satélite Real por defecto
 
         const baseMaps = {
+            "Satélite Real (ESRI)": layerEsriSat,
             "Sin Etiquetas (Claro)": layerNoLabels,
             "Con Nombres (Voyager)": layerVoyager,
             "Sin Etiquetas (Oscuro)": layerDarkNoLabels
@@ -579,12 +586,21 @@
             noWrap: true
         });
 
+        // Satélite NASA GOES-East (Infrarrojo)
+        const today = new Date().toISOString().split('T')[0];
+        const nasaSatellite = L.tileLayer('https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/GOES-East_ABI_Band13_Infrared/default/' + today + '/GoogleMapsCompatible_Level8/{z}/{y}/{x}.png', {
+            opacity: 0.5,
+            attribution: 'NASA GIBS / NOAA',
+            noWrap: true
+        }).addTo(map);
+
         // RainViewer Radar Overlay (Dinámico)
         const radarLayer = L.tileLayer('', {
-            opacity: 0.6,
+            opacity: 0.7,
             attribution: 'RainViewer',
             noWrap: true,
-            maxNativeZoom: 6
+            maxNativeZoom: 6,
+            zIndex: 1000
         }).addTo(map);
 
         async function updateRadar() {
@@ -606,9 +622,10 @@
         setInterval(updateRadar, 10 * 60 * 1000); // Auto-actualización cada 10 min
 
         L.control.layers(baseMaps, {
-            "Radar Lluvia": radarLayer,
-            "Rutas Areas": aeroLayer
-        }).addTo(map);
+            "🛰️ Nubes (NASA GOES)": nasaSatellite,
+            "🌧️ Radar (RainViewer)": radarLayer,
+            "✈️ Rutas Aéreas": aeroLayer
+        }, { position: 'topright', collapsed: false }).addTo(map);
 
         const markers = {};
 
@@ -649,10 +666,11 @@
         map.on('zoomend', function () {
             const zoom = map.getZoom();
 
-            // Cambio automtico de capa base segn zoom
-            const allBaseLayers = [layerNoLabels, layerVoyager, layerDarkNoLabels];
-            const hasManualDark = map.hasLayer(layerDarkNoLabels);
-            if (!hasManualDark) {
+            // Cambio automático de capa base según zoom (solo si no estamos en satélite o modo manual)
+            const allBaseLayers = [layerNoLabels, layerVoyager, layerDarkNoLabels, layerEsriSat];
+            const isManualView = map.hasLayer(layerDarkNoLabels) || map.hasLayer(layerEsriSat);
+
+            if (!isManualView) {
                 if (zoom >= 8 && !map.hasLayer(layerVoyager)) {
                     allBaseLayers.forEach(l => map.removeLayer(l));
                     layerVoyager.addTo(map);
