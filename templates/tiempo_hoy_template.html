@@ -172,6 +172,12 @@
                 0 0 3px #000;
         }
 
+        /* Color amarillo exclusivo para la vista satélite */
+        .sat-active .icao-marker .label {
+            color: #ffff00 !important;
+            text-shadow: 1px 1px 3px rgba(0,0,0,1), 0 0 4px rgba(0,0,0,0.5) !important;
+        }
+
         .icao-marker:hover .label {
             color: #ff0000;
             transform: scale(1.1);
@@ -560,11 +566,6 @@
             noWrap: true
         });
 
-        const topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenTopoMap',
-            noWrap: true
-        });
-
         const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Esri',
             noWrap: true
@@ -582,11 +583,20 @@
 
         const baseMaps = {
             "Navegación": osm,
-            "Cordilleras": topo,
             "Satélite": satellite
         };
 
         L.control.layers(baseMaps, null, { collapsed: true, position: 'topright' }).addTo(map);
+
+        // Control dinámico de color para la capa de satélite
+        map.on('baselayerchange', function (e) {
+            const mapEl = document.getElementById('map');
+            if (e.name === "Satélite") {
+                mapEl.classList.add('sat-active');
+            } else {
+                mapEl.classList.remove('sat-active');
+            }
+        });
 
         // PE Centering Button
         const homeControl = L.Control.extend({
