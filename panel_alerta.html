@@ -175,6 +175,160 @@
             text-transform: uppercase;
             letter-spacing: 0.02em;
         }
+
+        /* ── Modal Reglas de Vuelo ── */
+        #flight-rules-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        #flight-rules-modal.open {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #fff;
+            border: 2px solid var(--tech-border);
+            width: 100%;
+            max-width: 480px;
+            padding: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            animation: modal-in 0.2s ease;
+        }
+
+        .dark .modal-box {
+            background: #0f172a;
+        }
+
+        @keyframes modal-in {
+            from {
+                transform: scale(0.92);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(180deg, #074e8c 0%, #033663 100%);
+            color: white;
+            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .modal-close-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            line-height: 1;
+            transition: background 0.2s;
+        }
+
+        .modal-close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .rule-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .dark .rule-card {
+            border-color: #1e293b;
+        }
+
+        .rule-card:last-child {
+            border-bottom: none;
+        }
+
+        .rule-dot {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 0, 0, 0.12);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .rule-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 900;
+        }
+
+        .rule-name {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            opacity: 0.6;
+            letter-spacing: 0.05em;
+        }
+
+        .rule-vis {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .rule-desc {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 3px;
+            line-height: 1.4;
+        }
+
+        .info-trigger-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.65rem;
+            border: 2px solid var(--tech-border);
+            background: var(--tech-border);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .info-trigger-btn:hover {
+            background: #033663;
+            border-color: #033663;
+        }
     </style>
 </head>
 
@@ -278,9 +432,19 @@
             <!-- Cards Section -->
             <div id="station-cards"
                 class="w-full lg:w-1/2 h-[calc(100vh-4rem)] overflow-y-auto pr-4 custom-scrollbar scroll-smooth">
-                <div class="p-6 bg-slate-50 dark:bg-slate-800/50 border-b-2 border-[--tech-border] mb-6">
+                <div
+                    class="p-6 bg-slate-50 dark:bg-slate-800/50 border-b-2 border-[--tech-border] mb-6 flex justify-between items-center">
                     <h2 class="text-2xl font-black uppercase text-blue-900 dark:text-sky-400 tracking-tighter">
                         Condiciones de Vuelo -Aeropuertos</h2>
+                    <button id="open-flight-rules" class="info-trigger-btn" title="Ver guía de reglas de vuelo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="16" x2="12" y2="12" />
+                            <line x1="12" y1="8" x2="12.01" y2="8" />
+                        </svg>
+                        Reglas de vuelo
+                    </button>
                 </div>
 
                 <div class="tech-grid bg-white dark:bg-slate-900/50 overflow-hidden">
@@ -567,6 +731,66 @@
         </div>
     </div>
 
+    <!-- Modal: Guía de Reglas de Vuelo -->
+    <div id="flight-rules-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modal-title">✈️ &nbsp;Guía de Reglas de Vuelo</h3>
+                <button class="modal-close-btn" id="close-flight-rules" title="Cerrar">&times;</button>
+            </div>
+            <div>
+                <!-- LIFR -->
+                <div class="rule-card">
+                    <div class="rule-dot" style="background:#d946ef;"></div>
+                    <div>
+                        <div class="rule-code" style="color:#d946ef;">LIFR</div>
+                        <div class="rule-name">Low Instrument Flight Rules</div>
+                        <div class="rule-vis">Visibilidad &lt; 1.5 km</div>
+                        <div class="rule-desc">Condiciones extremadamente restrictivas. Operaciones muy limitadas.
+                            Requiere habilitación instrumental especial y equipos de precisión certificados.</div>
+                    </div>
+                </div>
+                <!-- IFR -->
+                <div class="rule-card">
+                    <div class="rule-dot" style="background:#ef4444;"></div>
+                    <div>
+                        <div class="rule-code" style="color:#ef4444;">IFR</div>
+                        <div class="rule-name">Instrument Flight Rules</div>
+                        <div class="rule-vis">Visibilidad 1.5 – 5 km</div>
+                        <div class="rule-desc">Vuelo exclusivamente instrumental. Requiere plan de vuelo IFR,
+                            habilitación vigente del piloto y aeronave equipada con instrumentos certificados.</div>
+                    </div>
+                </div>
+                <!-- MVFR -->
+                <div class="rule-card">
+                    <div class="rule-dot" style="background:#3b82f6;"></div>
+                    <div>
+                        <div class="rule-code" style="color:#3b82f6;">MVFR</div>
+                        <div class="rule-name">Marginal Visual Flight Rules</div>
+                        <div class="rule-vis">Visibilidad 5 – 8 km</div>
+                        <div class="rule-desc">Vuelo visual marginal. Condiciones aceptables con precaución. Se
+                            recomienda experiencia adicional del piloto y monitoreo continuo del tiempo.</div>
+                    </div>
+                </div>
+                <!-- VFR -->
+                <div class="rule-card">
+                    <div class="rule-dot" style="background:#22c55e;"></div>
+                    <div>
+                        <div class="rule-code" style="color:#22c55e;">VFR</div>
+                        <div class="rule-name">Visual Flight Rules</div>
+                        <div class="rule-vis">Visibilidad &gt; 8 km</div>
+                        <div class="rule-desc">Condiciones óptimas para vuelo visual. El piloto puede navegar por
+                            referencia al terreno. Menor restricción operacional bajo estas condiciones.</div>
+                    </div>
+                </div>
+                <div
+                    style="padding:0.75rem 1.25rem; font-size:0.65rem; opacity:0.5; border-top:1px solid #e2e8f0; font-style:italic;">
+                    Fuente: OACI Anexo 2 — Reglamento del Aire
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         const airports = [
@@ -846,6 +1070,12 @@
         });
         map.addControl(new homeControl());
 
+        // ── Modal: Reglas de vuelo ──
+        const modal = document.getElementById('flight-rules-modal');
+        document.getElementById('open-flight-rules').addEventListener('click', () => modal.classList.add('open'));
+        document.getElementById('close-flight-rules').addEventListener('click', () => modal.classList.remove('open'));
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.classList.remove('open'); });
 
     </script>
 </body>
