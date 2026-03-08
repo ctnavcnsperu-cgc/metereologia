@@ -417,11 +417,10 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
-        <!-- Columna Izquierda: Fenómenos/Temperaturas -->
         <div class="lg:col-span-4 flex flex-col gap-6 h-[calc(100vh-80px)]">
             <!-- Fenómenos Meteorológicos -->
             <div
-                class="tech-grid bg-white dark:bg-slate-900 rounded-sm overflow-hidden shadow-none flex flex-col flex-[2] min-h-0">
+                class="tech-grid bg-white dark:bg-slate-900 rounded-sm overflow-hidden shadow-none flex flex-col flex-1 min-h-0">
                 <div class="tech-header p-3 flex items-center justify-between bg-red-700">
                     <span class="flex items-center gap-2">
                         <span class="pulse-alert">⚠️</span> FENÓMENOS METEOROLÓGICOS
@@ -449,23 +448,6 @@
                     <p class="text-center text-slate-500 py-10 italic">No hay fenómenos significativos reportados.
                     </p>
                     {% endif %}
-                </div>
-            </div>
-
-            <!-- Resumen de Temperaturas -->
-            <div
-                class="tech-grid bg-white dark:bg-slate-900 rounded-sm overflow-hidden shadow-none flex flex-col flex-[1] min-h-0">
-                <div class="tech-header p-3 bg-blue-800">
-                    🌡️ RESUMEN DE TEMPERATURAS
-                </div>
-                <div class="p-2 grid grid-cols-2 gap-2 overflow-y-auto custom-scrollbar flex-grow">
-                    {% for pt in map_data %}
-                    <div
-                        class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                        <span class="text-[10px] font-bold uppercase truncate w-20">{{ pt.id }}</span>
-                        <span class="text-xs font-black text-blue-600 dark:text-sky-400">{{ pt.temp }}</span>
-                    </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
