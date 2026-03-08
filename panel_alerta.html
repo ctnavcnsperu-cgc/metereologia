@@ -391,7 +391,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">07/03/2026 23:51</p>
+                <p class="text-xl font-bold">08/03/2026 00:01</p>
             </div>
         </header>
 
@@ -458,7 +458,7 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-current">
-
+                            
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPUR">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPUR
@@ -480,7 +480,7 @@
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPHI">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPHI
@@ -502,7 +502,7 @@
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPRU">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPRU
@@ -524,7 +524,7 @@
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPQT">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPQT
@@ -546,7 +546,7 @@
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPCL">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPCL
@@ -568,7 +568,7 @@
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPJC">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPJC
@@ -590,7 +590,7 @@
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPSO">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPSO
@@ -612,7 +612,7 @@
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPQU">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPQU
@@ -634,7 +634,7 @@
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPTN">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPTN
@@ -656,7 +656,7 @@
                                     </button>
                                 </td>
                             </tr>
-
+                            
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPZO">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPZO
@@ -678,7 +678,7 @@
                                     </button>
                                 </td>
                             </tr>
-
+                            
                         </tbody>
                     </table>
                 </div>
@@ -749,125 +749,127 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         const airports = [
-
-            {
-                icao: "SPUR",
+            
+        {
+            icao: "SPUR",
                 nombre: "Aeropuerto de Piura/Capitan FAP Guillemo Concha Iberico",
-                lat: -5.209,
-                lon: -80.616,
-                vis: "10 km a más",
+                    lat: -5.209,
+            lon: -80.616,
+            vis: "10 km a más",
                 temp: "27 °C",
-                viento: "Sur / 11 KT",
-                nubosidad: "Sin nubes bajo los 1500m",
-                fenomenos: "No hay fenómeno meteorológico"
-            },
-
-            {
-                icao: "SPHI",
+                    viento: "Sur / 11 KT",
+                        nubosidad: "Sin nubes bajo los 1500m",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPHI",
                 nombre: "Aeropuerto de Chiclayo/Intl. Cap. Jose Abelardo Quinones Gonzales",
-                lat: -6.787,
-                lon: -79.828,
-                vis: "10 km a más",
+                    lat: -6.787,
+            lon: -79.828,
+            vis: "10 km a más",
                 temp: "24 °C",
-                viento: "Sur / 11 KT",
-                nubosidad: "Sin nubes bajo los 1500m",
-                fenomenos: "No hay fenómeno meteorológico"
-            },
-
-            {
-                icao: "SPRU",
+                    viento: "Sur / 11 KT",
+                        nubosidad: "Sin nubes bajo los 1500m",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPRU",
                 nombre: "Aeropuerto de Trujillo/Intl. Cap.Carlos Martinez de Pinillos",
-                lat: -8.082,
-                lon: -79.109,
-                vis: "7 km",
+                    lat: -8.082,
+            lon: -79.109,
+            vis: "7 km",
                 temp: "22 °C",
-                viento: "Sureste / 07 KT",
-                nubosidad: "Sin nubes de importancia",
-                fenomenos: "No hay fenómeno meteorológico"
-            },
-
-            {
-                icao: "SPQT",
+                    viento: "Sureste / 07 KT",
+                        nubosidad: "Sin nubes de importancia",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPQT",
                 nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
-                lat: -3.785,
-                lon: -73.309,
-                vis: "8 km",
+                    lat: -3.785,
+            lon: -73.309,
+            vis: "8 km",
                 temp: "25 °C",
-                viento: "Oeste / 09 KT",
-                nubosidad: "Nublado",
-                fenomenos: "Lluvia débil"
-            },
-
-            {
-                icao: "SPCL",
+                    viento: "Oeste / 09 KT",
+                        nubosidad: "Nublado",
+                            fenomenos: "Lluvia débil"
+        },
+        
+        {
+            icao: "SPCL",
                 nombre: "Aeropuerto de Pucallpa/Intl. David Abensur Rengifo",
-                lat: -8.378,
-                lon: -74.574,
-                vis: "10 km a más",
+                    lat: -8.378,
+            lon: -74.574,
+            vis: "10 km a más",
                 temp: "24 °C",
-                viento: "Calma / 0",
-                nubosidad: "Cielo cubierto",
-                fenomenos: "No hay fenómeno meteorológico"
-            },
-
-            {
-                icao: "SPJC",
+                    viento: "Calma / 0",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPJC",
                 nombre: "Aeropuerto de Lima/Intl. Jorge Chavez",
-                lat: -12.022,
-                lon: -77.114,
-                vis: "10 km a más",
+                    lat: -12.022,
+            lon: -77.114,
+            vis: "10 km a más",
                 temp: "23 °C",
-                viento: "Sureste / 13 KT",
-                nubosidad: "Sin nubes bajo los 1500m",
-                fenomenos: "No hay fenómeno meteorológico"
-            },
-
-            {
-                icao: "SPSO",
+                    viento: "Sureste / 13 KT",
+                        nubosidad: "Sin nubes bajo los 1500m",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPSO",
                 nombre: "Aeropuerto de Pisco/Intl. Pisco",
-                lat: -13.744,
-                lon: -76.222,
-                vis: "10 km a más",
+                    lat: -13.744,
+            lon: -76.222,
+            vis: "10 km a más",
                 temp: "22 °C",
-                viento: "Sur / 06 KT",
-                nubosidad: "Sin nubes bajo los 1500m",
-                fenomenos: "No hay fenómeno meteorológico"
-            },
-
-            {
-                icao: "SPQU",
+                    viento: "Sur / 06 KT",
+                        nubosidad: "Sin nubes bajo los 1500m",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPQU",
                 nombre: "Aeropuerto de Arequipa/Intl. Rodriguez Ballon",
-                lat: -16.341,
-                lon: -71.571,
-                vis: "10 km a más",
+                    lat: -16.341,
+            lon: -71.571,
+            vis: "10 km a más",
                 temp: "13 °C",
-                viento: "Noroeste / 03 KT",
-                nubosidad: "Despejado",
-                fenomenos: "No hay fenómeno meteorológico"
-            },
-
-            {
-                icao: "SPTN",
+                    viento: "Noroeste / 03 KT",
+                        nubosidad: "Despejado",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPTN",
                 nombre: "Aeropuerto de Tacna/Intl. Coronel FAP Carlos Ciriani Santa Rosa",
-                lat: -18.053,
-                lon: -70.276,
-                vis: "10 km a más",
+                    lat: -18.053,
+            lon: -70.276,
+            vis: "10 km a más",
                 temp: "22 °C",
-                viento: "Noroeste / 02 KT",
-                nubosidad: "Sin nubes bajo los 1500m",
-                fenomenos: "No hay fenómeno meteorológico"
-            },
-            {
-                icao: "SPZO",
+                    viento: "Noroeste / 02 KT",
+                        nubosidad: "Sin nubes bajo los 1500m",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPZO",
                 nombre: "Aeropuerto de Cuzco/Intl. Velasco Astete",
-                lat: -13.535,
-                lon: -71.939,
-                vis: "10 km a más",
+                    lat: -13.535,
+            lon: -71.939,
+            vis: "10 km a más",
                 temp: "13 °C",
-                viento: "Variable / 02 KT",
-                nubosidad: "Cielo cubierto",
-                fenomenos: "No hay fenómeno meteorológico"
-            }
+                    viento: "Variable / 02 KT",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
         ];
 
         // Map Initialization
