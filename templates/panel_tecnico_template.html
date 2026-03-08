@@ -117,6 +117,12 @@
             transition: all 0.2s ease;
         }
 
+        /* Color amarillo exclusivo para la vista satélite */
+        .sat-active .icao-marker .label {
+            color: #ffff00 !important;
+            text-shadow: 1px 1px 3px rgba(0,0,0,1), 0 0 4px rgba(0,0,0,0.5) !important;
+        }
+
         .icao-marker .wx-icon {
             font-size: 13px;
             margin-left: 2px;
@@ -603,6 +609,18 @@
         L.control.layers(baseMaps, {
             "🌧️ Radar HD": radarLayer
         }, { position: 'topright', collapsed: false }).addTo(map);
+
+        // Control dinámico de color para la capa de satélite
+        map.on('baselayerchange', function (e) {
+            const mapEl = document.getElementById('map');
+            if (e.name === "Satélite Real (ESRI)") {
+                mapEl.classList.add('sat-active');
+            } else {
+                mapEl.classList.remove('sat-active');
+            }
+        });
+        // Inicializar con Satélite activo
+        document.getElementById('map').classList.add('sat-active');
 
         const markers = {};
 
