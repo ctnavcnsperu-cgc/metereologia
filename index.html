@@ -398,7 +398,7 @@
             </nav>
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">08/03/2026 11:37</p>
+                <p class="text-xl font-bold">08/03/2026 11:44</p>
             </div>
     </div>
     </header>
@@ -938,19 +938,32 @@
         ];
 
         const peruBounds = [[-20.0, -85.0], [-0.0, -65.0]];
-        const cartoDB = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+        
+        // Capas Base
+        const layerEsriSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'ESRI Satellite',
+            noWrap: true
+        });
+
+        const layerVoyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; OpenStreetMap &copy; CARTO',
             subdomains: 'abcd',
-            maxZoom: 20,
             noWrap: true
         });
 
         const map = L.map('map', {
             zoomSnap: 0.1,
-            layers: [cartoDB],
             center: [-9.19, -75.01],
-            zoom: 6
+            zoom: 6,
+            layers: [layerEsriSat] // Satélite por defecto
         });
+
+        const baseMaps = {
+            "Vista Satélite": layerEsriSat,
+            "Mapa Nombres": layerVoyager
+        };
+
+        L.control.layers(baseMaps, null, { collapsed: true, position: 'topright' }).addTo(map);
 
         cityData.forEach(city => {
             if (city.lat && parseFloat(city.lat) !== 0) {
