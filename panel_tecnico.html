@@ -171,8 +171,8 @@
             gap: 0.5rem;
             padding: 0.5rem 0.75rem;
             border: 2px solid var(--tech-border);
-            background-color: transparent;
-            color: var(--tech-border);
+            background-color: #334155;
+            color: #ffffff;
             transition: all 0.2s ease-in-out;
             text-decoration: none;
             cursor: pointer;
@@ -186,6 +186,12 @@
         .nav-btn.active {
             background-color: var(--tech-border);
             color: #ffffff !important;
+        }
+
+        .nav-btn svg {
+            flex-shrink: 0;
+            width: 1rem;
+            height: 1rem;
         }
 
         .nav-btn span {
@@ -358,7 +364,7 @@
                 </a>
             </nav>
 
-            <div class="text-right monospace">
+            <div class="text-right monospace" style="color: #94A3B8;">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
                 <p class="text-xl font-bold">07/03/2026 22:11</p>
             </div>
