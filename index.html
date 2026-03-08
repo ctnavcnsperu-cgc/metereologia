@@ -398,7 +398,7 @@
             </nav>
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">08/03/2026 11:44</p>
+                <p class="text-xl font-bold">08/03/2026 11:53</p>
             </div>
     </div>
     </header>
@@ -945,7 +945,7 @@
             noWrap: true
         });
 
-        const layerVoyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        const layerNoLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; OpenStreetMap &copy; CARTO',
             subdomains: 'abcd',
             noWrap: true
@@ -960,7 +960,7 @@
 
         const baseMaps = {
             "Vista Satélite": layerEsriSat,
-            "Mapa Nombres": layerVoyager
+            "Sin Etiquetas (Claro)": layerNoLabels
         };
 
         L.control.layers(baseMaps, null, { collapsed: true, position: 'topright' }).addTo(map);

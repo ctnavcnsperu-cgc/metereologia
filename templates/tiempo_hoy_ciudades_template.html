@@ -491,7 +491,7 @@
             noWrap: true
         });
 
-        const layerVoyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        const layerNoLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; OpenStreetMap &copy; CARTO',
             subdomains: 'abcd',
             noWrap: true
@@ -506,7 +506,7 @@
 
         const baseMaps = {
             "Vista Satélite": layerEsriSat,
-            "Mapa Nombres": layerVoyager
+            "Sin Etiquetas (Claro)": layerNoLabels
         };
 
         L.control.layers(baseMaps, null, { collapsed: true, position: 'topright' }).addTo(map);
