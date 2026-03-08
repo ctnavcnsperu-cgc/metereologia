@@ -147,8 +147,8 @@
 
         .radar-box {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            bottom: 20px;
+            left: 10px;
             z-index: 1000;
             background: var(--tech-bg);
             border: 1px solid var(--tech-border);
@@ -580,19 +580,24 @@
             "Sin Etiquetas (Oscuro)": layerDarkNoLabels
         };
 
-        // Aviation Layers
-        const aeroLayer = L.tileLayer('https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=YOUR_API_KEY', {
-            attribution: 'Thunderforest',
-            noWrap: true
-        });
-
         // Satélite NASA GOES-East (Infrarrojo)
-        const today = new Date().toISOString().split('T')[0];
-        const nasaSatellite = L.tileLayer('https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/GOES-East_ABI_Band13_Infrared/default/' + today + '/GoogleMapsCompatible_Level8/{z}/{y}/{x}.png', {
+        const getUtcDate = () => new Date().toISOString().split('T')[0];
+        const nasaSatellite = L.tileLayer('https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/GOES-East_ABI_Band13_Infrared/default/{time}/GoogleMapsCompatible_Level8/{z}/{y}/{x}.png', {
+            time: getUtcDate(),
             opacity: 0.5,
             attribution: 'NASA GIBS / NOAA',
-            noWrap: true
+            noWrap: true,
+            zIndex: 50
         }).addTo(map);
+
+        // Rutas Aéreas (OpenAIP)
+        const aeroLayer = L.tileLayer('https://{s}.tile.maps.openaip.net/geowebcache/service/tms/1.0.0/openaip_basemap@EPSG%3A900913@png/{z}/{x}/{y}.png', {
+            tms: true,
+            opacity: 0.8,
+            attribution: 'OpenAIP',
+            noWrap: true,
+            zIndex: 150
+        });
 
         // RainViewer Radar Overlay (Dinámico)
         const radarLayer = L.tileLayer('', {
