@@ -169,6 +169,18 @@
             text-shadow: none;
         }
 
+        /* Ajustes específicos para Vista Satélite (Mejor Contraste) */
+        .sat-active .weather-pin .city-label {
+            color: #ffff00 !important; /* Amarillo Intenso */
+            text-shadow: 1px 1px 3px rgba(0,0,0,1), 0 0 4px rgba(0,0,0,0.5) !important;
+            font-weight: 700 !important;
+        }
+        .sat-active .weather-pin .temp {
+            color: #ffffff !important; /* Blanco */
+            text-shadow: 1px 1px 3px rgba(0,0,0,1) !important;
+            font-weight: 700 !important;
+        }
+
         /* Animations */
         @keyframes pulse-red {
             0% {
@@ -398,7 +410,7 @@
             </nav>
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">08/03/2026 11:53</p>
+                <p class="text-xl font-bold">08/03/2026 12:00</p>
             </div>
     </div>
     </header>
@@ -418,6 +430,18 @@
                 <div class="p-4 overflow-y-auto flex-grow custom-scrollbar">
                     
                     <div class="space-y-3">
+                        
+                        <div
+                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-start mb-1">
+                                    <span
+                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">Cajamarca</span>
+                                </div>
+                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">Niebla en la vecindad.</p>
+                            </div>
+                            <span class="fen-weather-icon text-4xl flex-shrink-0" data-fen="Niebla en la vecindad."></span>
+                        </div>
                         
                         <div
                             class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
@@ -964,6 +988,19 @@
         };
 
         L.control.layers(baseMaps, null, { collapsed: true, position: 'topright' }).addTo(map);
+
+        // Control dinámico de estilos basado en la capa activa
+        map.on('baselayerchange', function (e) {
+            const mapEl = document.getElementById('map');
+            if (e.name === "Vista Satélite") {
+                mapEl.classList.add('sat-active');
+            } else {
+                mapEl.classList.remove('sat-active');
+            }
+        });
+        // Inicializar con Satélite activo
+        document.getElementById('map').classList.add('sat-active');
+
 
         cityData.forEach(city => {
             if (city.lat && parseFloat(city.lat) !== 0) {

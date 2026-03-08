@@ -169,6 +169,18 @@
             text-shadow: none;
         }
 
+        /* Ajustes específicos para Vista Satélite (Mejor Contraste) */
+        .sat-active .weather-pin .city-label {
+            color: #ffff00 !important; /* Amarillo Intenso */
+            text-shadow: 1px 1px 3px rgba(0,0,0,1), 0 0 4px rgba(0,0,0,0.5) !important;
+            font-weight: 700 !important;
+        }
+        .sat-active .weather-pin .temp {
+            color: #ffffff !important; /* Blanco */
+            text-shadow: 1px 1px 3px rgba(0,0,0,1) !important;
+            font-weight: 700 !important;
+        }
+
         /* Animations */
         @keyframes pulse-red {
             0% {
@@ -510,6 +522,19 @@
         };
 
         L.control.layers(baseMaps, null, { collapsed: true, position: 'topright' }).addTo(map);
+
+        // Control dinámico de estilos basado en la capa activa
+        map.on('baselayerchange', function (e) {
+            const mapEl = document.getElementById('map');
+            if (e.name === "Vista Satélite") {
+                mapEl.classList.add('sat-active');
+            } else {
+                mapEl.classList.remove('sat-active');
+            }
+        });
+        // Inicializar con Satélite activo
+        document.getElementById('map').classList.add('sat-active');
+
 
         cityData.forEach(city => {
             if (city.lat && parseFloat(city.lat) !== 0) {
