@@ -392,7 +392,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">09/03/2026 16:21</p>
+                <p class="text-xl font-bold">09/03/2026 16:31</p>
             </div>
         </header>
 
@@ -966,6 +966,28 @@
                                 </td>
                             </tr>
                             
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                                data-icao="SPZO">
+                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPZO
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPZO"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold">10 km a más</td>
+                                <td class="tech-cell italic opacity-80">Tormenta en la vecindad</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-13.535, -71.939, 'SPZO')"
+                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>
@@ -1311,6 +1333,18 @@
                     viento: "Sureste / 14 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPZO",
+                nombre: "Aeropuerto de Cuzco/Intl. Velasco Astete",
+                    lat: -13.535,
+            lon: -71.939,
+            vis: "10 km a más",
+                temp: "16 °C",
+                    viento: "Variable / 05 KT",
+                        nubosidad: "Nublado",
+                            fenomenos: "Tormenta en la vecindad"
         },
         
         ];
