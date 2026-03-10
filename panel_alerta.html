@@ -392,7 +392,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">10/03/2026 09:36</p>
+                <p class="text-xl font-bold">10/03/2026 09:41</p>
             </div>
         </header>
 
@@ -571,6 +571,28 @@
                             </tr>
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                                data-icao="SPHI">
+                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPHI
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPHI"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold">10 km a más</td>
+                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-6.787, -79.828, 'SPHI')"
+                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPJR">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPJR
                                 </td>
@@ -628,6 +650,28 @@
                                 <td class="tech-cell italic opacity-80">Niebla</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-6.202, -77.856, 'SPPY')"
+                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                                data-icao="SPQT">
+                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPQT
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPQT"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold">7 km</td>
+                                <td class="tech-cell italic opacity-80">Lluvia débil</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-3.785, -73.309, 'SPQT')"
                                         class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -945,28 +989,6 @@
                             </tr>
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
-                                data-icao="SPJL">
-                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPJL
-                                </td>
-                                <td class="tech-cell">
-                                    <div id="status-tag-SPJL"
-                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
-                                        ---
-                                    </div>
-                                </td>
-                                <td class="tech-cell font-bold">10 km a más</td>
-                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
-                                <td class="tech-cell text-right">
-                                    <button onclick="zoomToStation(-15.467, -70.158, 'SPJL')"
-                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                        </svg>
-                                    </button>
-                                </td>
-                            </tr>
-                            
-                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPQU">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPQU
                                 </td>
@@ -1186,6 +1208,18 @@
         },
         
         {
+            icao: "SPHI",
+                nombre: "Aeropuerto de Chiclayo/Intl. Cap. Jose Abelardo Quinones Gonzales",
+                    lat: -6.787,
+            lon: -79.828,
+            vis: "10 km a más",
+                temp: "27 °C",
+                    viento: "Variable / 01 KT",
+                        nubosidad: "Sin nubes bajo los 1500m",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
             icao: "SPJR",
                 nombre: "Aeropuerto de Cajamarca/Mayor Gral.FAP Armando Revoredo Iglesias",
                     lat: -7.139,
@@ -1219,6 +1253,18 @@
                     viento: "Oeste / 02 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "Niebla"
+        },
+        
+        {
+            icao: "SPQT",
+                nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
+                    lat: -3.785,
+            lon: -73.309,
+            vis: "7 km",
+                temp: "24 °C",
+                    viento: "Norte / 04 KT",
+                        nubosidad: "Nublado",
+                            fenomenos: "Lluvia débil"
         },
         
         {
@@ -1386,18 +1432,6 @@
                 temp: "25 °C",
                     viento: "Suroeste / 04 KT",
                         nubosidad: "Sin nubes de importancia",
-                            fenomenos: "No hay fenómeno meteorológico"
-        },
-        
-        {
-            icao: "SPJL",
-                nombre: "Aeropuerto de Juliaca/Intl. Inca Manco Capac",
-                    lat: -15.467,
-            lon: -70.158,
-            vis: "10 km a más",
-                temp: "11 °C",
-                    viento: "Noroeste / 02 KT",
-                        nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
