@@ -414,8 +414,8 @@
                     {% if fenomenos %}
                     <div class="divide-y divide-slate-100 dark:divide-slate-800">
                         {% for fen in fenomenos %}
-                        <div
-                            class="fenomeno-card p-2.5 bg-white dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700/50 flex items-center gap-3 hover:bg-blue-50/50 dark:hover:bg-blue-900/20 transition-all duration-200">
+                        <div onclick="zoomToCity('{{ fen.aeropuerto }}')" title="Ver en el mapa (Máximo Zoom)"
+                            class="fenomeno-card cursor-pointer p-2.5 bg-white dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700/50 flex items-center gap-3 hover:bg-blue-50/50 dark:hover:bg-blue-900/20 transition-all duration-200">
                             <span class="fen-weather-icon text-xl flex-shrink-0 opacity-90 shadow-sm" data-fen="{{ fen.fenomeno }}"></span>
                             <div class="flex items-center gap-3 min-w-0 flex-grow">
                                 <span class="bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 font-bold px-2 py-1 rounded-md text-[10px] uppercase tracking-wider min-w-[100px] text-center border border-red-100/50 dark:border-red-800/30 font-technical shrink-0">
@@ -502,6 +502,8 @@
         document.getElementById('map').classList.add('sat-active');
 
 
+        const cityMarkers = {};
+
         cityData.forEach(city => {
             if (city.lat && parseFloat(city.lat) !== 0) {
                 const tempVal = city.temp.replace(" °C", "°");
@@ -519,8 +521,31 @@
                 });
                 const marker = L.marker([city.lat, city.lon], { icon: customIcon }).addTo(map);
                 marker.bindPopup(`<b>${city.name}</b><br>Temperatura: ${city.temp}`);
+                
+                cityMarkers[city.name] = marker;
             }
         });
+
+        // Function to zoom directly to a city when clicking on its card
+        function zoomToCity(cityName) {
+            const marker = cityMarkers[cityName];
+            if (marker) {
+                map.flyTo(marker.getLatLng(), 12, {
+                    animate: true,
+                    duration: 1.5
+                });
+                marker.openPopup();
+                
+                // Temporary visual highlight on the marker icon
+                const icon = marker.getElement();
+                if (icon) {
+                    icon.style.filter = 'drop-shadow(0 0 15px yellow) brightness(1.2)';
+                    setTimeout(() => {
+                        icon.style.filter = '';
+                    }, 3000);
+                }
+            }
+        }
 
         function adjustView() {
             map.invalidateSize();

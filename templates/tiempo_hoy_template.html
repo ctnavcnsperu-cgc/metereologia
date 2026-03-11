@@ -433,17 +433,17 @@
                 class="w-full lg:w-1/2 h-[calc(100vh-4rem)] overflow-y-auto pr-4 custom-scrollbar scroll-smooth">
                 {% for air in airports %}
                 <div id="card-{{ air.icao }}" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
-                    <div class="flex">
+                    <div class="flex cursor-pointer hover:opacity-80 transition-opacity" onclick="zoomToAirport('{{ air.icao }}')" title="Ver en el mapa (Máximo Zoom)">
                         <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
                             <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path
                                     d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H3l-2 1v3.5l1.5 1.5H6L7 19l3-2 3.5 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1Z" />
                             </svg>
-                            <span>AEROPUERTO: {{ air.nombre }}</span>
+                            <span class="hover:text-yellow-300 transition-colors">AEROPUERTO: {{ air.nombre }}</span>
                         </div>
-                        <div class="w-1/3 tech-cell monospace text-right font-bold text-sm">
-                            <span class="opacity-60 mr-2 text-[10px]">ICAO:</span> {{ air.icao }}
+                        <div class="w-1/3 tech-cell monospace text-right font-bold text-sm bg-blue-50 dark:bg-slate-800">
+                            <span class="opacity-60 mr-2 text-[10px]">ICAO:</span> <span class="text-blue-700 dark:text-sky-300 hover:text-yellow-500 dark:hover:text-yellow-300">{{ air.icao }}</span>
                         </div>
                     </div>
 
@@ -615,6 +615,28 @@
                 markers[air.icao] = marker;
             }
         });
+
+        // Function to zoom directly to an airport when clicking on its card
+        function zoomToAirport(icao) {
+            const marker = markers[icao];
+            if (marker) {
+                // maxZoom is 12 according to map initialization
+                map.flyTo(marker.getLatLng(), 12, {
+                    animate: true,
+                    duration: 1.5
+                });
+                marker.openPopup();
+                
+                // Temporary visual highlight on the marker icon
+                const icon = marker.getElement();
+                if (icon) {
+                    icon.style.filter = 'drop-shadow(0 0 15px yellow) brightness(1.2)';
+                    setTimeout(() => {
+                        icon.style.filter = '';
+                    }, 3000);
+                }
+            }
+        }
 
         // Initialize view
         setTimeout(() => {
