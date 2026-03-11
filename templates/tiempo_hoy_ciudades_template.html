@@ -88,7 +88,7 @@
         }
 
         .fenomeno-card {
-            border-left: 4px solid #ef4444;
+            border-left: 3px solid #b91c1c;
             transition: all 0.2s ease;
         }
 
@@ -404,26 +404,22 @@
             <!-- Fenómenos Meteorológicos -->
             <div
                 class="tech-grid bg-white dark:bg-slate-900 rounded-sm overflow-hidden shadow-none flex flex-col flex-1 min-h-0">
-                <div class="tech-header p-3 flex items-center justify-between bg-red-700">
-                    <span class="flex items-center gap-2">
+                <div class="tech-header p-3 flex items-center justify-between">
+                    <span class="flex items-center gap-2 text-white">
                         <span class="pulse-alert">⚠️</span> FENÓMENOS METEOROLÓGICOS
                     </span>
                 </div>
-                <div class="p-4 overflow-y-auto flex-grow custom-scrollbar">
+                <div class="p-3 overflow-y-auto flex-grow custom-scrollbar">
                     {% if fenomenos %}
-                    <div class="space-y-3">
+                    <div class="space-y-2">
                         {% for fen in fenomenos %}
                         <div
-                            class="fenomeno-card p-3 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-sm flex items-center justify-between gap-3">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex justify-between items-start mb-1">
-                                    <span
-                                        class="font-bold text-red-600 dark:text-red-400 uppercase text-sm leading-tight">{{
-                                        fen.aeropuerto }}</span>
-                                </div>
-                                <p class="text-xs text-slate-700 dark:text-slate-300 italic">{{ fen.fenomeno }}</p>
+                            class="fenomeno-card p-2 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-none flex items-center justify-between gap-2">
+                            <div class="flex items-center gap-2 min-w-0 flex-grow">
+                                <span class="font-bold text-red-700 dark:text-red-400 uppercase text-[11px] leading-none shrink-0 font-technical">{{ fen.aeropuerto }}</span>
+                                <span class="text-[11px] text-slate-600 dark:text-slate-400 italic truncate">{{ fen.fenomeno }}</span>
                             </div>
-                            <span class="fen-weather-icon text-4xl flex-shrink-0" data-fen="{{ fen.fenomeno }}"></span>
+                            <span class="fen-weather-icon text-lg flex-shrink-0 opacity-80" data-fen="{{ fen.fenomeno }}"></span>
                         </div>
                         {% endfor %}
                     </div>
