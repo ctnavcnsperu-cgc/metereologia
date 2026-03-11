@@ -105,17 +105,33 @@
         }
 
         .custom-scrollbar::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-track {
             background: transparent;
+            margin: 4px 0; /* Creates separation from top and bottom */
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: var(--tech-border);
-            border-radius: 0px;
+            background: rgba(7, 78, 140, 0.3); /* Subtle light mode variant */
+            border-radius: 10px;
+            transition: background 0.3s ease;
         }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(7, 78, 140, 0.8); /* Brighter on hover in light mode */
+        }
+
+        /* Dark Mode Scrollbar Styling */
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(56, 189, 248, 0.3); /* Subtle dark mode variant (tech-accent) */
+        }
+
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(56, 189, 248, 0.8); /* Brighter dark mode on hover */
+        }
+
 
         .leaflet-control-layers {
             background: var(--tech-bg) !important;
