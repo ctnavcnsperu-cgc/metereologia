@@ -1,0 +1,25 @@
+﻿interactive rebase in progress; onto 7b0a57f
+Last command done (1 command done):
+   pick a2c727e Eliminar tarjeta de temperaturas y expandir fen├│menos meteorol├│gicos
+No commands remaining.
+You are currently rebasing branch 'main' on '7b0a57f'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   templates/tiempo_hoy_ciudades_template.html
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+	both modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	diff.txt
+	git_status.txt
+	gitlog.txt
+	log.txt
+
