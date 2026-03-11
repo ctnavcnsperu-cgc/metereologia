@@ -88,7 +88,6 @@
         }
 
         .fenomeno-card {
-            border-left: 3px solid #b91c1c;
             transition: all 0.2s ease;
         }
 
@@ -417,7 +416,7 @@
                             class="fenomeno-card p-2 bg-slate-50 dark:bg-slate-800 rounded-sm shadow-none flex items-center justify-between gap-2">
                             <div class="flex items-center gap-2 min-w-0 flex-grow">
                                 <span class="font-bold text-red-700 dark:text-red-400 uppercase text-[11px] leading-none shrink-0 font-technical">{{ fen.aeropuerto }}</span>
-                                <span class="text-[11px] text-slate-600 dark:text-slate-400 italic truncate">{{ fen.fenomeno }}</span>
+                                <span class="text-xs text-slate-900 dark:text-slate-100 font-bold truncate">{{ fen.fenomeno }}</span>
                             </div>
                             <span class="fen-weather-icon text-lg flex-shrink-0 opacity-80" data-fen="{{ fen.fenomeno }}"></span>
                         </div>
