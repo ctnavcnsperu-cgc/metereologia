@@ -92,6 +92,14 @@
             filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
         }
 
+        .map-tactical-filter {
+            filter: grayscale(20%) sepia(30%) hue-rotate(75deg) brightness(0.6) contrast(1.2) !important;
+        }
+
+        .dark .map-tactical-filter {
+            filter: contrast(110%) brightness(105%) hue-rotate(180deg) invert(100%) grayscale(20%) sepia(30%) hue-rotate(75deg) brightness(0.6) contrast(1.2) !important;
+        }
+
         .station-card {
             margin-bottom: 2rem;
             scroll-margin-top: 2rem;
@@ -137,7 +145,7 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            border: 1.5px dotted rgba(255, 204, 0, 0.8);
+            border: none;
             background-color: transparent;
             display: flex;
             align-items: center;
@@ -149,7 +157,7 @@
         .icao-marker .plane-icon {
             width: 21px;
             height: 21px;
-            fill: #ffcc00;
+            fill: #FFFF00;
             stroke: #1a1a1a;
             stroke-width: 1.5px;
             stroke-linejoin: round;
@@ -173,7 +181,7 @@
 
         .dark .icao-marker .plane-radar-ring {
             background-color: transparent;
-            border-color: rgba(255, 204, 0, 0.6);
+            border: none;
         }
 
         .dark .icao-marker .label {
@@ -3078,6 +3086,7 @@
 
         const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap',
+            className: 'map-tactical-filter',
             noWrap: true
         });
 
