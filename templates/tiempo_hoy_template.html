@@ -170,19 +170,24 @@
         }
 
         .icao-marker .label {
-            color: #ffffff;
+            color: #FFFF00;
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
             font-weight: 900;
             margin-left: 1px;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.9);
+            letter-spacing: 0.5px;
+        }
+
+        /* Mantener el mapa satélite con su estilo original (blanco con borde) */
+        .sat-active .icao-marker .label {
+            color: #ffffff !important;
             text-shadow:
                 -1.5px -1.5px 0 #000,
                 1.5px -1.5px 0 #000,
                 -1.5px 1.5px 0 #000,
                 1.5px 1.5px 0 #000,
-                0 0 4px #000;
-            /* Borde negro consistente para legibilidad en todos los mapas */
-            letter-spacing: 0.5px;
+                0 0 4px #000 !important;
         }
 
         .dark .icao-marker .plane-radar-ring {
