@@ -55,15 +55,31 @@
         }
 
         .custom-scrollbar::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
 
         .custom-scrollbar::-webkit-scrollbar-track {
             background: transparent;
+            margin: 4px 0;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: var(--tech-border);
+            background: rgba(7, 78, 140, 0.3);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(7, 78, 140, 0.8);
+        }
+
+        /* Dark Mode Scrollbar Styling */
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(56, 189, 248, 0.3);
+        }
+
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(56, 189, 248, 0.8);
         }
 
         .tech-header {
