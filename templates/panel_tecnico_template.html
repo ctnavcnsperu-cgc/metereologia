@@ -181,6 +181,41 @@
             backdrop-filter: blur(4px);
         }
 
+        /* Slider de Transparencia Vertical */
+        .opacity-control-panel {
+            background: rgba(15, 23, 42, 0.85) !important;
+            border: 2px solid var(--tech-border) !important;
+            padding: 10px 4px !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            margin-left: 10px !important;
+            margin-top: 10px !important;
+        }
+
+        .opacity-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 8px;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .vertical-slider {
+            writing-mode: bt-lr; /* Bottom to top */
+            -webkit-appearance: slider-vertical;
+            appearance: slider-vertical;
+            width: 10px;
+            height: 100px;
+            padding: 0 5px;
+            cursor: pointer;
+            background: transparent;
+        }
+
         .leaflet-control-layers {
             background: var(--tech-bg) !important;
             border: 2px solid var(--tech-border) !important;
@@ -601,6 +636,30 @@
         L.control.layers(baseMaps, {
             "🛰️ Satélite IR (Tormentas)": goesLayer
         }, { position: 'topright', collapsed: false }).addTo(map);
+
+        // Control de opacidad personalizado
+        const OpacityControl = L.Control.extend({
+            options: { position: 'topleft' },
+            onAdd: function (map) {
+                const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control opacity-control-panel');
+                container.innerHTML = `
+                    <div class="opacity-label">IN</div>
+                    <input type="range" min="0" max="100" value="${goesLayer.options.opacity * 100}" class="vertical-slider" id="goes-opacity-slider">
+                    <div class="opacity-label">OUT</div>
+                `;
+                
+                L.DomEvent.disableClickPropagation(container);
+                
+                const slider = container.querySelector('#goes-opacity-slider');
+                slider.addEventListener('input', (e) => {
+                    const val = e.target.value / 100;
+                    goesLayer.setOpacity(val);
+                });
+                
+                return container;
+            }
+        });
+        map.addControl(new OpacityControl());
 
         // Control dinámico de color para la capa de satélite
         map.on('baselayerchange', function (e) {
