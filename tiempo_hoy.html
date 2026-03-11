@@ -88,17 +88,6 @@
             height: calc(100vh - 4rem);
         }
 
-        .dark #map {
-            filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
-        }
-
-        .map-tactical-filter {
-            filter: grayscale(20%) sepia(30%) hue-rotate(75deg) brightness(0.6) contrast(1.2) !important;
-        }
-
-        .dark .map-tactical-filter {
-            filter: contrast(110%) brightness(105%) hue-rotate(180deg) invert(100%) grayscale(20%) sepia(30%) hue-rotate(75deg) brightness(0.6) contrast(1.2) !important;
-        }
 
         .station-card {
             margin-bottom: 2rem;
@@ -3072,7 +3061,6 @@
 
         const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap',
-            className: 'map-tactical-filter',
             noWrap: true
         });
 
