@@ -487,15 +487,18 @@
         }
         /* Styles for Radar Accordion and HUD */
         .radar-accordion {
-            border: 2px solid var(--tech-border);
+            border: 1px solid rgba(7, 78, 140, 0.15); /* Borde muy sutil */
+            border-radius: 8px;
             margin-bottom: 1.5rem;
-            background: rgba(15, 23, 42, 0.03);
+            background: #ffffff;
             overflow: hidden;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
         }
 
         .dark .radar-accordion {
             background: rgba(15, 23, 42, 0.3);
+            border-color: rgba(56, 189, 248, 0.1);
         }
 
         .radar-header {
@@ -521,11 +524,15 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-out;
-            background: #0f172a; /* Dark cockpit feel always */
+            background: #f8fafc; /* Fondo claro de cockpit moderno */
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
+        }
+
+        .dark .radar-content {
+            background: #0f172a;
         }
 
         .radar-accordion.open .radar-content {
@@ -565,25 +572,25 @@
             stroke-width: 4px !important;
         }
 
-        .radar-glow-vfr { filter: drop-shadow(0 0 12px #22c55e); }
-        .radar-glow-mvfr { filter: drop-shadow(0 0 12px #3b82f6); }
-        .radar-glow-ifr { filter: drop-shadow(0 0 12px #ef4444); }
-        .radar-glow-lifr { filter: drop-shadow(0 0 12px #d946ef); }
+        .radar-glow-vfr { filter: drop-shadow(0 0 8px #22c55e); }
+        .radar-glow-mvfr { filter: drop-shadow(0 0 8px #3b82f6); }
+        .radar-glow-ifr { filter: drop-shadow(0 0 8px #ef4444); }
+        .radar-glow-lifr { filter: drop-shadow(0 0 8px #d946ef); }
 
         .radar-label {
             font-family: 'JetBrains Mono', monospace;
             font-size: 9px;
             font-weight: 900;
-            fill: rgba(255, 255, 255, 0.15);
+            fill: #94a3b8; /* Gris suave para fondo claro */
             text-transform: uppercase;
             transition: all 0.5s ease;
             pointer-events: none;
         }
 
         .radar-label-active {
-            fill: #ffffff !important;
+            fill: #1e293b !important;
             font-size: 11px !important;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
             opacity: 1 !important;
         }
 
@@ -598,8 +605,14 @@
         .radar-icao-display {
             font-size: 1.5rem;
             font-weight: 900;
-            color: #38bdf8;
+            color: #074e8c;
             letter-spacing: -0.05em;
+        }
+
+        .radar-vis-text {
+            font-size: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #64748b;
         }
     </style>
 </head>
@@ -665,7 +678,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">12/03/2026 10:11</p>
+                <p class="text-xl font-bold">12/03/2026 10:23</p>
             </div>
         </header>
 
@@ -742,14 +755,14 @@
                         <!-- Radar SVG HUD -->
                         <svg viewBox="0 0 220 220" class="w-64 h-64 md:w-80 md:h-80 drop-shadow-[0_0_15px_rgba(56,189,248,0.4)]">
                             <!-- Background Circles -->
-                            <circle cx="110" cy="110" r="100" class="stroke-slate-600/30 fill-none" stroke-width="0.5" />
-                            <circle cx="110" cy="110" r="75" class="stroke-slate-600/30 fill-none" stroke-width="0.5" />
-                            <circle cx="110" cy="110" r="50" class="stroke-slate-600/30 fill-none" stroke-width="0.5" />
-                            <circle cx="110" cy="110" r="25" class="stroke-slate-600/30 fill-none" stroke-width="0.5" />
+                            <circle cx="110" cy="110" r="100" class="stroke-slate-200 fill-none" stroke-width="0.5" />
+                            <circle cx="110" cy="110" r="75" class="stroke-slate-200 fill-none" stroke-width="0.5" />
+                            <circle cx="110" cy="110" r="50" class="stroke-slate-200 fill-none" stroke-width="0.5" />
+                            <circle cx="110" cy="110" r="25" class="stroke-slate-200 fill-none" stroke-width="0.5" />
 
                             <!-- Crosshair -->
-                            <line x1="110" y1="0" x2="110" y2="220" class="stroke-slate-700/50" stroke-width="0.5"/>
-                            <line x1="0" y1="110" x2="220" y2="110" class="stroke-slate-700/50" stroke-width="0.5"/>
+                            <line x1="110" y1="0" x2="110" y2="220" class="stroke-slate-100" stroke-width="0.5"/>
+                            <line x1="0" y1="110" x2="220" y2="110" class="stroke-slate-100" stroke-width="0.5"/>
 
                             <!-- Rule Rings (The Pulsing ones) -->
                             <!-- VFR > 8km -->
@@ -770,14 +783,14 @@
 
                             <!-- Center Airplane Clipart (SVG) -->
                             <g transform="translate(100, 100) scale(0.8)">
-                                <path fill="#ffffff" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                                <path fill="#1e293b" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
                             </g>
                         </svg>
 
                         <div class="radar-info-box">
-                            <p class="text-[8px] font-bold text-slate-500 uppercase">Estación Seleccionada</p>
+                            <p class="text-[8px] font-bold text-slate-400 uppercase">Estación Seleccionada</p>
                             <p id="radar-icao-text" class="radar-icao-display">---</p>
-                            <p id="radar-vis-text" class="text-[10px] font-mono text-white/70">ESPERANDO SELECCIÓN</p>
+                            <p id="radar-vis-text" class="radar-vis-text">ESPERANDO SELECCIÓN</p>
                         </div>
                     </div>
                 </div>
