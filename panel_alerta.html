@@ -479,6 +479,106 @@
         .dark .filter-count {
             background: rgba(255, 255, 255, 0.1);
         }
+        /* Styles for Radar Accordion and HUD */
+        .radar-accordion {
+            border: 2px solid var(--tech-border);
+            margin-bottom: 1.5rem;
+            background: rgba(15, 23, 42, 0.03);
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dark .radar-accordion {
+            background: rgba(15, 23, 42, 0.3);
+        }
+
+        .radar-header {
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            background: var(--tech-bg);
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .radar-header:hover {
+            background: rgba(7, 78, 140, 0.1);
+        }
+
+        .radar-accordion.open .radar-header {
+            border-bottom-color: var(--tech-border);
+        }
+
+        .radar-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background: #0f172a; /* Dark cockpit feel always */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .radar-accordion.open .radar-content {
+            max-height: 400px;
+            padding: 2rem 0;
+        }
+
+        /* Radar Pulse Animation */
+        @keyframes radar-pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.3;
+                stroke-width: 1px;
+            }
+            50% {
+                opacity: 0.8;
+                stroke-width: 3px;
+            }
+            100% {
+                transform: scale(1.15);
+                opacity: 0;
+                stroke-width: 1px;
+            }
+        }
+
+        .pulse-circle {
+            fill: none;
+            stroke-width: 2;
+            transform-origin: center;
+            opacity: 0.2;
+        }
+
+        .pulse-active {
+            animation: radar-pulse 2s infinite ease-out;
+            opacity: 1;
+        }
+
+        .radar-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: bold;
+            fill: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+        }
+
+        .radar-info-box {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            text-align: right;
+            pointer-events: none;
+        }
+
+        .radar-icao-display {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #38bdf8;
+            letter-spacing: -0.05em;
+        }
     </style>
 </head>
 
@@ -543,7 +643,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">12/03/2026 09:01</p>
+                <p class="text-xl font-bold">12/03/2026 09:26</p>
             </div>
         </header>
 
@@ -596,6 +696,68 @@
                         </svg>
                         Reglas de vuelo
                     </button>
+                </div>
+
+                <!-- Radar Accordion -->
+                <div class="radar-accordion" id="radar-accordion">
+                    <div class="radar-header" onclick="toggleRadar()">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 flex items-center justify-center bg-blue-900 dark:bg-sky-400 text-white dark:text-black rounded-full shadow-lg">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.44c-.31.17-.69.17-1 0L3.53 17.38c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.44c.31-.17.69-.17 1 0l7.97 4.44c.32.17.53.5.53.88v9z"/>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-blue-900 dark:text-sky-400">Monitor de Situación Visual</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div id="radar-status-mini" class="px-2 py-0.5 rounded text-[8px] font-bold text-white uppercase bg-vfr">VFR ACTIVO</div>
+                            <svg id="radar-arrow" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="radar-content">
+                        <!-- Radar SVG HUD -->
+                        <svg viewBox="0 0 220 220" class="w-64 h-64 md:w-80 md:h-80 drop-shadow-[0_0_15px_rgba(56,189,248,0.4)]">
+                            <!-- Background Circles -->
+                            <circle cx="110" cy="110" r="100" class="stroke-slate-700 fill-none" stroke-width="0.5" stroke-dasharray="2 4"/>
+                            <circle cx="110" cy="110" r="75" class="stroke-slate-700 fill-none" stroke-width="0.5" stroke-dasharray="2 4"/>
+                            <circle cx="110" cy="110" r="50" class="stroke-slate-700 fill-none" stroke-width="0.5" stroke-dasharray="2 4"/>
+                            <circle cx="110" cy="110" r="25" class="stroke-slate-700 fill-none" stroke-width="0.5" stroke-dasharray="2 4"/>
+
+                            <!-- Crosshair -->
+                            <line x1="110" y1="0" x2="110" y2="220" class="stroke-slate-800" stroke-width="0.5"/>
+                            <line x1="0" y1="110" x2="220" y2="110" class="stroke-slate-800" stroke-width="0.5"/>
+
+                            <!-- Rule Rings (The Pulsing ones) -->
+                            <!-- VFR > 8km -->
+                            <circle id="radar-vfr" cx="110" cy="110" r="95" class="pulse-circle stroke-vfr" />
+                            <text x="110" y="10" text-anchor="middle" class="radar-label">VFR</text>
+                            
+                            <!-- MVFR 5-8km -->
+                            <circle id="radar-mvfr" cx="110" cy="110" r="70" class="pulse-circle stroke-mvfr" />
+                            <text x="110" y="35" text-anchor="middle" class="radar-label">MVFR</text>
+
+                            <!-- IFR 1.5-5km -->
+                            <circle id="radar-ifr" cx="110" cy="110" r="45" class="pulse-circle stroke-ifr" />
+                            <text x="110" y="60" text-anchor="middle" class="radar-label">IFR</text>
+
+                            <!-- LIFR < 1.5km -->
+                            <circle id="radar-lifr" cx="110" cy="110" r="20" class="pulse-circle stroke-lifr" />
+                            <text x="110" y="85" text-anchor="middle" class="radar-label">LIFR</text>
+
+                            <!-- Center Airplane Clipart (SVG) -->
+                            <g transform="translate(100, 100) scale(0.8)">
+                                <path fill="#ffffff" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                            </g>
+                        </svg>
+
+                        <div class="radar-info-box">
+                            <p class="text-[8px] font-bold text-slate-500 uppercase">Estación Seleccionada</p>
+                            <p id="radar-icao-text" class="radar-icao-display">---</p>
+                            <p id="radar-vis-text" class="text-[10px] font-mono text-white/70">ESPERANDO SELECCIÓN</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="tech-grid bg-white dark:bg-slate-900/50 overflow-hidden">
@@ -754,7 +916,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">8 km</td>
+                                <td class="tech-cell font-bold">10 km a más</td>
                                 <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-5.592, -78.771, 'SPJE')"
@@ -776,7 +938,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">2.5 km</td>
+                                <td class="tech-cell font-bold">4 km</td>
                                 <td class="tech-cell italic opacity-80">Neblina</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-6.061, -77.157, 'SPJA')"
@@ -842,8 +1004,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">5 km</td>
-                                <td class="tech-cell italic opacity-80">Neblina</td>
+                                <td class="tech-cell font-bold">6 km</td>
+                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-8.082, -79.109, 'SPRU')"
                                         class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
@@ -864,8 +1026,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">3 km</td>
-                                <td class="tech-cell italic opacity-80">Neblina</td>
+                                <td class="tech-cell font-bold">5 km</td>
+                                <td class="tech-cell italic opacity-80">Niebla</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-6.202, -77.856, 'SPPY')"
                                         class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
@@ -908,7 +1070,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">6 km</td>
+                                <td class="tech-cell font-bold">10 km a más</td>
                                 <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-5.894, -76.118, 'SPMS')"
@@ -930,8 +1092,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">8 km</td>
-                                <td class="tech-cell italic opacity-80">Niebla</td>
+                                <td class="tech-cell font-bold">10 km a más</td>
+                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-6.509, -76.372, 'SPST')"
                                         class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
@@ -952,8 +1114,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">5 km</td>
-                                <td class="tech-cell italic opacity-80">Neblina</td>
+                                <td class="tech-cell font-bold">7 km</td>
+                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-7.17, -76.729, 'SPJI')"
                                         class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
@@ -996,8 +1158,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">4 km</td>
-                                <td class="tech-cell italic opacity-80">Neblina</td>
+                                <td class="tech-cell font-bold">6 km</td>
+                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-10.729, -73.766, 'SPAY')"
                                         class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
@@ -1062,8 +1224,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">3 km</td>
-                                <td class="tech-cell italic opacity-80">Neblina</td>
+                                <td class="tech-cell font-bold">8 km</td>
+                                <td class="tech-cell italic opacity-80">Niebla</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-9.347, -77.598, 'SPHZ')"
                                         class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
@@ -1084,7 +1246,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">9 km</td>
+                                <td class="tech-cell font-bold">10 km a más</td>
                                 <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-9.879, -76.204, 'SPNC')"
@@ -1150,8 +1312,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">4 km</td>
-                                <td class="tech-cell italic opacity-80">Neblina</td>
+                                <td class="tech-cell font-bold">10 km a más</td>
+                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-9.3, -76.0, 'SPGM')"
                                         class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
@@ -1393,8 +1555,8 @@
                     lat: -3.552,
             lon: -80.379,
             vis: "10 km a más",
-                temp: "26 °C",
-                    viento: "Noroeste / 03 KT",
+                temp: "28 °C",
+                    viento: "Norte / 06 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1405,8 +1567,8 @@
                     lat: -4.442,
             lon: -81.224,
             vis: "10 km a más",
-                temp: "26 °C",
-                    viento: "Sureste / 03 KT",
+                temp: "27 °C",
+                    viento: "Sureste / 04 KT",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1417,9 +1579,9 @@
                     lat: -4.58,
             lon: -81.251,
             vis: "10 km a más",
-                temp: "25 °C",
+                temp: "27 °C",
                     viento: "Sureste / 06 KT",
-                        nubosidad: "Nublado",
+                        nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1429,8 +1591,8 @@
                     lat: -5.209,
             lon: -80.616,
             vis: "10 km a más",
-                temp: "25 °C",
-                    viento: "Este / 04 KT",
+                temp: "26 °C",
+                    viento: "Norte / 03 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1440,9 +1602,9 @@
                 nombre: "Aeropuerto de Jaen",
                     lat: -5.592,
             lon: -78.771,
-            vis: "8 km",
-                temp: "22 °C",
-                    viento: "Noroeste / 02 KT",
+            vis: "10 km a más",
+                temp: "24 °C",
+                    viento: "Variable / 02 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1452,9 +1614,9 @@
                 nombre: "Aeropuerto de Rioja",
                     lat: -6.061,
             lon: -77.157,
-            vis: "2.5 km",
-                temp: "21 °C",
-                    viento: "Noreste / 01 KT",
+            vis: "4 km",
+                temp: "22 °C",
+                    viento: "Sureste / 03 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "Neblina"
         },
@@ -1465,8 +1627,8 @@
                     lat: -6.787,
             lon: -79.828,
             vis: "10 km a más",
-                temp: "24 °C",
-                    viento: "Sur / 08 KT",
+                temp: "25 °C",
+                    viento: "Sur / 07 KT",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1477,8 +1639,8 @@
                     lat: -7.139,
             lon: -78.489,
             vis: "6 km",
-                temp: "14 °C",
-                    viento: "Calma / 0",
+                temp: "15 °C",
+                    viento: "Variable / 02 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "Niebla"
         },
@@ -1488,11 +1650,11 @@
                 nombre: "Aeropuerto de Trujillo/Intl. Cap.Carlos Martinez de Pinillos",
                     lat: -8.082,
             lon: -79.109,
-            vis: "5 km",
-                temp: "22 °C",
-                    viento: "Sureste / 05 KT",
-                        nubosidad: "Nublado",
-                            fenomenos: "Neblina"
+            vis: "6 km",
+                temp: "23 °C",
+                    viento: "Sur / 05 KT",
+                        nubosidad: "Parcialmente nublado",
+                            fenomenos: "No hay fenómeno meteorológico"
         },
         
         {
@@ -1500,11 +1662,11 @@
                 nombre: "Aeropuerto de Chachapoyas",
                     lat: -6.202,
             lon: -77.856,
-            vis: "3 km",
-                temp: "13 °C",
-                    viento: "Calma / 0",
+            vis: "5 km",
+                temp: "14 °C",
+                    viento: "Noroeste / 02 KT",
                         nubosidad: "Cielo cubierto",
-                            fenomenos: "Neblina"
+                            fenomenos: "Niebla"
         },
         
         {
@@ -1513,8 +1675,8 @@
                     lat: -3.785,
             lon: -73.309,
             vis: "10 km a más",
-                temp: "25 °C",
-                    viento: "Variable / 01 KT",
+                temp: "27 °C",
+                    viento: "Calma / 0",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1524,8 +1686,8 @@
                 nombre: "Aeropuerto de Yurimaguas/Moises Benzaquen Rengifo",
                     lat: -5.894,
             lon: -76.118,
-            vis: "6 km",
-                temp: "24 °C",
+            vis: "10 km a más",
+                temp: "26 °C",
                     viento: "Sur / 01 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
@@ -1536,11 +1698,11 @@
                 nombre: "Aeropuerto de Tarapoto/Cadete Guillermo del Castillo Paredes",
                     lat: -6.509,
             lon: -76.372,
-            vis: "8 km",
-                temp: "23 °C",
-                    viento: "Variable / 02 KT",
+            vis: "10 km a más",
+                temp: "25 °C",
+                    viento: "Sureste / 03 KT",
                         nubosidad: "Cielo cubierto",
-                            fenomenos: "Niebla"
+                            fenomenos: "No hay fenómeno meteorológico"
         },
         
         {
@@ -1548,11 +1710,11 @@
                 nombre: "Aeropuerto de Juanjui",
                     lat: -7.17,
             lon: -76.729,
-            vis: "5 km",
-                temp: "23 °C",
+            vis: "7 km",
+                temp: "25 °C",
                     viento: "Este / 03 KT",
-                        nubosidad: "Cielo cubierto",
-                            fenomenos: "Neblina"
+                        nubosidad: "Nublado",
+                            fenomenos: "No hay fenómeno meteorológico"
         },
         
         {
@@ -1561,8 +1723,8 @@
                     lat: -8.378,
             lon: -74.574,
             vis: "10 km a más",
-                temp: "25 °C",
-                    viento: "Norte / 02 KT",
+                temp: "27 °C",
+                    viento: "Norte / 03 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1572,11 +1734,11 @@
                 nombre: "Aeropuerto de Atalaya",
                     lat: -10.729,
             lon: -73.766,
-            vis: "4 km",
-                temp: "25 °C",
-                    viento: "Noroeste / 03 KT",
+            vis: "6 km",
+                temp: "26 °C",
+                    viento: "Calma / 0",
                         nubosidad: "Cielo cubierto",
-                            fenomenos: "Neblina"
+                            fenomenos: "No hay fenómeno meteorológico"
         },
         
         {
@@ -1598,8 +1760,8 @@
             lon: -78.524,
             vis: "8 km",
                 temp: "22 °C",
-                    viento: "Sur / 07 KT",
-                        nubosidad: "Nublado",
+                    viento: "Sur / 08 KT",
+                        nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1608,11 +1770,11 @@
                 nombre: "Aeropuerto de Anta - Huaraz/Cmdte. FAP German Arias Grazziani",
                     lat: -9.347,
             lon: -77.598,
-            vis: "3 km",
-                temp: "13 °C",
-                    viento: "Norte / 03 KT",
+            vis: "8 km",
+                temp: "16 °C",
+                    viento: "Este / 03 KT",
                         nubosidad: "Cielo cubierto",
-                            fenomenos: "Neblina"
+                            fenomenos: "Niebla"
         },
         
         {
@@ -1620,9 +1782,9 @@
                 nombre: "Aeropuerto de Huanuco/Alferez FAP David Figueroa Fernandini",
                     lat: -9.879,
             lon: -76.204,
-            vis: "9 km",
-                temp: "18 °C",
-                    viento: "Este / 02 KT",
+            vis: "10 km a más",
+                temp: "19 °C",
+                    viento: "Calma / 0",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1634,7 +1796,7 @@
             lon: -77.114,
             vis: "5 km",
                 temp: "22 °C",
-                    viento: "Noroeste / 04 KT",
+                    viento: "Oeste / 06 KT",
                         nubosidad: "Nublado",
                             fenomenos: "Neblina"
         },
@@ -1645,8 +1807,8 @@
                     lat: -11.783,
             lon: -75.473,
             vis: "10 km a más",
-                temp: "10 °C",
-                    viento: "Variable / 01 KT",
+                temp: "12 °C",
+                    viento: "Sureste / 03 KT",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1656,11 +1818,11 @@
                 nombre: "Aeropuerto de Tingo Maria",
                     lat: -9.3,
             lon: -76.0,
-            vis: "4 km",
-                temp: "22 °C",
-                    viento: "Variable / 01 KT",
-                        nubosidad: "Cielo cubierto",
-                            fenomenos: "Neblina"
+            vis: "10 km a más",
+                temp: "24 °C",
+                    viento: "Noreste / 03 KT",
+                        nubosidad: "Nublado",
+                            fenomenos: "No hay fenómeno meteorológico"
         },
         
         {
@@ -1670,8 +1832,8 @@
             lon: -76.222,
             vis: "8 km",
                 temp: "24 °C",
-                    viento: "Suroeste / 04 KT",
-                        nubosidad: "Parcialmente nublado",
+                    viento: "Oeste / 06 KT",
+                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1681,7 +1843,7 @@
                     lat: -14.853,
             lon: -74.962,
             vis: "10 km a más",
-                temp: "23 °C",
+                temp: "25 °C",
                     viento: "Noroeste / 03 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
@@ -1693,9 +1855,9 @@
                     lat: -15.467,
             lon: -70.158,
             vis: "10 km a más",
-                temp: "10 °C",
-                    viento: "Noreste / 04 KT",
-                        nubosidad: "Nublado",
+                temp: "12 °C",
+                    viento: "Sureste / 03 KT",
+                        nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1706,7 +1868,7 @@
             lon: -71.571,
             vis: "10 km a más",
                 temp: "17 °C",
-                    viento: "Variable / 01 KT",
+                    viento: "Suroeste / 04 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1717,8 +1879,8 @@
                     lat: -17.697,
             lon: -71.343,
             vis: "10 km a más",
-                temp: "23 °C",
-                    viento: "Sureste / 05 KT",
+                temp: "24 °C",
+                    viento: "Sur / 08 KT",
                         nubosidad: "Sin nubes de importancia",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1729,7 +1891,7 @@
                     lat: -18.053,
             lon: -70.276,
             vis: "10 km a más",
-                temp: "22 °C",
+                temp: "24 °C",
                     viento: "Oeste / 02 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
@@ -1741,8 +1903,8 @@
                     lat: -13.535,
             lon: -71.939,
             vis: "10 km a más",
-                temp: "12 °C",
-                    viento: "Este / 03 KT",
+                temp: "14 °C",
+                    viento: "Noreste / 03 KT",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1775,6 +1937,35 @@
         };
 
         L.control.layers(baseMaps).addTo(map);
+
+        // Radar HUD Logic
+        function toggleRadar() {
+            const acc = document.getElementById('radar-accordion');
+            const arrow = document.getElementById('radar-arrow');
+            acc.classList.toggle('open');
+            arrow.style.transform = acc.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        function updateRadarHUD(icao, rule, vis) {
+            // Remove active classes from all rings
+            document.querySelectorAll('.pulse-circle').forEach(el => el.classList.remove('pulse-active'));
+            
+            // Add pulse to selected rule
+            const ringId = `radar-${rule.toLowerCase()}`;
+            const targetRing = document.getElementById(ringId);
+            if (targetRing) {
+                targetRing.classList.add('pulse-active');
+            }
+
+            // Update text displays
+            document.getElementById('radar-icao-text').innerText = icao;
+            document.getElementById('radar-vis-text').innerText = vis.toUpperCase();
+            
+            // Update mini status in header
+            const miniStatus = document.getElementById('radar-status-mini');
+            miniStatus.innerText = `${rule} ACTIVO`;
+            miniStatus.className = `px-2 py-0.5 rounded text-[8px] font-bold text-white uppercase bg-${rule.toLowerCase()}`;
+        }
 
         function getFlightRule(visText) {
             let visValue = 10;
@@ -1936,8 +2127,25 @@
 
         function zoomToStation(lat, lon, icao) {
             map.setView([lat, lon], 12);
+            
+            // Buscar la regla de vuelo para esta estación
+            const stationData = airports.find(a => a.icao === icao);
+            if (stationData) {
+                const rule = getFlightRule(stationData.vis);
+                updateRadarHUD(icao, rule, stationData.vis);
+            }
+
             if (markers[icao]) markers[icao].openPopup();
         }
+
+        // Inicializar Radar HUD con el primer aeropuerto
+        window.addEventListener('DOMContentLoaded', () => {
+            if (airports.length > 0) {
+                const first = airports[0];
+                const rule = getFlightRule(first.vis);
+                updateRadarHUD(first.icao, rule, first.vis);
+            }
+        });
 
         // PE Centering Button
         const homeControl = L.Control.extend({
