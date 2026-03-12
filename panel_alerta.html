@@ -193,6 +193,51 @@
             letter-spacing: 0.02em;
         }
 
+        /* Menu Dropdown Styles */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--tech-bg);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 10000;
+            border: 2px solid var(--tech-border);
+            margin-top: 2px;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-content {
+            display: block;
+        }
+
+        .nav-dropdown-item {
+            color: var(--tech-border);
+            padding: 8px 12px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .nav-dropdown-item:hover {
+            background-color: var(--tech-border);
+            color: white !important;
+        }
+
+        .dark .nav-dropdown-content {
+            background-color: #0f172a;
+        }
+
         /* ── Modal Reglas de Vuelo ── */
         #flight-rules-modal {
             display: none;
@@ -371,10 +416,28 @@
                     
                     <span>Tiempo Hoy</span>
                 </a>
-                <a href="tiempo_hoy.html" class="nav-btn" title="Dashboard Principal">
-                    
-                    <span>TIEMPO AEROPUERTOS</span>
-                </a>
+                <div class="nav-dropdown">
+                    <button class="nav-btn" title="Dashboard Principal">
+                        <span>TIEMPO AEROPUERTOS</span>
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-content">
+                        <a href="tiempo_hoy.html" class="nav-dropdown-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <span>METAR</span>
+                        </a>
+                        <a href="taf.html" class="nav-dropdown-item">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span>TAF</span>
+                        </a>
+                    </div>
+                </div>
                 <a href="panel_alerta.html" class="nav-btn active" title="Sistema de Alerta">
                     
                     <span>REGLAS DE VUELO</span>
@@ -391,7 +454,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">11/03/2026 20:41</p>
+                <p class="text-xl font-bold">11/03/2026 20:44</p>
             </div>
         </header>
 

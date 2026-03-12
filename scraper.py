@@ -232,6 +232,9 @@ def main():
     with open('panel_tecnico.html', 'w', encoding='utf-8') as f:
         f.write(env.get_template('panel_tecnico_template.html').render(airports=results, last_update=ahora))
     
+    with open('taf.html', 'w', encoding='utf-8') as f:
+        f.write(env.get_template('taf_template.html').render(airports=results, last_update=ahora))
+
     print("\n" + "="*60)
     print(f"🚀 DASHBOARDS ACTUALIZADOS: {len(results)} estaciones reales.")
     print("="*60)
