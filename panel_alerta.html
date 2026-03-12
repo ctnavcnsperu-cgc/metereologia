@@ -543,7 +543,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">11/03/2026 21:21</p>
+                <p class="text-xl font-bold">11/03/2026 21:25</p>
             </div>
         </header>
 
@@ -1309,11 +1309,26 @@
                 }
             });
 
+            // Update Table and Map Markers
             rows.forEach(row => {
-                if (selectedRule === 'ALL' || row.getAttribute('data-rule') === selectedRule) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
+                const icao = row.getAttribute('data-icao');
+                const rule = row.getAttribute('data-rule');
+                const shouldShow = (selectedRule === 'ALL' || rule === selectedRule);
+
+                // Table row
+                row.style.display = shouldShow ? '' : 'none';
+
+                // Map Marker
+                if (markers[icao]) {
+                    if (shouldShow) {
+                        if (!map.hasLayer(markers[icao])) {
+                            markers[icao].addTo(map);
+                        }
+                    } else {
+                        if (map.hasLayer(markers[icao])) {
+                            map.removeLayer(markers[icao]);
+                        }
+                    }
                 }
             });
 
