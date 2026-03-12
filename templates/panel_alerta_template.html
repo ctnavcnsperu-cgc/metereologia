@@ -1071,6 +1071,9 @@
                             </div>
                         </div>
                     `)
+                    .on('click', function() {
+                        updateRadarHUD(air.icao, rule, air.vis);
+                    })
                     .addTo(map);
 
                 markers[air.icao] = marker;
@@ -1081,6 +1084,17 @@
                     const priorities = { 'LIFR': 1, 'IFR': 2, 'MVFR': 3, 'VFR': 4 };
                     row.setAttribute('data-priority', priorities[rule] || 99);
                     row.setAttribute('data-rule', rule);
+                    
+                    // Al hacer clic en la fila (no solo en el botón), actualizar radar
+                    row.addEventListener('click', (e) => {
+                        // Evitar disparar si se hace clic en el botón de zoom (que ya tiene su función)
+                        if (!e.target.closest('button')) {
+                            updateRadarHUD(air.icao, rule, air.vis);
+                            // También centrar en el mapa suavemente
+                            map.panTo([air.lat, air.lon]);
+                            markers[air.icao].openPopup();
+                        }
+                    });
                 }
             }
         });
@@ -1143,6 +1157,17 @@
                     }
                 }
             });
+
+            // Sincronizar Radar con el primer elemento visible después del filtro
+            const firstVisible = Array.from(rows).find(r => r.style.display !== 'none');
+            if (firstVisible) {
+                const icao = firstVisible.getAttribute('data-icao');
+                const station = airports.find(a => a.icao === icao);
+                if (station) {
+                    const rule = getFlightRule(station.vis);
+                    updateRadarHUD(icao, rule, station.vis);
+                }
+            }
 
             document.getElementById('rule-filter-dropdown').classList.remove('open');
         }
