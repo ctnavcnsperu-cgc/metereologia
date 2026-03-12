@@ -151,11 +151,11 @@
             color: #d946ef;
         }
 
-        /* Stroke colors for SVG Radar */
-        .stroke-vfr { stroke: #22c55e; }
-        .stroke-mvfr { stroke: #3b82f6; }
-        .stroke-ifr { stroke: #ef4444; }
-        .stroke-lifr { stroke: #d946ef; }
+        /* Stroke and Color definitions for SVG Radar - Ensuring visibility */
+        .stroke-vfr { stroke: #22c55e !important; color: #22c55e !important; }
+        .stroke-mvfr { stroke: #3b82f6 !important; color: #3b82f6 !important; }
+        .stroke-ifr { stroke: #ef4444 !important; color: #ef4444 !important; }
+        .stroke-lifr { stroke: #d946ef !important; color: #d946ef !important; }
 
         .leaflet-control-layers {
             background: var(--tech-bg) !important;
@@ -561,24 +561,30 @@
 
         .pulse-active {
             animation: radar-pulse 2s infinite ease-out;
-            opacity: 1;
-            stroke-width: 3px;
-            filter: drop-shadow(0 0 8px currentColor);
+            opacity: 1 !important;
+            stroke-width: 4px !important;
         }
+
+        .radar-glow-vfr { filter: drop-shadow(0 0 12px #22c55e); }
+        .radar-glow-mvfr { filter: drop-shadow(0 0 12px #3b82f6); }
+        .radar-glow-ifr { filter: drop-shadow(0 0 12px #ef4444); }
+        .radar-glow-lifr { filter: drop-shadow(0 0 12px #d946ef); }
 
         .radar-label {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 8px;
+            font-size: 9px;
             font-weight: 900;
-            fill: rgba(255, 255, 255, 0.2);
+            fill: rgba(255, 255, 255, 0.15);
             text-transform: uppercase;
             transition: all 0.5s ease;
+            pointer-events: none;
         }
 
         .radar-label-active {
-            fill: #ffffff;
-            font-size: 10px;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            fill: #ffffff !important;
+            font-size: 11px !important;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+            opacity: 1 !important;
         }
 
         .radar-info-box {
@@ -979,7 +985,9 @@
 
         function updateRadarHUD(icao, rule, vis) {
             // Remove active classes from all rings and labels
-            document.querySelectorAll('.pulse-circle').forEach(el => el.classList.remove('pulse-active'));
+            document.querySelectorAll('.pulse-circle').forEach(el => {
+                el.classList.remove('pulse-active', 'radar-glow-vfr', 'radar-glow-mvfr', 'radar-glow-ifr', 'radar-glow-lifr');
+            });
             document.querySelectorAll('.radar-label').forEach(el => el.classList.remove('radar-label-active'));
             
             // Add pulse to selected ring and highlight label
@@ -987,7 +995,9 @@
             const targetRing = document.getElementById(`radar-${ruleLower}`);
             const targetLabel = document.getElementById(`label-${ruleLower}`);
             
-            if (targetRing) targetRing.classList.add('pulse-active');
+            if (targetRing) {
+                targetRing.classList.add('pulse-active', `radar-glow-${ruleLower}`);
+            }
             if (targetLabel) targetLabel.classList.add('radar-label-active');
 
             // Update text displays
