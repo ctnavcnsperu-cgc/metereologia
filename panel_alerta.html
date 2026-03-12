@@ -390,6 +390,95 @@
             background: #033663;
             border-color: #033663;
         }
+
+        /* Rule Filter Dropdown */
+        .filter-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .filter-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: var(--tech-bg);
+            min-width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border: 2px solid var(--tech-border);
+            margin-top: 5px;
+        }
+
+        .dark .filter-dropdown-content {
+            background-color: #0f172a;
+        }
+
+        .filter-dropdown.open .filter-dropdown-content {
+            display: block;
+        }
+
+        .filter-item {
+            padding: 8px 12px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--tech-border);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .dark .filter-item {
+            border-bottom-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .filter-item:last-child {
+            border-bottom: none;
+        }
+
+        .filter-item:hover {
+            background-color: var(--tech-border);
+            color: white !important;
+        }
+
+        .filter-item.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+
+        .filter-item.active {
+            background-color: var(--tech-border);
+            color: white !important;
+        }
+
+        .filter-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .filter-count {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 1px 5px;
+            border-radius: 10px;
+            font-size: 9px;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        .dark .filter-count {
+            background: rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
 
@@ -454,7 +543,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">11/03/2026 21:11</p>
+                <p class="text-xl font-bold">11/03/2026 21:15</p>
             </div>
         </header>
 
@@ -514,7 +603,52 @@
                         <thead>
                             <tr class="tech-header text-[10px]">
                                 <th class="tech-cell">ICAO</th>
-                                <th class="tech-cell">REGLA VUELO</th>
+                                <th class="tech-cell relative">
+                                    <div class="flex items-center justify-between">
+                                        <span>REGLA VUELO</span>
+                                        <div class="filter-dropdown" id="rule-filter-dropdown">
+                                            <button class="hover:text-sky-400 transition-colors" onclick="toggleFilter(event)" title="Filtrar por regla">
+                                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            <div class="filter-dropdown-content">
+                                                <div class="filter-item active" onclick="filterByRule('ALL')">
+                                                    <span>Todas</span>
+                                                    <span class="filter-count" id="count-all">0</span>
+                                                </div>
+                                                <div class="filter-item" onclick="filterByRule('VFR')" id="filter-vfr">
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="filter-dot bg-vfr"></span>
+                                                        <span>VFR</span>
+                                                    </div>
+                                                    <span class="filter-count" id="count-vfr">0</span>
+                                                </div>
+                                                <div class="filter-item" onclick="filterByRule('MVFR')" id="filter-mvfr">
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="filter-dot bg-mvfr"></span>
+                                                        <span>MVFR</span>
+                                                    </div>
+                                                    <span class="filter-count" id="count-mvfr">0</span>
+                                                </div>
+                                                <div class="filter-item" onclick="filterByRule('IFR')" id="filter-ifr">
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="filter-dot bg-ifr"></span>
+                                                        <span>IFR</span>
+                                                    </div>
+                                                    <span class="filter-count" id="count-ifr">0</span>
+                                                </div>
+                                                <div class="filter-item" onclick="filterByRule('LIFR')" id="filter-lifr">
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="filter-dot bg-lifr"></span>
+                                                        <span>LIFR</span>
+                                                    </div>
+                                                    <span class="filter-count" id="count-lifr">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
                                 <th class="tech-cell">VISIBILIDAD</th>
                                 <th class="tech-cell">FENÓMENOS</th>
                                 <th class="tech-cell text-right">ACCIÓN</th>
@@ -1083,12 +1217,17 @@
         }
 
         const markers = {};
+        const ruleCounts = { 'VFR': 0, 'MVFR': 0, 'IFR': 0, 'LIFR': 0, 'ALL': 0 };
 
         airports.forEach(air => {
             if (air.lat && air.lat !== 0) {
                 const rule = getFlightRule(air.vis);
                 const colorClass = `bg-${rule.toLowerCase()}`;
                 const textClass = `text-${rule.toLowerCase()}`;
+
+                // Update count
+                ruleCounts[rule]++;
+                ruleCounts.ALL++;
 
                 // Update table tag
                 const tag = document.getElementById(`status-tag-${air.icao}`);
@@ -1124,14 +1263,70 @@
 
                 markers[air.icao] = marker;
 
-                // Guardar prioridad para el ordenamiento
+                // Guardar prioridad para el ordenamiento y el estado de la regla
                 const row = document.querySelector(`tr[data-icao="${air.icao}"]`);
                 if (row) {
                     const priorities = { 'LIFR': 1, 'IFR': 2, 'MVFR': 3, 'VFR': 4 };
                     row.setAttribute('data-priority', priorities[rule] || 99);
+                    row.setAttribute('data-rule', rule);
                 }
             }
         });
+
+        // --- Filter Logic ---
+        function toggleFilter(event) {
+            event.stopPropagation();
+            document.getElementById('rule-filter-dropdown').classList.toggle('open');
+        }
+
+        function updateFilterCounts() {
+            document.getElementById('count-all').innerText = ruleCounts.ALL;
+            ['VFR', 'MVFR', 'IFR', 'LIFR'].forEach(rule => {
+                const count = ruleCounts[rule];
+                const countElement = document.getElementById(`count-${rule.toLowerCase()}`);
+                const filterItem = document.getElementById(`filter-${rule.toLowerCase()}`);
+
+                if (countElement) countElement.innerText = count;
+                if (filterItem) {
+                    if (count === 0) {
+                        filterItem.classList.add('disabled');
+                    } else {
+                        filterItem.classList.remove('disabled');
+                    }
+                }
+            });
+        }
+
+        function filterByRule(selectedRule) {
+            const rows = document.querySelectorAll('tbody tr[data-icao]');
+            const items = document.querySelectorAll('.filter-item');
+
+            // Update active state in menu
+            items.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('onclick')?.includes(`'${selectedRule}'`)) {
+                    item.classList.add('active');
+                }
+            });
+
+            rows.forEach(row => {
+                if (selectedRule === 'ALL' || row.getAttribute('data-rule') === selectedRule) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            document.getElementById('rule-filter-dropdown').classList.remove('open');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            document.getElementById('rule-filter-dropdown').classList.remove('open');
+        });
+
+        // Initialize counts
+        updateFilterCounts();
 
         // Ordenar la tabla automáticamente al cargar: LIFR > IFR > MVFR > VFR
         function sortTableByRule() {
