@@ -731,7 +731,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">15/03/2026 07:51</p>
+                <p class="text-xl font-bold">15/03/2026 08:01</p>
             </div>
         </header>
 
@@ -1087,6 +1087,28 @@
                             </tr>
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                                data-icao="SPMS">
+                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPMS
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPMS"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold">5 km</td>
+                                <td class="tech-cell italic opacity-80">Lluvia débil</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-5.894, -76.118, 'SPMS')"
+                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPST">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPST
                                 </td>
@@ -1122,6 +1144,28 @@
                                 <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-8.378, -74.574, 'SPCL')"
+                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                                data-icao="SPNC">
+                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPNC
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPNC"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold">10 km a más</td>
+                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-9.879, -76.204, 'SPNC')"
                                         class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -1462,6 +1506,18 @@
         },
         
         {
+            icao: "SPMS",
+                nombre: "Aeropuerto de Yurimaguas/Moises Benzaquen Rengifo",
+                    lat: -5.894,
+            lon: -76.118,
+            vis: "5 km",
+                temp: "26 °C",
+                    viento: "Noroeste / 07 KT",
+                        nubosidad: "Nublado",
+                            fenomenos: "Lluvia débil"
+        },
+        
+        {
             icao: "SPST",
                 nombre: "Aeropuerto de Tarapoto/Cadete Guillermo del Castillo Paredes",
                     lat: -6.509,
@@ -1482,6 +1538,18 @@
                 temp: "25 °C",
                     viento: "Noreste / 03 KT",
                         nubosidad: "Cielo cubierto",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPNC",
+                nombre: "Aeropuerto de Huanuco/Alferez FAP David Figueroa Fernandini",
+                    lat: -9.879,
+            lon: -76.204,
+            vis: "10 km a más",
+                temp: "23 °C",
+                    viento: "Norte / 02 KT",
+                        nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
