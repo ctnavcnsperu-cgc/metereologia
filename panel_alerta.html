@@ -731,7 +731,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">23/03/2026 06:51</p>
+                <p class="text-xl font-bold">23/03/2026 06:57</p>
             </div>
         </header>
 
@@ -1109,6 +1109,28 @@
                             </tr>
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                                data-icao="SPHZ">
+                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPHZ
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPHZ"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold">8 km</td>
+                                <td class="tech-cell italic opacity-80">Chubasco en la vecindad</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-9.347, -77.598, 'SPHZ')"
+                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPJC">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPJC
                                 </td>
@@ -1427,6 +1449,18 @@
                     viento: "Sur / 03 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "Niebla"
+        },
+        
+        {
+            icao: "SPHZ",
+                nombre: "Aeropuerto de Anta - Huaraz/Cmdte. FAP German Arias Grazziani",
+                    lat: -9.347,
+            lon: -77.598,
+            vis: "8 km",
+                temp: "14 °C",
+                    viento: "Noroeste / 05 KT",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "Chubasco en la vecindad"
         },
         
         {
