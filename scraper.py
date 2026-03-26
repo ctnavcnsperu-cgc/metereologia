@@ -10,25 +10,40 @@ import urllib3
 # Desactivar advertencias
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Códigos internos de  y Coordenadas GPS
+# Códigos internos de CORPAC y Coordenadas GPS (Fuente: CORPAC Estaciones Meteorológicas - DMS convertido a decimal)
 AIRPORT_MAPPING = [
-    # (ICAO, ID_POST, LAT, LON)
-    ('SPTU', 'sptu', -3.552, -80.379), ('SPME', 'spme', -4.442, -81.224),
-    ('SPYL', 'spyl', -4.580, -81.251), ('SPUR', 'spur', -5.209, -80.616),
-    ('SPJE', 'spje', -5.592, -78.771), ('SPJA', 'spja', -6.061, -77.157),
-    ('SPHI', 'sphi', -6.787, -79.828), ('SPJR', 'spjr', -7.139, -78.489),
-    ('SPRU', 'spru', -8.082, -79.109), ('SPPY', 'sppy', -6.202, -77.856),
-    ('SPQT', 'spqt', -3.785, -73.309), ('SPMS', 'spms', -5.894, -76.118),
-    ('SPST', 'spst', -6.509, -76.372), ('SPJI', 'spji', -7.170, -76.729),
-    ('SPCL', 'spcl', -8.378, -74.574), ('SPAY', 'spay', -10.729, -73.766),
-    ('SPWT', 'spwt', -7.352, -75.006), ('SPMF', 'spmf', -11.325, -74.536),
-    ('SPEO', 'speo', -9.150, -78.524), ('SPHZ', 'sphz', -9.347, -77.598),
-    ('SPNC', 'spnc', -9.879, -76.204), ('SPJC', 'spjc', -12.022, -77.114),
-    ('SPJJ', 'spjj', -11.783, -75.473), ('SPGM', 'spgm', -9.300, -76.000),
-    ('SPSO', 'spso', -13.744, -76.222), ('SPZA', 'spza', -14.853, -74.962),
-    ('SPJL', 'spjl', -15.467, -70.158), ('SPQU', 'spqu', -16.341, -71.571),
-    ('SPLO', 'splo', -17.697, -71.343), ('SPTN', 'sptn', -18.053, -70.276),
-    ('SPZO', 'spzo', -13.535, -71.939)
+    # (ICAO, ID_POST, LAT, LON) — Coordenadas oficiales CORPAC (DMS → Decimal: -(DD + MM/60))
+    ('SPME', 'spme', -3.550, -80.383),   # Tumbes         03°33'S  80°23'W
+    ('SPQT', 'spqt', -3.783, -73.300),   # Iquitos        03°47'S  73°18'W
+    ('SPYL', 'spyl', -4.567, -81.250),   # Talara         04°34'S  81°15'W
+    ('SPUR', 'spur', -5.200, -80.600),   # Piura          05°12'S  80°36'W
+    ('SPJE', 'spje', -5.583, -78.767),   # Jaén           05°35'S  78°46'W
+    ('SPMS', 'spms', -5.883, -76.117),   # Yurimaguas     05°53'S  76°07'W
+    ('SPJA', 'spja', -6.067, -77.150),   # Rioja          06°04'S  77°09'W
+    ('SPPY', 'sppy', -6.200, -77.850),   # Chachapoyas    06°12'S  77°51'W
+    ('SPHI', 'sphi', -6.783, -79.817),   # Chiclayo       06°47'S  79°49'W
+    ('SPST', 'spst', -6.500, -76.367),   # Tarapoto       06°30'S  76°22'W
+    ('SPJR', 'spjr', -7.133, -78.483),   # Cajamarca      07°08'S  78°29'W
+    ('SPJI', 'spji', -7.167, -76.717),   # Juanjuí        07°10'S  76°43'W
+    ('SPWT', 'spwt', -7.336, -74.993),   # Contamana      07°20'S  74°59'W (OurAirports)
+    ('SPRU', 'spru', -8.083, -79.100),   # Trujillo       08°05'S  79°06'W
+    ('SPCL', 'spcl', -8.367, -74.567),   # Pucallpa       08°22'S  74°34'W
+    ('SPEO', 'speo', -9.133, -78.517),   # Chimbote       09°08'S  78°31'W
+    ('SPGM', 'spgm', -9.283, -76.000),   # Tingo María    09°17'S  76°00'W
+    ('SPHZ', 'sphz', -9.350, -77.600),   # Anta/Huaraz    09°21'S  77°36'W
+    ('SPNC', 'spnc', -9.867, -76.200),   # Huánuco        09°52'S  76°12'W
+    ('SPAY', 'spay', -10.717, -73.767),  # Atalaya        10°43'S  73°46'W
+    ('SPMF', 'spmf', -11.333, -74.550),  # Mazamari       11°20'S  74°33'W
+    ('SPJJ', 'spjj', -11.767, -75.467),  # Jauja          11°46'S  75°28'W
+    ('SPJC', 'spjc', -12.017, -77.117),  # Lima/Callao    12°01'S  77°07'W
+    ('SPTU', 'sptu', -12.600, -69.217),  # Pto.Maldonado  12°36'S  69°13'W
+    ('SPZO', 'spzo', -13.533, -71.933),  # Cusco          13°32'S  71°56'W
+    ('SPSO', 'spso', -13.733, -76.217),  # Pisco          13°44'S  76°13'W
+    ('SPZA', 'spza', -14.850, -74.950),  # Nazca          14°51'S  74°57'W
+    ('SPJL', 'spjl', -15.467, -70.150),  # Juliaca        15°28'S  70°09'W
+    ('SPQU', 'spqu', -16.333, -71.567),  # Arequipa       16°20'S  71°34'W
+    ('SPLO', 'splo', -17.683, -71.350),  # Ilo            17°41'S  71°21'W
+    ('SPTN', 'sptn', -18.050, -70.267),  # Tacna          18°03'S  70°16'W
 ]
 
 # Coordenadas ciudades del mapa index
@@ -60,8 +75,11 @@ HEADERS = {
 
 def clean(text):
     if not text: return "---"
-    # Quitar &nbsp;, saltos de línea y espacios múltiples
+    # Quitar &nbsp;
     text = text.replace('\xa0', ' ')
+    # Caso específico CORPAC: "UTC o" -> "UTC o"
+    text = text.replace('UTCo', 'UTC o')
+    # Quitar saltos de línea y espacios múltiples
     text = re.sub(r'\s+', ' ', text).strip()
     return text if text else "---"
 
