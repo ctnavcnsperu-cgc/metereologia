@@ -469,7 +469,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">27/03/2026 14:51</p>
+                <p class="text-xl font-bold">27/03/2026 15:01</p>
             </div>
         </header>
 
@@ -633,6 +633,38 @@
                             <span class="condition-icon text-sm" data-fen="No hay fenómeno meteorológico"
                                 data-nub="Sin nubes bajo los 1500m"></span>
                             <span>Sin nubes bajo los 1500m | No hay fenómeno meteorológico</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-2 border-[--tech-border] bg-white/50 dark:bg-slate-900/50 p-4 hover:border-sky-400 transition-all cursor-pointer group shadow-sm"
+                        onclick="zoomToStation(-5.583, -78.767, 'SPJE')">
+                        <!-- Header Row: ICAO + Time -->
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-blue-900 dark:text-sky-400 font-mono group-hover:underline italic">SPJE</span>
+                                <span class="text-[10px] uppercase text-slate-500 font-semibold tracking-wide">Aeropuerto de Jaen</span>
+                            </div>
+                            <span class="text-[10px] font-bold bg-sky-900 text-white px-2 py-0.5">19:00 UTC o14:00 hrs. (Local)</span>
+                        </div>
+                        <!-- Data Row: Wind + Visibility -->
+                        <div class="grid grid-cols-2 gap-4 text-[12px] mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Viento">&#x1F4A8;</span>
+                                <span class="font-bold border-l-2 border-sky-500 pl-2">Este / 03 KT</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Visibilidad">&#x1F441;&#xFE0F;</span>
+                                <span
+                                    class="font-bold text-emerald-600 dark:text-emerald-400 border-l-2 border-emerald-500 pl-2">10 km a más</span>
+                            </div>
+                        </div>
+                        <!-- Conditions Row: Sky + Phenomena -->
+                        <div
+                            class="flex items-center gap-2 text-[10px] uppercase font-bold italic opacity-80 border-t border-[--tech-border] pt-2 mt-2">
+                            <span class="condition-icon text-sm" data-fen="No hay fenómeno meteorológico"
+                                data-nub="Cielo cubierto"></span>
+                            <span>Cielo cubierto | No hay fenómeno meteorológico</span>
                         </div>
                     </div>
                     
@@ -1131,7 +1163,7 @@
                         <div class="grid grid-cols-2 gap-4 text-[12px] mb-2">
                             <div class="flex items-center gap-2">
                                 <span class="text-base" title="Viento">&#x1F4A8;</span>
-                                <span class="font-bold border-l-2 border-sky-500 pl-2">Noreste / 05 KT</span>
+                                <span class="font-bold border-l-2 border-sky-500 pl-2">Sureste / 06 KT</span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <span class="text-base" title="Visibilidad">&#x1F441;&#xFE0F;</span>
@@ -1142,9 +1174,9 @@
                         <!-- Conditions Row: Sky + Phenomena -->
                         <div
                             class="flex items-center gap-2 text-[10px] uppercase font-bold italic opacity-80 border-t border-[--tech-border] pt-2 mt-2">
-                            <span class="condition-icon text-sm" data-fen="Lluvia débil"
-                                data-nub="Cielo cubierto"></span>
-                            <span>Cielo cubierto | Lluvia débil</span>
+                            <span class="condition-icon text-sm" data-fen="Chubasco en la vecindad"
+                                data-nub="Parcialmente nublado"></span>
+                            <span>Parcialmente nublado | Chubasco en la vecindad</span>
                         </div>
                     </div>
                     
@@ -1531,6 +1563,17 @@
         },
         
         {
+            icao: "SPJE",
+                nombre: "Aeropuerto de Jaen",
+                    lat: -5.583,
+            lon: -78.767,
+            vis: "10 km a más",
+                viento: "Este / 03 KT",
+                    nubosidad: "Cielo cubierto",
+                        fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
             icao: "SPMS",
                 nombre: "Aeropuerto de Yurimaguas/Moises Benzaquen Rengifo",
                     lat: -5.883,
@@ -1701,9 +1744,9 @@
                     lat: -11.767,
             lon: -75.467,
             vis: "10 km a más",
-                viento: "Noreste / 05 KT",
-                    nubosidad: "Cielo cubierto",
-                        fenomenos: "Lluvia débil"
+                viento: "Sureste / 06 KT",
+                    nubosidad: "Parcialmente nublado",
+                        fenomenos: "Chubasco en la vecindad"
         },
         
         {
