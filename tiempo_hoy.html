@@ -507,7 +507,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">28/03/2026 16:51</p>
+                <p class="text-xl font-bold">28/03/2026 17:01</p>
             </div>
         </header>
 
@@ -539,7 +539,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPME 280320261651Z Noroeste07 KT 9999 Parcialmente nublado 31/23 Q1007</span>
+                        <span class="italic truncate tracking-tight">SPME 280320261701Z Noroeste07 KT 9999 Parcialmente nublado 31/23 Q1007</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -597,6 +597,82 @@
                     </table>
                 </div>
                 
+                <div id="card-SPQT" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
+                    <div class="flex cursor-pointer hover:opacity-80 transition-opacity" onclick="zoomToAirport('SPQT')" title="Ver en el mapa (Máximo Zoom)">
+                        <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H3l-2 1v3.5l1.5 1.5H6L7 19l3-2 3.5 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1Z" />
+                            </svg>
+                            <span class="hover:text-yellow-300 transition-colors">AEROPUERTO: Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett</span>
+                        </div>
+                        <div class="w-1/3 tech-cell monospace text-right font-bold text-sm bg-blue-50 dark:bg-slate-800">
+                            <span class="opacity-60 mr-2 text-[10px]">ICAO:</span> <span class="text-blue-700 dark:text-sky-300 hover:text-yellow-500 dark:hover:text-yellow-300">SPQT</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
+                        <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
+                        <span class="italic truncate tracking-tight">SPQT 280320261701Z Sur03 KT 9999 Cielo cubierto 32/25 Q1008</span>
+                    </div>
+
+                    <!-- Instrumentos -->
+                    <div
+                        class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
+                        <span>INSTRUMENTO: VIENTO</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 20:00 UTC o15:00 hrs. (Local)</span>
+                    </div>
+
+                    <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
+                        <tbody>
+                            <tr>
+                                <td class="w-1/2 p-2 text-center border-r border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] uppercase font-bold opacity-70 mb-0.5 block">Dirección</span>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <span class="text-lg font-black uppercase monospace">Sur</span>
+                                        <span class="text-xl">🧭</span>
+                                    </div>
+                                </td>
+                                <td class="w-1/2 p-2 text-center border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] uppercase font-bold opacity-70 mb-0.5 block">Velocidad</span>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <span class="text-xl font-black monospace">03 KT</span>
+                                        <span class="text-xl">🚩</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border-r border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[9px] font-bold opacity-70 uppercase">Temperatura</span>
+                                        <span class="text-xl">🌡️</span>
+                                    </div>
+                                    <div class="text-xl font-black monospace text-indigo-700 dark:text-sky-400 mt-[-2px]">32 °C</div>
+                                </td>
+                                <td class="p-2 border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[9px] font-bold opacity-70 uppercase">Rocío</span>
+                                        <span class="text-xl">💧</span>
+                                    </div>
+                                    <div class="text-xl font-black monospace text-slate-500 dark:text-slate-400 mt-[-2px]">25 °C</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-slate-50/50 dark:bg-slate-900/20">
+                                <td class="p-2 border-r" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] font-bold opacity-70 block uppercase">Nubosidad</span>
+                                    <span class="text-xs font-bold uppercase">Cielo cubierto</span>
+                                </td>
+                                <td class="p-2">
+                                    <span class="text-[9px] font-bold opacity-70 block uppercase">Fenómenos</span>
+                                    <span class="text-xs font-bold uppercase text-red-600 dark:text-red-400">No hay fenómeno meteorológico</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
                 <div id="card-SPYL" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
                     <div class="flex cursor-pointer hover:opacity-80 transition-opacity" onclick="zoomToAirport('SPYL')" title="Ver en el mapa (Máximo Zoom)">
                         <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
@@ -615,7 +691,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPYL 280320261651Z Sur12 KT 9999 Sin nubes bajo los 1500m 27/20 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPYL 280320261701Z Sur12 KT 9999 Sin nubes bajo los 1500m 27/20 Q1008</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -673,6 +749,82 @@
                     </table>
                 </div>
                 
+                <div id="card-SPUR" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
+                    <div class="flex cursor-pointer hover:opacity-80 transition-opacity" onclick="zoomToAirport('SPUR')" title="Ver en el mapa (Máximo Zoom)">
+                        <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H3l-2 1v3.5l1.5 1.5H6L7 19l3-2 3.5 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1Z" />
+                            </svg>
+                            <span class="hover:text-yellow-300 transition-colors">AEROPUERTO: Aeropuerto de Piura/Capitan FAP Guillemo Concha Iberico</span>
+                        </div>
+                        <div class="w-1/3 tech-cell monospace text-right font-bold text-sm bg-blue-50 dark:bg-slate-800">
+                            <span class="opacity-60 mr-2 text-[10px]">ICAO:</span> <span class="text-blue-700 dark:text-sky-300 hover:text-yellow-500 dark:hover:text-yellow-300">SPUR</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
+                        <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
+                        <span class="italic truncate tracking-tight">SPUR 280320261701Z Suroeste10 KT 9999 Sin nubes bajo los 1500m 33/19 Q1008</span>
+                    </div>
+
+                    <!-- Instrumentos -->
+                    <div
+                        class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
+                        <span>INSTRUMENTO: VIENTO</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 20:00 UTC o15:00 hrs. (Local)</span>
+                    </div>
+
+                    <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
+                        <tbody>
+                            <tr>
+                                <td class="w-1/2 p-2 text-center border-r border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] uppercase font-bold opacity-70 mb-0.5 block">Dirección</span>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <span class="text-lg font-black uppercase monospace">Suroeste</span>
+                                        <span class="text-xl">🧭</span>
+                                    </div>
+                                </td>
+                                <td class="w-1/2 p-2 text-center border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] uppercase font-bold opacity-70 mb-0.5 block">Velocidad</span>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <span class="text-xl font-black monospace">10 KT</span>
+                                        <span class="text-xl">🚩</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border-r border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[9px] font-bold opacity-70 uppercase">Temperatura</span>
+                                        <span class="text-xl">🌡️</span>
+                                    </div>
+                                    <div class="text-xl font-black monospace text-indigo-700 dark:text-sky-400 mt-[-2px]">33 °C</div>
+                                </td>
+                                <td class="p-2 border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[9px] font-bold opacity-70 uppercase">Rocío</span>
+                                        <span class="text-xl">💧</span>
+                                    </div>
+                                    <div class="text-xl font-black monospace text-slate-500 dark:text-slate-400 mt-[-2px]">19 °C</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-slate-50/50 dark:bg-slate-900/20">
+                                <td class="p-2 border-r" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] font-bold opacity-70 block uppercase">Nubosidad</span>
+                                    <span class="text-xs font-bold uppercase">Sin nubes bajo los 1500m</span>
+                                </td>
+                                <td class="p-2">
+                                    <span class="text-[9px] font-bold opacity-70 block uppercase">Fenómenos</span>
+                                    <span class="text-xs font-bold uppercase text-red-600 dark:text-red-400">No hay fenómeno meteorológico</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
                 <div id="card-SPMS" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
                     <div class="flex cursor-pointer hover:opacity-80 transition-opacity" onclick="zoomToAirport('SPMS')" title="Ver en el mapa (Máximo Zoom)">
                         <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
@@ -691,7 +843,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPMS 280320261651Z Sureste04 KT 9999 Nublado 30/23 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPMS 280320261701Z Sureste04 KT 9999 Nublado 30/23 Q1008</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -767,7 +919,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPPY 280320261651Z Noroeste11 KT 9999 Cielo cubierto 20/12 Q1023</span>
+                        <span class="italic truncate tracking-tight">SPPY 280320261701Z Noroeste11 KT 9999 Cielo cubierto 20/12 Q1023</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -843,7 +995,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPHI 280320261651Z Sur18 KT 9999 Sin nubes bajo los 1500m 27/20 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPHI 280320261701Z Sur18 KT 9999 Sin nubes bajo los 1500m 27/20 Q1008</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -919,7 +1071,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPST 280320261651Z Noroeste04 KT 9999 Nublado 31/23 Q1007</span>
+                        <span class="italic truncate tracking-tight">SPST 280320261701Z Noroeste04 KT 9999 Nublado 31/23 Q1007</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -995,7 +1147,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPJR 280320261651Z Variable03 KT 9999 Cielo cubierto 18/12 Q1024</span>
+                        <span class="italic truncate tracking-tight">SPJR 280320261701Z Variable03 KT 9999 Cielo cubierto 18/12 Q1024</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1071,7 +1223,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPJI 280320261651Z Sur03 KT 9999 Cielo cubierto 32/24 Q1008</span>
+                        <span class="italic truncate tracking-tight">SPJI 280320261701Z Sur03 KT 9999 Cielo cubierto 32/24 Q1008</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1147,7 +1299,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPRU 280320261651Z Sureste11 KT 9999 Sin nubes de importancia 24/21 Q1009</span>
+                        <span class="italic truncate tracking-tight">SPRU 280320261701Z Sureste11 KT 9999 Sin nubes de importancia 24/21 Q1009</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1223,7 +1375,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPCL 280320261651Z Sur04 KT 9999 Cielo cubierto 27/24 Q1007</span>
+                        <span class="italic truncate tracking-tight">SPCL 280320261701Z Sur04 KT 9999 Cielo cubierto 27/24 Q1007</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1299,7 +1451,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPEO 280320261651Z Sur15 KT 9999 Sin nubes bajo los 1500m 23/20 Q1009</span>
+                        <span class="italic truncate tracking-tight">SPEO 280320261701Z Sur15 KT 9999 Sin nubes bajo los 1500m 23/20 Q1009</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1375,7 +1527,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPHZ 280320261651Z Norte13 KT 9999 Cielo cubierto 22/07 Q1022</span>
+                        <span class="italic truncate tracking-tight">SPHZ 280320261701Z Norte13 KT 9999 Cielo cubierto 22/07 Q1022</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1451,7 +1603,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPNC 280320261651Z Noreste12 KT 9999 Nublado 23/14 Q1017</span>
+                        <span class="italic truncate tracking-tight">SPNC 280320261701Z Noreste12 KT 9999 Nublado 23/14 Q1017</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1527,7 +1679,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPAY 280320261651Z Variable02 KT 9999 Cielo cubierto 29/24 Q1009</span>
+                        <span class="italic truncate tracking-tight">SPAY 280320261701Z Variable02 KT 9999 Cielo cubierto 29/24 Q1009</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1603,7 +1755,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPMF 280320261651Z Sur03 KT 9999 Nublado 26/22 Q1013</span>
+                        <span class="italic truncate tracking-tight">SPMF 280320261701Z Sur03 KT 9999 Nublado 26/22 Q1013</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1661,6 +1813,158 @@
                     </table>
                 </div>
                 
+                <div id="card-SPJJ" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
+                    <div class="flex cursor-pointer hover:opacity-80 transition-opacity" onclick="zoomToAirport('SPJJ')" title="Ver en el mapa (Máximo Zoom)">
+                        <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H3l-2 1v3.5l1.5 1.5H6L7 19l3-2 3.5 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1Z" />
+                            </svg>
+                            <span class="hover:text-yellow-300 transition-colors">AEROPUERTO: Aeropuerto de Jauja</span>
+                        </div>
+                        <div class="w-1/3 tech-cell monospace text-right font-bold text-sm bg-blue-50 dark:bg-slate-800">
+                            <span class="opacity-60 mr-2 text-[10px]">ICAO:</span> <span class="text-blue-700 dark:text-sky-300 hover:text-yellow-500 dark:hover:text-yellow-300">SPJJ</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
+                        <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
+                        <span class="italic truncate tracking-tight">SPJJ 280320261701Z Variable03 KT 9999 Cielo cubierto 17/06 Q1028</span>
+                    </div>
+
+                    <!-- Instrumentos -->
+                    <div
+                        class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
+                        <span>INSTRUMENTO: VIENTO</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 20:00 UTC o15:00 hrs. (Local)</span>
+                    </div>
+
+                    <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
+                        <tbody>
+                            <tr>
+                                <td class="w-1/2 p-2 text-center border-r border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] uppercase font-bold opacity-70 mb-0.5 block">Dirección</span>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <span class="text-lg font-black uppercase monospace">Variable</span>
+                                        <span class="text-xl">🧭</span>
+                                    </div>
+                                </td>
+                                <td class="w-1/2 p-2 text-center border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] uppercase font-bold opacity-70 mb-0.5 block">Velocidad</span>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <span class="text-xl font-black monospace">03 KT</span>
+                                        <span class="text-xl">🚩</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border-r border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[9px] font-bold opacity-70 uppercase">Temperatura</span>
+                                        <span class="text-xl">🌡️</span>
+                                    </div>
+                                    <div class="text-xl font-black monospace text-indigo-700 dark:text-sky-400 mt-[-2px]">17 °C</div>
+                                </td>
+                                <td class="p-2 border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[9px] font-bold opacity-70 uppercase">Rocío</span>
+                                        <span class="text-xl">💧</span>
+                                    </div>
+                                    <div class="text-xl font-black monospace text-slate-500 dark:text-slate-400 mt-[-2px]">06 °C</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-slate-50/50 dark:bg-slate-900/20">
+                                <td class="p-2 border-r" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] font-bold opacity-70 block uppercase">Nubosidad</span>
+                                    <span class="text-xs font-bold uppercase">Cielo cubierto</span>
+                                </td>
+                                <td class="p-2">
+                                    <span class="text-[9px] font-bold opacity-70 block uppercase">Fenómenos</span>
+                                    <span class="text-xs font-bold uppercase text-red-600 dark:text-red-400">No hay fenómeno meteorológico</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div id="card-SPTU" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
+                    <div class="flex cursor-pointer hover:opacity-80 transition-opacity" onclick="zoomToAirport('SPTU')" title="Ver en el mapa (Máximo Zoom)">
+                        <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H3l-2 1v3.5l1.5 1.5H6L7 19l3-2 3.5 5.2c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1Z" />
+                            </svg>
+                            <span class="hover:text-yellow-300 transition-colors">AEROPUERTO: Aeropuerto de Pto Maldonado/Padre Aldamiz</span>
+                        </div>
+                        <div class="w-1/3 tech-cell monospace text-right font-bold text-sm bg-blue-50 dark:bg-slate-800">
+                            <span class="opacity-60 mr-2 text-[10px]">ICAO:</span> <span class="text-blue-700 dark:text-sky-300 hover:text-yellow-500 dark:hover:text-yellow-300">SPTU</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
+                        <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
+                        <span class="italic truncate tracking-tight">SPTU 280320261701Z Noroeste03 KT 9999 Nublado 23/23 Q1011</span>
+                    </div>
+
+                    <!-- Instrumentos -->
+                    <div
+                        class="tech-cell flex justify-between items-center bg-slate-200 dark:bg-slate-800 text-blue-900 dark:text-sky-300 font-bold text-[11px] uppercase border-t-0">
+                        <span>INSTRUMENTO: VIENTO</span>
+                        <span class="text-[10px] font-normal italic opacity-60">Sincronizado: 20:00 UTC o15:00 hrs. (Local)</span>
+                    </div>
+
+                    <table class="w-full table-fixed border-collapse" style="border-top: 1px solid var(--tech-border);">
+                        <tbody>
+                            <tr>
+                                <td class="w-1/2 p-2 text-center border-r border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] uppercase font-bold opacity-70 mb-0.5 block">Dirección</span>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <span class="text-lg font-black uppercase monospace">Noroeste</span>
+                                        <span class="text-xl">🧭</span>
+                                    </div>
+                                </td>
+                                <td class="w-1/2 p-2 text-center border-b" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] uppercase font-bold opacity-70 mb-0.5 block">Velocidad</span>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <span class="text-xl font-black monospace">03 KT</span>
+                                        <span class="text-xl">🚩</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border-r border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[9px] font-bold opacity-70 uppercase">Temperatura</span>
+                                        <span class="text-xl">🌡️</span>
+                                    </div>
+                                    <div class="text-xl font-black monospace text-indigo-700 dark:text-sky-400 mt-[-2px]">23 °C</div>
+                                </td>
+                                <td class="p-2 border-b" style="border-color: var(--tech-border);">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[9px] font-bold opacity-70 uppercase">Rocío</span>
+                                        <span class="text-xl">💧</span>
+                                    </div>
+                                    <div class="text-xl font-black monospace text-slate-500 dark:text-slate-400 mt-[-2px]">23 °C</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-slate-50/50 dark:bg-slate-900/20">
+                                <td class="p-2 border-r" style="border-color: var(--tech-border);">
+                                    <span class="text-[9px] font-bold opacity-70 block uppercase">Nubosidad</span>
+                                    <span class="text-xs font-bold uppercase">Nublado</span>
+                                </td>
+                                <td class="p-2">
+                                    <span class="text-[9px] font-bold opacity-70 block uppercase">Fenómenos</span>
+                                    <span class="text-xs font-bold uppercase text-red-600 dark:text-red-400">Lluvia</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
                 <div id="card-SPZO" class="station-card tech-grid bg-white dark:bg-black/40 shadow-sm">
                     <div class="flex cursor-pointer hover:opacity-80 transition-opacity" onclick="zoomToAirport('SPZO')" title="Ver en el mapa (Máximo Zoom)">
                         <div class="w-2/3 tech-cell tech-header flex items-center gap-3">
@@ -1679,7 +1983,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPZO 280320261651Z Este05 KT 9999 Cielo cubierto 17/09 Q1028</span>
+                        <span class="italic truncate tracking-tight">SPZO 280320261701Z Este05 KT 9999 Cielo cubierto 17/09 Q1028</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1755,7 +2059,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPSO 280320261651Z Suroeste15 KT 9999 Sin nubes bajo los 1500m 26/18 Q1009</span>
+                        <span class="italic truncate tracking-tight">SPSO 280320261701Z Suroeste15 KT 9999 Sin nubes bajo los 1500m 26/18 Q1009</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1831,7 +2135,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPZA 280320261651Z Sur13 KT 9999 Parcialmente nublado 31/13 Q1010</span>
+                        <span class="italic truncate tracking-tight">SPZA 280320261701Z Sur13 KT 9999 Parcialmente nublado 31/13 Q1010</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1907,7 +2211,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPJL 280320261651Z Sureste09 KT 9999 Despejado 15/03 Q1032</span>
+                        <span class="italic truncate tracking-tight">SPJL 280320261701Z Sureste09 KT 9999 Despejado 15/03 Q1032</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -1983,7 +2287,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPQU 280320261651Z Oeste10 KT 9999 Cielo cubierto 18/09 Q1025</span>
+                        <span class="italic truncate tracking-tight">SPQU 280320261701Z Oeste10 KT 9999 Cielo cubierto 18/09 Q1025</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -2059,7 +2363,7 @@
                     <div
                         class="tech-cell bg-slate-50 dark:bg-slate-900/80 monospace text-[11px] flex items-center overflow-hidden">
                         <span class="font-bold border-r border-current pr-2 mr-2 shrink-0">METAR</span>
-                        <span class="italic truncate tracking-tight">SPTN 280320261651Z Suroeste09 KT 9999 Sin nubes bajo los 1500m 23/14 Q1012</span>
+                        <span class="italic truncate tracking-tight">SPTN 280320261701Z Suroeste09 KT 9999 Sin nubes bajo los 1500m 23/14 Q1012</span>
                     </div>
 
                     <!-- Instrumentos -->
@@ -2138,12 +2442,34 @@
         },
         
         {
+            icao: "SPQT",
+                nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
+                    lat: "-3.783",
+                        lon: "-73.3",
+                            temp: "32 °C",
+                                viento: "Sur / 03 KT",
+                                    fenomenos: "No hay fenómeno meteorológico",
+                                        nubosidad: "Cielo cubierto"
+        },
+        
+        {
             icao: "SPYL",
                 nombre: "Aeropuerto de Talara/Capitan Montes",
                     lat: "-4.567",
                         lon: "-81.25",
                             temp: "27 °C",
                                 viento: "Sur / 12 KT",
+                                    fenomenos: "No hay fenómeno meteorológico",
+                                        nubosidad: "Sin nubes bajo los 1500m"
+        },
+        
+        {
+            icao: "SPUR",
+                nombre: "Aeropuerto de Piura/Capitan FAP Guillemo Concha Iberico",
+                    lat: "-5.2",
+                        lon: "-80.6",
+                            temp: "33 °C",
+                                viento: "Suroeste / 10 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
                                         nubosidad: "Sin nubes bajo los 1500m"
         },
@@ -2288,6 +2614,28 @@
                             temp: "26 °C",
                                 viento: "Sur / 03 KT",
                                     fenomenos: "No hay fenómeno meteorológico",
+                                        nubosidad: "Nublado"
+        },
+        
+        {
+            icao: "SPJJ",
+                nombre: "Aeropuerto de Jauja",
+                    lat: "-11.767",
+                        lon: "-75.467",
+                            temp: "17 °C",
+                                viento: "Variable / 03 KT",
+                                    fenomenos: "No hay fenómeno meteorológico",
+                                        nubosidad: "Cielo cubierto"
+        },
+        
+        {
+            icao: "SPTU",
+                nombre: "Aeropuerto de Pto Maldonado/Padre Aldamiz",
+                    lat: "-12.6",
+                        lon: "-69.217",
+                            temp: "23 °C",
+                                viento: "Noroeste / 03 KT",
+                                    fenomenos: "Lluvia",
                                         nubosidad: "Nublado"
         },
         
