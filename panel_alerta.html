@@ -731,7 +731,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">01/04/2026 05:01</p>
+                <p class="text-xl font-bold">01/04/2026 05:11</p>
             </div>
         </header>
 
@@ -942,7 +942,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">8 km</td>
+                                <td class="tech-cell font-bold">10 km a más</td>
                                 <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-3.783, -73.3, 'SPQT')"
@@ -1012,6 +1012,28 @@
                                 <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-6.783, -79.817, 'SPHI')"
+                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                                data-icao="SPJR">
+                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPJR
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPJR"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold">10 km a más</td>
+                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-7.133, -78.483, 'SPJR')"
                                         class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -1140,7 +1162,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">10 km a más</td>
+                                <td class="tech-cell font-bold">8 km</td>
                                 <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-13.733, -76.217, 'SPSO')"
@@ -1272,9 +1294,9 @@
                 nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
                     lat: -3.783,
             lon: -73.3,
-            vis: "8 km",
-                temp: "25 °C",
-                    viento: "Norte / 04 KT",
+            vis: "10 km a más",
+                temp: "24 °C",
+                    viento: "Variable / 02 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1285,9 +1307,9 @@
                     lat: -4.567,
             lon: -81.25,
             vis: "10 km a más",
-                temp: "24 °C",
-                    viento: "Sur / 06 KT",
-                        nubosidad: "Sin nubes bajo los 1500m",
+                temp: "25 °C",
+                    viento: "Sureste / 11 KT",
+                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1298,7 +1320,7 @@
             lon: -80.6,
             vis: "10 km a más",
                 temp: "25 °C",
-                    viento: "Sur / 07 KT",
+                    viento: "Sur / 06 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1310,7 +1332,19 @@
             lon: -79.817,
             vis: "10 km a más",
                 temp: "24 °C",
-                    viento: "Sureste / 05 KT",
+                    viento: "Sur / 05 KT",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPJR",
+                nombre: "Aeropuerto de Cajamarca/Mayor Gral.FAP Armando Revoredo Iglesias",
+                    lat: -7.133,
+            lon: -78.483,
+            vis: "10 km a más",
+                temp: "09 °C",
+                    viento: "Variable / 02 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1322,8 +1356,8 @@
             lon: -79.1,
             vis: "7 km",
                 temp: "23 °C",
-                    viento: "Sureste / 04 KT",
-                        nubosidad: "Nublado",
+                    viento: "Sureste / 05 KT",
+                        nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1334,7 +1368,7 @@
             lon: -74.567,
             vis: "10 km a más",
                 temp: "24 °C",
-                    viento: "Variable / 02 KT",
+                    viento: "Suroeste / 02 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1345,9 +1379,9 @@
                     lat: -11.767,
             lon: -75.467,
             vis: "10 km a más",
-                temp: "14 °C",
-                    viento: "Noreste / 04 KT",
-                        nubosidad: "Nublado",
+                temp: "08 °C",
+                    viento: "Calma / 0",
+                        nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1370,7 +1404,7 @@
             lon: -71.933,
             vis: "10 km a más",
                 temp: "08 °C",
-                    viento: "Oeste / 03 KT",
+                    viento: "Noroeste / 04 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1380,10 +1414,10 @@
                 nombre: "Aeropuerto de Pisco/Intl. Pisco",
                     lat: -13.733,
             lon: -76.217,
-            vis: "10 km a más",
+            vis: "8 km",
                 temp: "22 °C",
-                    viento: "Sur / 06 KT",
-                        nubosidad: "Sin nubes bajo los 1500m",
+                    viento: "Suroeste / 07 KT",
+                        nubosidad: "Sin nubes de importancia",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1393,9 +1427,9 @@
                     lat: -16.333,
             lon: -71.567,
             vis: "10 km a más",
-                temp: "13 °C",
-                    viento: "Oeste / 01 KT",
-                        nubosidad: "Parcialmente nublado",
+                temp: "12 °C",
+                    viento: "Este / 03 KT",
+                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1406,7 +1440,7 @@
             lon: -70.267,
             vis: "10 km a más",
                 temp: "20 °C",
-                    viento: "Calma / 0",
+                    viento: "Variable / 02 KT",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
