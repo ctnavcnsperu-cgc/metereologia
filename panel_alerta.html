@@ -731,7 +731,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">01/04/2026 23:01</p>
+                <p class="text-xl font-bold">01/04/2026 23:11</p>
             </div>
         </header>
 
@@ -933,28 +933,6 @@
                         <tbody class="divide-y divide-current">
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
-                                data-icao="SPME">
-                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPME
-                                </td>
-                                <td class="tech-cell">
-                                    <div id="status-tag-SPME"
-                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
-                                        ---
-                                    </div>
-                                </td>
-                                <td class="tech-cell font-bold">10 km a más</td>
-                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
-                                <td class="tech-cell text-right">
-                                    <button onclick="zoomToStation(-3.55, -80.383, 'SPME')"
-                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                        </svg>
-                                    </button>
-                                </td>
-                            </tr>
-                            
-                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPQT">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPQT
                                 </td>
@@ -1021,28 +999,6 @@
                             </tr>
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
-                                data-icao="SPST">
-                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPST
-                                </td>
-                                <td class="tech-cell">
-                                    <div id="status-tag-SPST"
-                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
-                                        ---
-                                    </div>
-                                </td>
-                                <td class="tech-cell font-bold">10 km a más</td>
-                                <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
-                                <td class="tech-cell text-right">
-                                    <button onclick="zoomToStation(-6.5, -76.367, 'SPST')"
-                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                        </svg>
-                                    </button>
-                                </td>
-                            </tr>
-                            
-                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPRU">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPRU
                                 </td>
@@ -1052,7 +1008,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">8 km</td>
+                                <td class="tech-cell font-bold">7 km</td>
                                 <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-8.083, -79.1, 'SPRU')"
@@ -1268,25 +1224,13 @@
         const airports = [
             
         {
-            icao: "SPME",
-                nombre: "Aeropuerto de Tumbes/Pedro Canga",
-                    lat: -3.55,
-            lon: -80.383,
-            vis: "10 km a más",
-                temp: "25 °C",
-                    viento: "Calma / 0",
-                        nubosidad: "Nublado",
-                            fenomenos: "No hay fenómeno meteorológico"
-        },
-        
-        {
             icao: "SPQT",
                 nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
                     lat: -3.783,
             lon: -73.3,
             vis: "10 km a más",
                 temp: "26 °C",
-                    viento: "Este / 04 KT",
+                    viento: "Calma / 0",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1298,7 +1242,7 @@
             lon: -80.6,
             vis: "10 km a más",
                 temp: "26 °C",
-                    viento: "Sur / 09 KT",
+                    viento: "Sur / 08 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1309,21 +1253,9 @@
                     lat: -6.783,
             lon: -79.817,
             vis: "10 km a más",
-                temp: "25 °C",
-                    viento: "Sur / 07 KT",
+                temp: "24 °C",
+                    viento: "Sur / 06 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
-                            fenomenos: "No hay fenómeno meteorológico"
-        },
-        
-        {
-            icao: "SPST",
-                nombre: "Aeropuerto de Tarapoto/Cadete Guillermo del Castillo Paredes",
-                    lat: -6.5,
-            lon: -76.367,
-            vis: "10 km a más",
-                temp: "27 °C",
-                    viento: "Noreste / 03 KT",
-                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1332,8 +1264,8 @@
                 nombre: "Aeropuerto de Trujillo/Intl. Cap.Carlos Martinez de Pinillos",
                     lat: -8.083,
             lon: -79.1,
-            vis: "8 km",
-                temp: "23 °C",
+            vis: "7 km",
+                temp: "22 °C",
                     viento: "Sureste / 06 KT",
                         nubosidad: "Sin nubes de importancia",
                             fenomenos: "No hay fenómeno meteorológico"
@@ -1357,9 +1289,9 @@
                     lat: -12.017,
             lon: -77.117,
             vis: "10 km a más",
-                temp: "24 °C",
-                    viento: "Sur / 07 KT",
-                        nubosidad: "Sin nubes bajo los 1500m",
+                temp: "23 °C",
+                    viento: "Sur / 09 KT",
+                        nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1369,8 +1301,8 @@
                     lat: -13.533,
             lon: -71.933,
             vis: "10 km a más",
-                temp: "11 °C",
-                    viento: "Este / 03 KT",
+                temp: "09 °C",
+                    viento: "Variable / 03 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1381,8 +1313,8 @@
                     lat: -13.733,
             lon: -76.217,
             vis: "10 km a más",
-                temp: "22 °C",
-                    viento: "Suroeste / 04 KT",
+                temp: "23 °C",
+                    viento: "Sur / 06 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1394,7 +1326,7 @@
             lon: -71.567,
             vis: "10 km a más",
                 temp: "12 °C",
-                    viento: "Este / 05 KT",
+                    viento: "Variable / 02 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1406,8 +1338,8 @@
             lon: -70.267,
             vis: "10 km a más",
                 temp: "20 °C",
-                    viento: "Suroeste / 02 KT",
-                        nubosidad: "Cielo cubierto",
+                    viento: "Variable / 01 KT",
+                        nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
