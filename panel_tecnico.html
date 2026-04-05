@@ -469,7 +469,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">05/04/2026 07:51</p>
+                <p class="text-xl font-bold">05/04/2026 08:01</p>
             </div>
         </header>
 
@@ -601,6 +601,38 @@
                             <span class="condition-icon text-sm" data-fen="No hay fenómeno meteorológico"
                                 data-nub="Sin nubes bajo los 1500m"></span>
                             <span>Sin nubes bajo los 1500m | No hay fenómeno meteorológico</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-2 border-[--tech-border] bg-white/50 dark:bg-slate-900/50 p-4 hover:border-sky-400 transition-all cursor-pointer group shadow-sm"
+                        onclick="zoomToStation(-5.883, -76.117, 'SPMS')">
+                        <!-- Header Row: ICAO + Time -->
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-blue-900 dark:text-sky-400 font-mono group-hover:underline italic">SPMS</span>
+                                <span class="text-[10px] uppercase text-slate-500 font-semibold tracking-wide">Aeropuerto de Yurimaguas/Moises Benzaquen Rengifo</span>
+                            </div>
+                            <span class="text-[10px] font-bold bg-sky-900 text-white px-2 py-0.5">21:00 UTC o16:00 hrs. (Local)</span>
+                        </div>
+                        <!-- Data Row: Wind + Visibility -->
+                        <div class="grid grid-cols-2 gap-4 text-[12px] mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Viento">&#x1F4A8;</span>
+                                <span class="font-bold border-l-2 border-sky-500 pl-2">Sur / 03 KT</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Visibilidad">&#x1F441;&#xFE0F;</span>
+                                <span
+                                    class="font-bold text-emerald-600 dark:text-emerald-400 border-l-2 border-emerald-500 pl-2">8 km</span>
+                            </div>
+                        </div>
+                        <!-- Conditions Row: Sky + Phenomena -->
+                        <div
+                            class="flex items-center gap-2 text-[10px] uppercase font-bold italic opacity-80 border-t border-[--tech-border] pt-2 mt-2">
+                            <span class="condition-icon text-sm" data-fen="Chubasco en la vecindad"
+                                data-nub="Cielo cubierto"></span>
+                            <span>Cielo cubierto | Chubasco en la vecindad</span>
                         </div>
                     </div>
                     
@@ -793,6 +825,70 @@
                             <span class="condition-icon text-sm" data-fen="Neblina"
                                 data-nub="Cielo cubierto"></span>
                             <span>Cielo cubierto | Neblina</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-2 border-[--tech-border] bg-white/50 dark:bg-slate-900/50 p-4 hover:border-sky-400 transition-all cursor-pointer group shadow-sm"
+                        onclick="zoomToStation(-9.867, -76.2, 'SPNC')">
+                        <!-- Header Row: ICAO + Time -->
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-blue-900 dark:text-sky-400 font-mono group-hover:underline italic">SPNC</span>
+                                <span class="text-[10px] uppercase text-slate-500 font-semibold tracking-wide">Aeropuerto de Huanuco/Alferez FAP David Figueroa Fernandini</span>
+                            </div>
+                            <span class="text-[10px] font-bold bg-sky-900 text-white px-2 py-0.5">23:00 UTC o18:00 hrs. (Local)</span>
+                        </div>
+                        <!-- Data Row: Wind + Visibility -->
+                        <div class="grid grid-cols-2 gap-4 text-[12px] mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Viento">&#x1F4A8;</span>
+                                <span class="font-bold border-l-2 border-sky-500 pl-2">Calma / 0</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Visibilidad">&#x1F441;&#xFE0F;</span>
+                                <span
+                                    class="font-bold text-emerald-600 dark:text-emerald-400 border-l-2 border-emerald-500 pl-2">10 km a más</span>
+                            </div>
+                        </div>
+                        <!-- Conditions Row: Sky + Phenomena -->
+                        <div
+                            class="flex items-center gap-2 text-[10px] uppercase font-bold italic opacity-80 border-t border-[--tech-border] pt-2 mt-2">
+                            <span class="condition-icon text-sm" data-fen="No hay fenómeno meteorológico"
+                                data-nub="Nublado"></span>
+                            <span>Nublado | No hay fenómeno meteorológico</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-2 border-[--tech-border] bg-white/50 dark:bg-slate-900/50 p-4 hover:border-sky-400 transition-all cursor-pointer group shadow-sm"
+                        onclick="zoomToStation(-10.717, -73.767, 'SPAY')">
+                        <!-- Header Row: ICAO + Time -->
+                        <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-blue-900 dark:text-sky-400 font-mono group-hover:underline italic">SPAY</span>
+                                <span class="text-[10px] uppercase text-slate-500 font-semibold tracking-wide">Aeropuerto de Atalaya</span>
+                            </div>
+                            <span class="text-[10px] font-bold bg-sky-900 text-white px-2 py-0.5">21:00 UTC o16:00 hrs. (Local)</span>
+                        </div>
+                        <!-- Data Row: Wind + Visibility -->
+                        <div class="grid grid-cols-2 gap-4 text-[12px] mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Viento">&#x1F4A8;</span>
+                                <span class="font-bold border-l-2 border-sky-500 pl-2">Variable / 02 KT</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-base" title="Visibilidad">&#x1F441;&#xFE0F;</span>
+                                <span
+                                    class="font-bold text-emerald-600 dark:text-emerald-400 border-l-2 border-emerald-500 pl-2">10 km a más</span>
+                            </div>
+                        </div>
+                        <!-- Conditions Row: Sky + Phenomena -->
+                        <div
+                            class="flex items-center gap-2 text-[10px] uppercase font-bold italic opacity-80 border-t border-[--tech-border] pt-2 mt-2">
+                            <span class="condition-icon text-sm" data-fen="No hay fenómeno meteorológico"
+                                data-nub="Parcialmente nublado"></span>
+                            <span>Parcialmente nublado | No hay fenómeno meteorológico</span>
                         </div>
                     </div>
                     
@@ -1168,6 +1264,17 @@
         },
         
         {
+            icao: "SPMS",
+                nombre: "Aeropuerto de Yurimaguas/Moises Benzaquen Rengifo",
+                    lat: -5.883,
+            lon: -76.117,
+            vis: "8 km",
+                viento: "Sur / 03 KT",
+                    nubosidad: "Cielo cubierto",
+                        fenomenos: "Chubasco en la vecindad"
+        },
+        
+        {
             icao: "SPHI",
                 nombre: "Aeropuerto de Chiclayo/Intl. Cap. Jose Abelardo Quinones Gonzales",
                     lat: -6.783,
@@ -1231,6 +1338,28 @@
                 viento: "Variable / 02 KT",
                     nubosidad: "Cielo cubierto",
                         fenomenos: "Neblina"
+        },
+        
+        {
+            icao: "SPNC",
+                nombre: "Aeropuerto de Huanuco/Alferez FAP David Figueroa Fernandini",
+                    lat: -9.867,
+            lon: -76.2,
+            vis: "10 km a más",
+                viento: "Calma / 0",
+                    nubosidad: "Nublado",
+                        fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPAY",
+                nombre: "Aeropuerto de Atalaya",
+                    lat: -10.717,
+            lon: -73.767,
+            vis: "10 km a más",
+                viento: "Variable / 02 KT",
+                    nubosidad: "Parcialmente nublado",
+                        fenomenos: "No hay fenómeno meteorológico"
         },
         
         {
