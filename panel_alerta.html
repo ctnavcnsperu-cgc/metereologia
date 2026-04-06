@@ -731,7 +731,7 @@
 
             <div class="text-right monospace">
                 <p class="text-xs font-bold uppercase">Sincronización</p>
-                <p class="text-xl font-bold">05/04/2026 21:01</p>
+                <p class="text-xl font-bold">05/04/2026 21:11</p>
             </div>
         </header>
 
@@ -955,6 +955,28 @@
                             </tr>
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                                data-icao="SPQT">
+                                <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPQT
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPQT"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold">0.9 km</td>
+                                <td class="tech-cell italic opacity-80">Tormenta fuerte con lluvia</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-3.783, -73.3, 'SPQT')"
+                                        class="p-2 border border-current hover:bg-blue-900 hover:text-white dark:hover:bg-sky-400 dark:hover:text-black transition-all rounded-sm">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
                                 data-icao="SPYL">
                                 <td class="tech-cell font-black text-blue-900 dark:text-sky-400 text-sm italic">SPYL
                                 </td>
@@ -1052,7 +1074,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold">7 km</td>
+                                <td class="tech-cell font-bold">8 km</td>
                                 <td class="tech-cell italic opacity-80">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-8.083, -79.1, 'SPRU')"
@@ -1274,9 +1296,21 @@
             lon: -80.383,
             vis: "10 km a más",
                 temp: "25 °C",
-                    viento: "Sur / 10 KT",
-                        nubosidad: "Nublado",
+                    viento: "Sur / 03 KT",
+                        nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPQT",
+                nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
+                    lat: -3.783,
+            lon: -73.3,
+            vis: "0.9 km",
+                temp: "24 °C",
+                    viento: "Noroeste / 08 KT",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "Tormenta fuerte con lluvia"
         },
         
         {
@@ -1287,7 +1321,7 @@
             vis: "10 km a más",
                 temp: "25 °C",
                     viento: "Sur / 10 KT",
-                        nubosidad: "Nublado",
+                        nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1298,7 +1332,7 @@
             lon: -80.6,
             vis: "10 km a más",
                 temp: "28 °C",
-                    viento: "Sur / 07 KT",
+                    viento: "Sur / 10 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1310,8 +1344,8 @@
             lon: -79.817,
             vis: "10 km a más",
                 temp: "25 °C",
-                    viento: "Sur / 12 KT",
-                        nubosidad: "Despejado",
+                    viento: "Sur / 11 KT",
+                        nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1322,8 +1356,8 @@
             lon: -76.367,
             vis: "10 km a más",
                 temp: "24 °C",
-                    viento: "Variable / 01 KT",
-                        nubosidad: "Nublado",
+                    viento: "Noroeste / 02 KT",
+                        nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1332,10 +1366,10 @@
                 nombre: "Aeropuerto de Trujillo/Intl. Cap.Carlos Martinez de Pinillos",
                     lat: -8.083,
             lon: -79.1,
-            vis: "7 km",
+            vis: "8 km",
                 temp: "22 °C",
-                    viento: "Sureste / 07 KT",
-                        nubosidad: "Parcialmente nublado",
+                    viento: "Sureste / 06 KT",
+                        nubosidad: "Sin nubes de importancia",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1346,7 +1380,7 @@
             lon: -74.567,
             vis: "6 km",
                 temp: "23 °C",
-                    viento: "Variable / 01 KT",
+                    viento: "Variable / 02 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "Niebla"
         },
@@ -1369,9 +1403,9 @@
                     lat: -13.533,
             lon: -71.933,
             vis: "10 km a más",
-                temp: "14 °C",
-                    viento: "Noroeste / 06 KT",
-                        nubosidad: "Nublado",
+                temp: "13 °C",
+                    viento: "Sureste / 04 KT",
+                        nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1382,7 +1416,7 @@
             lon: -76.217,
             vis: "10 km a más",
                 temp: "23 °C",
-                    viento: "Suroeste / 16 KT",
+                    viento: "Suroeste / 17 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1393,8 +1427,8 @@
                     lat: -16.333,
             lon: -71.567,
             vis: "10 km a más",
-                temp: "14 °C",
-                    viento: "Este / 05 KT",
+                temp: "15 °C",
+                    viento: "Este / 03 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1406,7 +1440,7 @@
             lon: -70.267,
             vis: "10 km a más",
                 temp: "21 °C",
-                    viento: "Sur / 05 KT",
+                    viento: "Suroeste / 04 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
