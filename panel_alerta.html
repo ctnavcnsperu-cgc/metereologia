@@ -615,11 +615,16 @@
             background: #f8fafc;
             display: flex;
             flex-direction: column;
-            md:flex-direction: row; /* Cambia a fila en escritorio */
             justify-content: space-around;
             align-items: center;
             position: relative;
             padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .radar-content {
+                flex-direction: row;
+            }
         }
 
         .radar-visual {
