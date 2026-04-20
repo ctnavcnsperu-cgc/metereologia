@@ -149,7 +149,7 @@ def get_airport_weather(session, code_post, icao_real, lat=0, lon=0):
 
 def main():
     print("="*60)
-    print(" 🕵️ EXTRACCIÓN QUIRÚRGICA DE DATOS ")
+    print(" EXTRACCION QUIRURGICA DE DATOS ")
     print("="*60)
     
     session = requests.Session()
@@ -254,7 +254,7 @@ def main():
         f.write(env.get_template('taf_template.html').render(airports=results, last_update=ahora))
 
     print("\n" + "="*60)
-    print(f"🚀 DASHBOARDS ACTUALIZADOS: {len(results)} estaciones reales.")
+    print(f" DASHBOARDS ACTUALIZADOS: {len(results)} estaciones reales.")
     print("="*60)
 
 if __name__ == "__main__":

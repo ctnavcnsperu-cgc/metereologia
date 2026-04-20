@@ -27,18 +27,18 @@
         rel="stylesheet">
     <style>
         :root {
-            --tech-border: #074e8c;
-            --tech-bg: #dbeafe;
-        }
-
-        .dark {
-            --tech-border: #60a5fa;
-            --tech-bg: #0f172a;
+            --tech-bg: #030712;
+            --tech-border: #1e293b;
+            --tech-accent: #22d3ee;
+            --tech-card: #111827;
+            --tech-header-bg: #0f172a;
         }
 
         body {
             font-family: 'Outfit', sans-serif;
             background-color: var(--tech-bg);
+            color: #f8fafc;
+            transition: all 0.3s ease;
         }
 
         .tech-grid {
@@ -51,18 +51,13 @@
         }
 
         .tech-header {
-            background: linear-gradient(180deg, #074e8c 0%, #033663 100%);
-            color: white;
-            font-weight: bold;
+            background: var(--tech-header-bg);
+            color: var(--tech-accent);
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.75rem;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .dark .tech-header {
-            background: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
-            color: #38bdf8;
+            letter-spacing: 0.15em;
+            font-size: 0.70rem;
+            border-bottom: 1px solid var(--tech-border);
         }
 
         .monospace {
@@ -70,11 +65,7 @@
         }
 
         .table-row-hover:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-
-        .dark .table-row-hover:hover {
-            background-color: rgba(56, 189, 248, 0.05);
+            background-color: rgba(34, 211, 238, 0.05);
         }
 
         /* Botón Imprimir */
@@ -83,9 +74,9 @@
             align-items: center;
             gap: 6px;
             padding: 8px 14px;
-            background: linear-gradient(135deg, #074e8c, #033663);
-            color: white;
-            border: 2px solid #074e8c;
+            background: rgba(34, 211, 238, 0.1);
+            color: #22d3ee;
+            border: 1px solid #22d3ee;
             font-family: 'JetBrains Mono', monospace;
             font-size: 10px;
             font-weight: 900;
@@ -93,11 +84,12 @@
             letter-spacing: 0.05em;
             cursor: pointer;
             transition: all 0.2s ease;
+            border-radius: 4px;
         }
 
         .btn-print:hover {
-            background: linear-gradient(135deg, #0369a1, #074e8c);
-            box-shadow: 0 0 12px rgba(7, 78, 140, 0.5);
+            background: rgba(34, 211, 238, 0.2);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
             transform: translateY(-1px);
         }
 
@@ -115,22 +107,13 @@
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(7, 78, 140, 0.3);
+            background: rgba(34, 211, 238, 0.2);
             border-radius: 10px;
             transition: background 0.3s ease;
         }
 
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: rgba(7, 78, 140, 0.8);
-        }
-
-        /* Dark Mode Scrollbar Styling */
-        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(56, 189, 248, 0.3);
-        }
-
-        .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: rgba(56, 189, 248, 0.8);
+            background: rgba(34, 211, 238, 0.6);
         }
 
         /* ===== ESTILOS DE IMPRESIÓN ===== */
@@ -203,24 +186,32 @@
         .nav-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0.75rem;
-            border: 2px solid var(--tech-border);
-            background-color: transparent;
-            color: var(--tech-border);
-            transition: all 0.2s ease-in-out;
+            gap: 0.6rem;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background-color: rgba(17, 24, 39, 0.4);
+            color: #94a3b8;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             cursor: pointer;
+            border-radius: 9999px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .nav-btn:hover {
-            background-color: var(--tech-border);
+            border-color: var(--tech-accent);
             color: #ffffff !important;
+            background-color: rgba(34, 211, 238, 0.05);
         }
 
         .nav-btn.active {
-            background-color: var(--tech-border);
+            border-color: var(--tech-accent);
             color: #ffffff !important;
+            background-color: rgba(34, 211, 238, 0.1);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.1);
         }
 
         .nav-btn svg {
@@ -277,19 +268,25 @@
             color: white !important;
         }
 
-        .dark .nav-dropdown-content {
-            background-color: #0f172a;
+        .main-header {
+            background-color: var(--tech-header-bg);
+            border-bottom: 1px solid #334155;
+            padding: 1.25rem 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     </style>
 </head>
 
-<body class="min-h-screen p-4 md:p-8 text-slate-900 dark:text-slate-200">
-    <div class="max-w-[1800px] mx-auto">
-        <!-- Header -->
-        <header class="flex justify-between items-end mb-8">
+<body class="min-h-screen text-white">
+
+    <header class="main-header">
+        <div class="max-w-[1800px] mx-auto w-full flex justify-between items-center px-4 md:px-6">
             <div class="flex items-center gap-4">
-                <div class="text-blue-900 dark:text-sky-400">
-                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                <div class="text-cyan-400">
+                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
                         <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
@@ -300,55 +297,50 @@
                     </svg>
                 </div>
                 <div>
-                    <h1 class="text-3xl font-black uppercase tracking-tighter">REPORTE TÉCNICO</h1>
-                    <p class="text-sm font-bold opacity-80 uppercase">ESTACIONES METEOROLÓGICAS</p>
+                    <h1 class="text-2xl font-black uppercase tracking-tighter text-white leading-none">REPORTE TÉCNICO</h1>
+                    <p class="text-[10px] font-bold text-cyan-500 uppercase tracking-[0.2em] mt-1">ESTACIONES METEOROLÓGICAS (METAR)</p>
                 </div>
             </div>
 
-            <!-- Menú de Navegación -->
             <nav class="flex flex-wrap gap-2">
                 <a href="index.html" class="nav-btn" title="Estado del Tiempo Hoy">
-                    
-                    <span>Tiempo Hoy</span>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a2 2 0 002 2h3a2 2 0 002-2v-4a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 002 2h3a2 2 0 002-2V10m-6 0a2 2 0 002-2V4a2 2 0 00-2-2h-3a2 2 0 00-2 2v4a2 2 0 002 2h3z" />
+                    </svg>
+                    <span>RESUMEN HOY</span>
                 </a>
-                <div class="nav-dropdown">
-                    <button class="nav-btn" title="Dashboard Principal">
-                        <span>TIEMPO AEROPUERTOS</span>
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div class="nav-dropdown-content">
-                        <a href="tiempo_hoy.html" class="nav-dropdown-item">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                            <span>METAR</span>
-                        </a>
-                        <a href="taf.html" class="nav-dropdown-item">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            <span>TAF</span>
-                        </a>
-                    </div>
-                </div>
+                <a href="tiempo_hoy.html" class="nav-btn" title="Dashboard Principal">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                    <span>TIEMPO AEROPUERTOS</span>
+                </a>
                 <a href="panel_alerta.html" class="nav-btn" title="Sistema de Alerta">
-                    
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
                     <span>REGLAS DE VUELO</span>
                 </a>
                 <a href="panel_tecnico.html" class="nav-btn" title="Navegación Técnica">
-                    
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L16 4m0 13V4m0 0L9 7" />
+                    </svg>
                     <span>RADAR NAVEGACIÓN</span>
                 </a>
                 <a href="tiempo_aeropuertos.html" class="nav-btn active" title="Reporte Técnico">
-                    
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
                     <span>REPORTE</span>
                 </a>
             </nav>
 
             <div class="flex items-center gap-4">
-                <!-- Botón Imprimir (exclusivo de esta página) -->
                 <button class="btn-print" onclick="window.print()" title="Imprimir Reporte como PDF">
                     <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -356,12 +348,15 @@
                     </svg>
                     Imprimir PDF
                 </button>
-                <div class="text-right monospace">
-                    <p class="text-xs font-bold uppercase">Sincronización</p>
-                    <p class="text-xl font-bold">{{ last_update }}</p>
+                <div class="text-right monospace text-slate-400">
+                    <p class="text-[9px] font-bold uppercase tracking-widest text-cyan-500/80">Sincronización</p>
+                    <p class="text-lg font-bold text-white leading-none mt-1">{{ last_update }}</p>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
+
+    <div class="max-w-[1800px] mx-auto px-4 md:px-6"> 
 
 
         <!-- Título visible solo al imprimir -->
@@ -374,7 +369,7 @@
         </div>
 
         <!-- Technical Table -->
-        <div class="tech-grid bg-white dark:bg-transparent overflow-x-auto custom-scrollbar">
+        <div class="tech-grid bg-slate-900/40 backdrop-blur-md overflow-x-auto custom-scrollbar">
             <table class="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
                     <tr class="tech-header text-[12px]">
@@ -388,38 +383,38 @@
                         <th class="tech-cell">FENÓMENOS / NUBOSIDAD</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-current">
+                <tbody class="divide-y divide-slate-800">
                     {% for air in airports %}
                     <tr class="table-row-hover monospace text-[13px]">
                         <td class="tech-cell">
-                            <div class="font-black text-[15px]">{{ air.icao }}</div>
-                            <div class="text-[11px] uppercase opacity-60 leading-tight w-48">{{ air.nombre }}</div>
+                            <div class="font-black text-[15px] text-white">{{ air.icao }}</div>
+                            <div class="text-[10px] uppercase font-bold text-slate-400 leading-tight w-48">{{ air.nombre }}</div>
                         </td>
-                        <td class="tech-cell font-bold text-[11px]">{{ air.hora }}</td>
+                        <td class="tech-cell font-bold text-[11px] text-slate-400">{{ air.hora }}</td>
                         <td class="tech-cell text-center">
-                            <div class="font-black text-blue-800 dark:text-sky-400 text-[13px]">
+                            <div class="font-black text-white text-[13px]">
                                 {{ air.viento.split(' / ')[0] if ' / ' in air.viento else 'CALMA' }}
                             </div>
-                            <div class="text-[11px] opacity-70">
+                            <div class="text-[11px] font-bold text-cyan-400/80">
                                 {{ air.viento.split(' / ')[1] if ' / ' in air.viento else air.viento }}
                             </div>
                         </td>
-                        <td class="tech-cell text-center">{{ air.visibilidad }}</td>
+                        <td class="tech-cell text-center font-bold text-slate-300">{{ air.visibilidad }}</td>
                         <td class="tech-cell text-center font-black">
-                            <span class="text-indigo-600 dark:text-sky-400">{{ air.temperatura.replace(' °C','')
+                            <span class="text-white">{{ air.temperatura.replace(' °C','')
                                 }}°</span>
                             <span class="opacity-30">/</span>
-                            <span class="opacity-60">{{ air.rocio.replace(' °C','') }}°</span>
+                            <span class="text-slate-500">{{ air.rocio.replace(' °C','') }}°</span>
                         </td>
                         <td
-                            class="tech-cell text-center font-black text-blue-600 dark:text-blue-400 bg-blue-50/30 dark:bg-blue-900/10 text-[14px]">
+                            class="tech-cell text-center font-black text-cyan-400 bg-cyan-500/5 text-[14px] border-x-0">
                             {{ air.humedad }}
                         </td>
-                        <td class="tech-cell text-center font-bold text-emerald-600 dark:text-emerald-400 text-[14px]">
+                        <td class="tech-cell text-center font-bold text-emerald-400 text-[14px]">
                             {{ air.presion.replace(' hPa','') }}</td>
                         <td class="tech-cell">
                             <div
-                                class="text-[11px] font-bold uppercase text-slate-700 dark:text-slate-300 leading-tight">
+                                class="text-[11px] font-bold uppercase text-slate-400 leading-tight">
                                 {{ air.nubosidad }}</div>
                             <div
                                 class="text-[11px] italic text-red-600 dark:text-red-400 font-bold uppercase leading-tight">
