@@ -820,7 +820,7 @@
 
             <div class="text-right monospace text-slate-400">
                 <p class="text-[9px] font-bold uppercase tracking-widest text-cyan-500/80">Sincronización</p>
-                <p class="text-lg font-bold text-white leading-none mt-1">21/04/2026 12:12</p>
+                <p class="text-lg font-bold text-white leading-none mt-1">21/04/2026 12:21</p>
             </div>
         </div>
     </header>
@@ -1245,6 +1245,26 @@
                             </tr>
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
+                                data-icao="SPJI">
+                                <td class="tech-cell font-black text-cyan-400 text-sm italic">SPJI
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPJI"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold text-white">10 km a más</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-7.167, -76.717, 'SPJI')"
+                                        class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
+                                        Zoom
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
                                 data-icao="SPRU">
                                 <td class="tech-cell font-black text-cyan-400 text-sm italic">SPRU
                                 </td>
@@ -1298,6 +1318,26 @@
                                 <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-9.283, -76.0, 'SPGM')"
+                                        class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
+                                        Zoom
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
+                                data-icao="SPHZ">
+                                <td class="tech-cell font-black text-cyan-400 text-sm italic">SPHZ
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPHZ"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold text-white">10 km a más</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-9.35, -77.6, 'SPHZ')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
                                         Zoom
                                     </button>
@@ -1768,6 +1808,18 @@
         },
         
         {
+            icao: "SPJI",
+                nombre: "Aeropuerto de Juanjui",
+                    lat: -7.167,
+            lon: -76.717,
+            vis: "10 km a más",
+                temp: "29 °C",
+                    viento: "Este / 03 KT",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
             icao: "SPRU",
                 nombre: "Aeropuerto de Trujillo/Intl. Cap.Carlos Martinez de Pinillos",
                     lat: -8.083,
@@ -1799,6 +1851,18 @@
             vis: "10 km a más",
                 temp: "26 °C",
                     viento: "Noroeste / 02 KT",
+                        nubosidad: "Nublado",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPHZ",
+                nombre: "Aeropuerto de Anta - Huaraz/Cmdte. FAP German Arias Grazziani",
+                    lat: -9.35,
+            lon: -77.6,
+            vis: "10 km a más",
+                temp: "20 °C",
+                    viento: "Norte / 09 KT",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
