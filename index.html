@@ -534,7 +534,7 @@
 
             <div class="text-right monospace text-slate-400">
                 <p class="text-[9px] font-bold uppercase tracking-widest text-cyan-500/80">Sincronización</p>
-                <p class="text-lg font-bold text-white leading-none mt-1">24/04/2026 15:11</p>
+                <p class="text-lg font-bold text-white leading-none mt-1">24/04/2026 15:21</p>
             </div>
         </div>
     </header>
@@ -555,6 +555,19 @@
                 <div class="p-0 overflow-y-auto flex-grow custom-scrollbar">
                     
                     <div class="divide-y divide-slate-800">
+                        
+                        <div onclick="zoomToCity('Cuzco')" title="Ver en el mapa (Máximo Zoom)"
+                            class="fenomeno-card cursor-pointer p-2.5 flex items-center gap-3 transition-all duration-200">
+                            <span class="fen-weather-icon text-2xl flex-shrink-0" style="filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.4));" data-fen="Chubasco en la vecindad."></span>
+                            <div class="flex items-center gap-3 min-w-0 flex-grow">
+                                <span class="bg-cyan-500/10 text-cyan-400 font-bold px-2 py-1 rounded text-[10px] uppercase tracking-wider min-w-[100px] text-center border border-cyan-500/20 font-technical shrink-0">
+                                    Cuzco
+                                </span>
+                                <span class="text-[14px] font-medium text-slate-300 truncate leading-none">
+                                    Chubasco en la vecindad.
+                                </span>
+                            </div>
+                        </div>
                         
                         <div onclick="zoomToCity('Chachapoyas')" title="Ver en el mapa (Máximo Zoom)"
                             class="fenomeno-card cursor-pointer p-2.5 flex items-center gap-3 transition-all duration-200">
@@ -578,6 +591,19 @@
                                 </span>
                                 <span class="text-[14px] font-medium text-slate-300 truncate leading-none">
                                     Niebla en la vecindad.
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div onclick="zoomToCity('Pto Maldonado')" title="Ver en el mapa (Máximo Zoom)"
+                            class="fenomeno-card cursor-pointer p-2.5 flex items-center gap-3 transition-all duration-200">
+                            <span class="fen-weather-icon text-2xl flex-shrink-0" style="filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.4));" data-fen="Chubasco en la vecindad."></span>
+                            <div class="flex items-center gap-3 min-w-0 flex-grow">
+                                <span class="bg-cyan-500/10 text-cyan-400 font-bold px-2 py-1 rounded text-[10px] uppercase tracking-wider min-w-[100px] text-center border border-cyan-500/20 font-technical shrink-0">
+                                    Pto Maldonado
+                                </span>
+                                <span class="text-[14px] font-medium text-slate-300 truncate leading-none">
+                                    Chubasco en la vecindad.
                                 </span>
                             </div>
                         </div>
@@ -615,16 +641,16 @@
             name: "Piura",
                 lat: "-5.194",
                     lon: "-80.632",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "30 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
             name: "Talara",
                 lat: "-4.577",
                     lon: "-81.271",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "27 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
@@ -639,8 +665,8 @@
             name: "Trujillo",
                 lat: "-8.116",
                     lon: "-79.029",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "23 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
@@ -671,8 +697,8 @@
             name: "Pisco",
                 lat: "-13.708",
                     lon: "-76.205",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "23 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
@@ -687,8 +713,8 @@
             name: "Arequipa",
                 lat: "-16.409",
                     lon: "-71.537",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "17 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
         },
         
         {
@@ -703,8 +729,8 @@
             name: "Tacna",
                 lat: "-18.014",
                     lon: "-70.25",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "22 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
@@ -799,16 +825,16 @@
             name: "Cuzco",
                 lat: "-13.531",
                     lon: "-71.967",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "15 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/cubierto.gif"
         },
         
         {
             name: "Tarapoto",
                 lat: "-6.485",
                     lon: "-76.359",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "30 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
         },
         
         {
@@ -823,8 +849,8 @@
             name: "Puertomaldonado",
                 lat: "-12.593",
                     lon: "-69.183",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "31 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
         },
         
         {
