@@ -534,7 +534,7 @@
 
             <div class="text-right monospace text-slate-400">
                 <p class="text-[9px] font-bold uppercase tracking-widest text-cyan-500/80">Sincronización</p>
-                <p class="text-lg font-bold text-white leading-none mt-1">29/04/2026 05:51</p>
+                <p class="text-lg font-bold text-white leading-none mt-1">29/04/2026 06:01</p>
             </div>
         </div>
     </header>
@@ -556,6 +556,19 @@
                     
                     <div class="divide-y divide-slate-800">
                         
+                        <div onclick="zoomToCity('Nazca')" title="Ver en el mapa (Máximo Zoom)"
+                            class="fenomeno-card cursor-pointer p-2.5 flex items-center gap-3 transition-all duration-200">
+                            <span class="fen-weather-icon text-2xl flex-shrink-0" style="filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.4));" data-fen="Neblina con visibilidad de 5000m ."></span>
+                            <div class="flex items-center gap-3 min-w-0 flex-grow">
+                                <span class="bg-cyan-500/10 text-cyan-400 font-bold px-2 py-1 rounded text-[10px] uppercase tracking-wider min-w-[100px] text-center border border-cyan-500/20 font-technical shrink-0">
+                                    Nazca
+                                </span>
+                                <span class="text-[14px] font-medium text-slate-300 truncate leading-none">
+                                    Neblina con visibilidad de 5000m .
+                                </span>
+                            </div>
+                        </div>
+                        
                         <div onclick="zoomToCity('Andahuaylas')" title="Ver en el mapa (Máximo Zoom)"
                             class="fenomeno-card cursor-pointer p-2.5 flex items-center gap-3 transition-all duration-200">
                             <span class="fen-weather-icon text-2xl flex-shrink-0" style="filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.4));" data-fen="Bancos de niebla con visibilidad de 6000m ."></span>
@@ -565,6 +578,45 @@
                                 </span>
                                 <span class="text-[14px] font-medium text-slate-300 truncate leading-none">
                                     Bancos de niebla con visibilidad de 6000m .
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div onclick="zoomToCity('Andahuaylas')" title="Ver en el mapa (Máximo Zoom)"
+                            class="fenomeno-card cursor-pointer p-2.5 flex items-center gap-3 transition-all duration-200">
+                            <span class="fen-weather-icon text-2xl flex-shrink-0" style="filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.4));" data-fen="Bancos de niebla con visibilidad de 5000m ."></span>
+                            <div class="flex items-center gap-3 min-w-0 flex-grow">
+                                <span class="bg-cyan-500/10 text-cyan-400 font-bold px-2 py-1 rounded text-[10px] uppercase tracking-wider min-w-[100px] text-center border border-cyan-500/20 font-technical shrink-0">
+                                    Andahuaylas
+                                </span>
+                                <span class="text-[14px] font-medium text-slate-300 truncate leading-none">
+                                    Bancos de niebla con visibilidad de 5000m .
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div onclick="zoomToCity('Tarapoto')" title="Ver en el mapa (Máximo Zoom)"
+                            class="fenomeno-card cursor-pointer p-2.5 flex items-center gap-3 transition-all duration-200">
+                            <span class="fen-weather-icon text-2xl flex-shrink-0" style="filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.4));" data-fen="Bancos de niebla con visibilidad de 4000m ."></span>
+                            <div class="flex items-center gap-3 min-w-0 flex-grow">
+                                <span class="bg-cyan-500/10 text-cyan-400 font-bold px-2 py-1 rounded text-[10px] uppercase tracking-wider min-w-[100px] text-center border border-cyan-500/20 font-technical shrink-0">
+                                    Tarapoto
+                                </span>
+                                <span class="text-[14px] font-medium text-slate-300 truncate leading-none">
+                                    Bancos de niebla con visibilidad de 4000m .
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div onclick="zoomToCity('Pto Maldonado')" title="Ver en el mapa (Máximo Zoom)"
+                            class="fenomeno-card cursor-pointer p-2.5 flex items-center gap-3 transition-all duration-200">
+                            <span class="fen-weather-icon text-2xl flex-shrink-0" style="filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.4));" data-fen="Neblina con visibilidad de 4000m ."></span>
+                            <div class="flex items-center gap-3 min-w-0 flex-grow">
+                                <span class="bg-cyan-500/10 text-cyan-400 font-bold px-2 py-1 rounded text-[10px] uppercase tracking-wider min-w-[100px] text-center border border-cyan-500/20 font-technical shrink-0">
+                                    Pto Maldonado
+                                </span>
+                                <span class="text-[14px] font-medium text-slate-300 truncate leading-none">
+                                    Neblina con visibilidad de 4000m .
                                 </span>
                             </div>
                         </div>
@@ -610,8 +662,8 @@
             name: "Talara",
                 lat: "-4.577",
                     lon: "-81.271",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "21 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/noche_despejado.png"
         },
         
         {
@@ -642,8 +694,8 @@
             name: "Huaraz",
                 lat: "-9.526",
                     lon: "-77.528",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "23 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/cubierto.gif"
         },
         
         {
@@ -666,8 +718,8 @@
             name: "Nazca",
                 lat: "-14.83",
                     lon: "-74.938",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "25 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
@@ -794,8 +846,8 @@
             name: "Tarapoto",
                 lat: "-6.485",
                     lon: "-76.359",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "25 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/noche_nublado.png"
         },
         
         {
@@ -810,8 +862,8 @@
             name: "Puertomaldonado",
                 lat: "-12.593",
                     lon: "-69.183",
-                        temp: "-- °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
+                        temp: "22 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
         },
         
         {
