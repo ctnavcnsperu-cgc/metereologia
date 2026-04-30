@@ -820,7 +820,7 @@
 
             <div class="text-right monospace text-slate-400">
                 <p class="text-[9px] font-bold uppercase tracking-widest text-cyan-500/80">Sincronización</p>
-                <p class="text-lg font-bold text-white leading-none mt-1">30/04/2026 05:01</p>
+                <p class="text-lg font-bold text-white leading-none mt-1">30/04/2026 05:11</p>
             </div>
         </div>
     </header>
@@ -1035,7 +1035,7 @@
                                     </div>
                                 </td>
                                 <td class="tech-cell font-bold text-white">3 km</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">Neblina</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Niebla</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-3.783, -73.3, 'SPQT')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
@@ -1085,6 +1085,26 @@
                             </tr>
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
+                                data-icao="SPJR">
+                                <td class="tech-cell font-black text-cyan-400 text-sm italic">SPJR
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPJR"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold text-white">8 km</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Niebla</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-7.133, -78.483, 'SPJR')"
+                                        class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
+                                        Zoom
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
                                 data-icao="SPRU">
                                 <td class="tech-cell font-black text-cyan-400 text-sm italic">SPRU
                                 </td>
@@ -1114,8 +1134,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">8 km</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">Niebla</td>
+                                <td class="tech-cell font-bold text-white">10 km a más</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-8.367, -74.567, 'SPCL')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
@@ -1322,9 +1342,9 @@
             lon: -73.3,
             vis: "3 km",
                 temp: "23 °C",
-                    viento: "Oeste / 01 KT",
-                        nubosidad: "Cielo cubierto",
-                            fenomenos: "Neblina"
+                    viento: "Suroeste / 02 KT",
+                        nubosidad: "Parcialmente nublado",
+                            fenomenos: "Niebla"
         },
         
         {
@@ -1334,7 +1354,7 @@
             lon: -80.6,
             vis: "10 km a más",
                 temp: "22 °C",
-                    viento: "Sureste / 06 KT",
+                    viento: "Sur / 04 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1346,9 +1366,21 @@
             lon: -79.817,
             vis: "10 km a más",
                 temp: "21 °C",
-                    viento: "Sur / 08 KT",
+                    viento: "Sur / 09 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPJR",
+                nombre: "Aeropuerto de Cajamarca/Mayor Gral.FAP Armando Revoredo Iglesias",
+                    lat: -7.133,
+            lon: -78.483,
+            vis: "8 km",
+                temp: "12 °C",
+                    viento: "Variable / 02 KT",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "Niebla"
         },
         
         {
@@ -1358,7 +1390,7 @@
             lon: -79.1,
             vis: "7 km",
                 temp: "21 °C",
-                    viento: "Sureste / 05 KT",
+                    viento: "Sureste / 04 KT",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1368,11 +1400,11 @@
                 nombre: "Aeropuerto de Pucallpa/Intl. David Abensur Rengifo",
                     lat: -8.367,
             lon: -74.567,
-            vis: "8 km",
+            vis: "10 km a más",
                 temp: "24 °C",
                     viento: "Suroeste / 02 KT",
                         nubosidad: "Cielo cubierto",
-                            fenomenos: "Niebla"
+                            fenomenos: "No hay fenómeno meteorológico"
         },
         
         {
@@ -1381,8 +1413,8 @@
                     lat: -11.767,
             lon: -75.467,
             vis: "10 km a más",
-                temp: "13 °C",
-                    viento: "Variable / 02 KT",
+                temp: "07 °C",
+                    viento: "Noroeste / 04 KT",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1394,7 +1426,7 @@
             lon: -77.117,
             vis: "6 km",
                 temp: "19 °C",
-                    viento: "Suroeste / 05 KT",
+                    viento: "Suroeste / 03 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1406,7 +1438,7 @@
             lon: -71.933,
             vis: "10 km a más",
                 temp: "09 °C",
-                    viento: "Este / 03 KT",
+                    viento: "Este / 01 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1417,9 +1449,9 @@
                     lat: -13.733,
             lon: -76.217,
             vis: "10 km a más",
-                temp: "19 °C",
-                    viento: "Sur / 03 KT",
-                        nubosidad: "Nublado",
+                temp: "20 °C",
+                    viento: "Suroeste / 02 KT",
+                        nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1429,8 +1461,8 @@
                     lat: -16.333,
             lon: -71.567,
             vis: "10 km a más",
-                temp: "11 °C",
-                    viento: "Noreste / 05 KT",
+                temp: "10 °C",
+                    viento: "Noreste / 03 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1442,7 +1474,7 @@
             lon: -70.267,
             vis: "10 km a más",
                 temp: "16 °C",
-                    viento: "Variable / 01 KT",
+                    viento: "Variable / 02 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
