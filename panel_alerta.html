@@ -820,7 +820,7 @@
 
             <div class="text-right monospace text-slate-400">
                 <p class="text-[9px] font-bold uppercase tracking-widest text-cyan-500/80">Sincronización</p>
-                <p class="text-lg font-bold text-white leading-none mt-1">02/05/2026 08:01</p>
+                <p class="text-lg font-bold text-white leading-none mt-1">02/05/2026 08:11</p>
             </div>
         </div>
     </header>
@@ -1085,6 +1085,26 @@
                             </tr>
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
+                                data-icao="SPJE">
+                                <td class="tech-cell font-black text-cyan-400 text-sm italic">SPJE
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPJE"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold text-white">10 km a más</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-5.583, -78.767, 'SPJE')"
+                                        class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
+                                        Zoom
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
                                 data-icao="SPMS">
                                 <td class="tech-cell font-black text-cyan-400 text-sm italic">SPMS
                                 </td>
@@ -1094,10 +1114,30 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">10 km a más</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell font-bold text-white">8 km</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Chubasco en la vecindad</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-5.883, -76.117, 'SPMS')"
+                                        class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
+                                        Zoom
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
+                                data-icao="SPJA">
+                                <td class="tech-cell font-black text-cyan-400 text-sm italic">SPJA
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPJA"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold text-white">5 km</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Lluvia débil</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-6.067, -77.15, 'SPJA')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
                                         Zoom
                                     </button>
@@ -1114,8 +1154,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">10 km a más</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell font-bold text-white">4 km</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Llovizna</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-6.2, -77.85, 'SPPY')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
@@ -1154,7 +1194,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">4 km</td>
+                                <td class="tech-cell font-bold text-white">5 km</td>
                                 <td class="tech-cell italic opacity-80 text-slate-300">Lluvia débil</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-6.5, -76.367, 'SPST')"
@@ -1194,8 +1234,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">10 km a más</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell font-bold text-white">6 km</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Lluvia débil</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-7.167, -76.717, 'SPJI')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
@@ -1214,7 +1254,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">7 km</td>
+                                <td class="tech-cell font-bold text-white">9 km</td>
                                 <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-8.083, -79.1, 'SPRU')"
@@ -1254,7 +1294,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">10 km a más</td>
+                                <td class="tech-cell font-bold text-white">8 km</td>
                                 <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-9.133, -78.517, 'SPEO')"
@@ -1334,8 +1374,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">10 km a más</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell font-bold text-white">8 km</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Niebla en la vecindad</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-10.717, -73.767, 'SPAY')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
@@ -1354,8 +1394,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">10 km a más</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell font-bold text-white">3 km</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Neblina</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-11.333, -74.55, 'SPMF')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
@@ -1394,8 +1434,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">5 km</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">Neblina</td>
+                                <td class="tech-cell font-bold text-white">6 km</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-12.017, -77.117, 'SPJC')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
@@ -1454,8 +1494,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">1 km</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">Niebla</td>
+                                <td class="tech-cell font-bold text-white">3.5 km</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Neblina</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-13.733, -76.217, 'SPSO')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
@@ -1534,7 +1574,7 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">10 km a más</td>
+                                <td class="tech-cell font-bold text-white">8 km</td>
                                 <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-17.683, -71.35, 'SPLO')"
@@ -1641,7 +1681,7 @@
                     lat: -3.783,
             lon: -73.3,
             vis: "10 km a más",
-                temp: "24 °C",
+                temp: "25 °C",
                     viento: "Variable / 02 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
@@ -1655,7 +1695,7 @@
             vis: "10 km a más",
                 temp: "22 °C",
                     viento: "Sur / 14 KT",
-                        nubosidad: "Nublado",
+                        nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1667,7 +1707,19 @@
             vis: "10 km a más",
                 temp: "23 °C",
                     viento: "Sur / 06 KT",
-                        nubosidad: "Sin nubes bajo los 1500m",
+                        nubosidad: "Parcialmente nublado",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPJE",
+                nombre: "Aeropuerto de Jaen",
+                    lat: -5.583,
+            lon: -78.767,
+            vis: "10 km a más",
+                temp: "22 °C",
+                    viento: "Calma / 0",
+                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1676,11 +1728,23 @@
                 nombre: "Aeropuerto de Yurimaguas/Moises Benzaquen Rengifo",
                     lat: -5.883,
             lon: -76.117,
-            vis: "10 km a más",
-                temp: "33 °C",
+            vis: "8 km",
+                temp: "25 °C",
+                    viento: "Oeste / 03 KT",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "Chubasco en la vecindad"
+        },
+        
+        {
+            icao: "SPJA",
+                nombre: "Aeropuerto de Rioja",
+                    lat: -6.067,
+            lon: -77.15,
+            vis: "5 km",
+                temp: "20 °C",
                     viento: "Sureste / 03 KT",
-                        nubosidad: "Nublado",
-                            fenomenos: "No hay fenómeno meteorológico"
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "Lluvia débil"
         },
         
         {
@@ -1688,11 +1752,11 @@
                 nombre: "Aeropuerto de Chachapoyas",
                     lat: -6.2,
             lon: -77.85,
-            vis: "10 km a más",
-                temp: "17 °C",
-                    viento: "Este / 10 KT",
+            vis: "4 km",
+                temp: "13 °C",
+                    viento: "Este / 08 KT",
                         nubosidad: "Cielo cubierto",
-                            fenomenos: "No hay fenómeno meteorológico"
+                            fenomenos: "Llovizna"
         },
         
         {
@@ -1702,7 +1766,7 @@
             lon: -79.817,
             vis: "10 km a más",
                 temp: "22 °C",
-                    viento: "Sur / 08 KT",
+                    viento: "Sur / 09 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1712,10 +1776,10 @@
                 nombre: "Aeropuerto de Tarapoto/Cadete Guillermo del Castillo Paredes",
                     lat: -6.5,
             lon: -76.367,
-            vis: "4 km",
+            vis: "5 km",
                 temp: "23 °C",
-                    viento: "Norte / 02 KT",
-                        nubosidad: "Cielo cubierto",
+                    viento: "Norte / 03 KT",
+                        nubosidad: "Nublado",
                             fenomenos: "Lluvia débil"
         },
         
@@ -1725,8 +1789,8 @@
                     lat: -7.133,
             lon: -78.483,
             vis: "10 km a más",
-                temp: "11 °C",
-                    viento: "Calma / 0",
+                temp: "16 °C",
+                    viento: "Variable / 02 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1736,11 +1800,11 @@
                 nombre: "Aeropuerto de Juanjui",
                     lat: -7.167,
             lon: -76.717,
-            vis: "10 km a más",
-                temp: "32 °C",
-                    viento: "Este / 05 KT",
-                        nubosidad: "Parcialmente nublado",
-                            fenomenos: "No hay fenómeno meteorológico"
+            vis: "6 km",
+                temp: "24 °C",
+                    viento: "Calma / 0",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "Lluvia débil"
         },
         
         {
@@ -1748,9 +1812,9 @@
                 nombre: "Aeropuerto de Trujillo/Intl. Cap.Carlos Martinez de Pinillos",
                     lat: -8.083,
             lon: -79.1,
-            vis: "7 km",
-                temp: "21 °C",
-                    viento: "Sureste / 05 KT",
+            vis: "9 km",
+                temp: "22 °C",
+                    viento: "Sureste / 07 KT",
                         nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1761,8 +1825,8 @@
                     lat: -8.367,
             lon: -74.567,
             vis: "10 km a más",
-                temp: "26 °C",
-                    viento: "Este / 03 KT",
+                temp: "28 °C",
+                    viento: "Sureste / 05 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1772,10 +1836,10 @@
                 nombre: "Aeropuerto de Chimbote",
                     lat: -9.133,
             lon: -78.517,
-            vis: "10 km a más",
-                temp: "24 °C",
-                    viento: "Sur / 17 KT",
-                        nubosidad: "Sin nubes bajo los 1500m",
+            vis: "8 km",
+                temp: "22 °C",
+                    viento: "Sur / 08 KT",
+                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1785,9 +1849,9 @@
                     lat: -9.283,
             lon: -76.0,
             vis: "10 km a más",
-                temp: "29 °C",
-                    viento: "Noroeste / 02 KT",
-                        nubosidad: "Despejado",
+                temp: "22 °C",
+                    viento: "Calma / 0",
+                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1797,8 +1861,8 @@
                     lat: -9.35,
             lon: -77.6,
             vis: "10 km a más",
-                temp: "08 °C",
-                    viento: "Sur / 04 KT",
+                temp: "12 °C",
+                    viento: "Noreste / 02 KT",
                         nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1809,9 +1873,9 @@
                     lat: -9.867,
             lon: -76.2,
             vis: "10 km a más",
-                temp: "23 °C",
-                    viento: "Este / 05 KT",
-                        nubosidad: "Parcialmente nublado",
+                temp: "19 °C",
+                    viento: "Suroeste / 02 KT",
+                        nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1820,11 +1884,11 @@
                 nombre: "Aeropuerto de Atalaya",
                     lat: -10.717,
             lon: -73.767,
-            vis: "10 km a más",
-                temp: "32 °C",
-                    viento: "Variable / 03 KT",
+            vis: "8 km",
+                temp: "26 °C",
+                    viento: "Variable / 04 KT",
                         nubosidad: "Nublado",
-                            fenomenos: "No hay fenómeno meteorológico"
+                            fenomenos: "Niebla en la vecindad"
         },
         
         {
@@ -1832,11 +1896,11 @@
                 nombre: "Aeropuerto de Mazamari",
                     lat: -11.333,
             lon: -74.55,
-            vis: "10 km a más",
-                temp: "26 °C",
-                    viento: "Sur / 02 KT",
-                        nubosidad: "Nublado",
-                            fenomenos: "No hay fenómeno meteorológico"
+            vis: "3 km",
+                temp: "22 °C",
+                    viento: "Norte / 02 KT",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "Neblina"
         },
         
         {
@@ -1845,9 +1909,9 @@
                     lat: -11.767,
             lon: -75.467,
             vis: "10 km a más",
-                temp: "06 °C",
-                    viento: "Noroeste / 03 KT",
-                        nubosidad: "Nublado",
+                temp: "10 °C",
+                    viento: "Norte / 03 KT",
+                        nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1856,11 +1920,11 @@
                 nombre: "Aeropuerto de Lima/Intl. Jorge Chavez",
                     lat: -12.017,
             lon: -77.117,
-            vis: "5 km",
+            vis: "6 km",
                 temp: "20 °C",
-                    viento: "Noroeste / 08 KT",
+                    viento: "Noroeste / 06 KT",
                         nubosidad: "Cielo cubierto",
-                            fenomenos: "Neblina"
+                            fenomenos: "No hay fenómeno meteorológico"
         },
         
         {
@@ -1869,8 +1933,8 @@
                     lat: -12.6,
             lon: -69.217,
             vis: "10 km a más",
-                temp: "24 °C",
-                    viento: "Variable / 01 KT",
+                temp: "27 °C",
+                    viento: "Calma / 0",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1881,9 +1945,9 @@
                     lat: -13.533,
             lon: -71.933,
             vis: "10 km a más",
-                temp: "07 °C",
-                    viento: "Variable / 02 KT",
-                        nubosidad: "Cielo cubierto",
+                temp: "14 °C",
+                    viento: "Calma / 0",
+                        nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1892,11 +1956,11 @@
                 nombre: "Aeropuerto de Pisco/Intl. Pisco",
                     lat: -13.733,
             lon: -76.217,
-            vis: "1 km",
-                temp: "17 °C",
-                    viento: "Noreste / 03 KT",
-                        nubosidad: "Sin nubes de importancia",
-                            fenomenos: "Niebla"
+            vis: "3.5 km",
+                temp: "20 °C",
+                    viento: "Norte / 06 KT",
+                        nubosidad: "Cielo cubierto",
+                            fenomenos: "Neblina"
         },
         
         {
@@ -1905,8 +1969,8 @@
                     lat: -14.85,
             lon: -74.95,
             vis: "10 km a más",
-                temp: "16 °C",
-                    viento: "Este / 03 KT",
+                temp: "18 °C",
+                    viento: "Oeste / 03 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1917,9 +1981,9 @@
                     lat: -15.467,
             lon: -70.15,
             vis: "10 km a más",
-                temp: "06 °C",
-                    viento: "Oeste / 02 KT",
-                        nubosidad: "Parcialmente nublado",
+                temp: "08 °C",
+                    viento: "Noroeste / 03 KT",
+                        nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1929,8 +1993,8 @@
                     lat: -16.333,
             lon: -71.567,
             vis: "10 km a más",
-                temp: "14 °C",
-                    viento: "Norte / 05 KT",
+                temp: "19 °C",
+                    viento: "Variable / 02 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1940,9 +2004,9 @@
                 nombre: "Aeropuerto de Ilo",
                     lat: -17.683,
             lon: -71.35,
-            vis: "10 km a más",
-                temp: "21 °C",
-                    viento: "Sur / 07 KT",
+            vis: "8 km",
+                temp: "19 °C",
+                    viento: "Sureste / 07 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
