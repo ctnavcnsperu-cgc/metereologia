@@ -534,7 +534,7 @@
 
             <div class="text-right monospace text-slate-400">
                 <p class="text-[9px] font-bold uppercase tracking-widest text-cyan-500/80">Sincronización</p>
-                <p class="text-lg font-bold text-white leading-none mt-1">04/05/2026 18:41</p>
+                <p class="text-lg font-bold text-white leading-none mt-1">04/05/2026 18:51</p>
             </div>
         </div>
     </header>
@@ -554,8 +554,22 @@
                 </div>
                 <div class="p-0 overflow-y-auto flex-grow custom-scrollbar">
                     
-                    <p class="text-center text-slate-500 py-10 italic">No hay fenómenos significativos reportados.
-                    </p>
+                    <div class="divide-y divide-slate-800">
+                        
+                        <div onclick="zoomToCity('Trujillo')" title="Ver en el mapa (Máximo Zoom)"
+                            class="fenomeno-card cursor-pointer p-2.5 flex items-center gap-3 transition-all duration-200">
+                            <span class="fen-weather-icon text-2xl flex-shrink-0" style="filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.4));" data-fen="Neblina con visibilidad de 5000m ."></span>
+                            <div class="flex items-center gap-3 min-w-0 flex-grow">
+                                <span class="bg-cyan-500/10 text-cyan-400 font-bold px-2 py-1 rounded text-[10px] uppercase tracking-wider min-w-[100px] text-center border border-cyan-500/20 font-technical shrink-0">
+                                    Trujillo
+                                </span>
+                                <span class="text-[14px] font-medium text-slate-300 truncate leading-none">
+                                    Neblina con visibilidad de 5000m .
+                                </span>
+                            </div>
+                        </div>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -580,7 +594,7 @@
             name: "Tumbes",
                 lat: "-3.566",
                     lon: "-80.451",
-                        temp: "29 °C",
+                        temp: "28 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
@@ -588,7 +602,7 @@
             name: "Piura",
                 lat: "-5.194",
                     lon: "-80.632",
-                        temp: "30 °C",
+                        temp: "29 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
@@ -596,15 +610,15 @@
             name: "Talara",
                 lat: "-4.577",
                     lon: "-81.271",
-                        temp: "26 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/cubierto.gif"
+                        temp: "24 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
         },
         
         {
             name: "Chiclayo",
                 lat: "-6.771",
                     lon: "-79.844",
-                        temp: "25 °C",
+                        temp: "24 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
@@ -612,8 +626,8 @@
             name: "Trujillo",
                 lat: "-8.116",
                     lon: "-79.029",
-                        temp: "24 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
+                        temp: "23 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/cubierto.gif"
         },
         
         {
@@ -652,16 +666,16 @@
             name: "Nazca",
                 lat: "-14.83",
                     lon: "-74.938",
-                        temp: "29 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
+                        temp: "-- °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nodata.png"
         },
         
         {
             name: "Arequipa",
                 lat: "-16.409",
                     lon: "-71.537",
-                        temp: "17 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
+                        temp: "14 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
         },
         
         {
@@ -676,7 +690,7 @@
             name: "Tacna",
                 lat: "-18.014",
                     lon: "-70.25",
-                        temp: "21 °C",
+                        temp: "18 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
@@ -700,15 +714,15 @@
             name: "Jauja",
                 lat: "-11.777",
                     lon: "-75.5",
-                        temp: "16 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
+                        temp: "15 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
             name: "Ayacucho",
                 lat: "-13.158",
                     lon: "-74.223",
-                        temp: "22 °C",
+                        temp: "20 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
@@ -732,8 +746,8 @@
             name: "Huanuco",
                 lat: "-9.93",
                     lon: "-76.24",
-                        temp: "21 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/nublado.gif"
+                        temp: "20 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
         {
@@ -756,8 +770,8 @@
             name: "Mazamari",
                 lat: "-11.325",
                     lon: "-74.53",
-                        temp: "28 °C",
-                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
+                        temp: "26 °C",
+                            icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/parcialmente_nublado.gif"
         },
         
         {
@@ -796,7 +810,7 @@
             name: "Puertomaldonado",
                 lat: "-12.593",
                     lon: "-69.183",
-                        temp: "30 °C",
+                        temp: "25 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
@@ -804,7 +818,7 @@
             name: "Juliaca",
                 lat: "-15.496",
                     lon: "-70.133",
-                        temp: "16 °C",
+                        temp: "14 °C",
                             icon: "https://meteorologia.corpac.gob.pe/app/Meteorologia/consultas/gifs_mapa/despejado.gif"
         },
         
