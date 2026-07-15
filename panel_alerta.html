@@ -820,7 +820,7 @@
 
             <div class="text-right monospace text-slate-400">
                 <p class="text-[9px] font-bold uppercase tracking-widest text-cyan-500/80">Sincronización</p>
-                <p class="text-lg font-bold text-white leading-none mt-1">15/07/2026 15:01</p>
+                <p class="text-lg font-bold text-white leading-none mt-1">15/07/2026 15:11</p>
             </div>
         </div>
     </header>
@@ -1025,26 +1025,6 @@
                         <tbody class="divide-y divide-current">
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
-                                data-icao="SPME">
-                                <td class="tech-cell font-black text-cyan-400 text-sm italic">SPME
-                                </td>
-                                <td class="tech-cell">
-                                    <div id="status-tag-SPME"
-                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
-                                        ---
-                                    </div>
-                                </td>
-                                <td class="tech-cell font-bold text-white">10 km a más</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
-                                <td class="tech-cell text-right">
-                                    <button onclick="zoomToStation(-3.55, -80.383, 'SPME')"
-                                        class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
-                                        Zoom
-                                    </button>
-                                </td>
-                            </tr>
-                            
-                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
                                 data-icao="SPQT">
                                 <td class="tech-cell font-black text-cyan-400 text-sm italic">SPQT
                                 </td>
@@ -1054,8 +1034,8 @@
                                         ---
                                     </div>
                                 </td>
-                                <td class="tech-cell font-bold text-white">10 km a más</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell font-bold text-white">8 km</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Chubasco de lluvia</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-3.783, -73.3, 'SPQT')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
@@ -1696,27 +1676,15 @@
         const airports = [
             
         {
-            icao: "SPME",
-                nombre: "Aeropuerto de Tumbes/Pedro Canga",
-                    lat: -3.55,
-            lon: -80.383,
-            vis: "10 km a más",
-                temp: "31 °C",
-                    viento: "Noroeste / 09 KT",
-                        nubosidad: "Parcialmente nublado",
-                            fenomenos: "No hay fenómeno meteorológico"
-        },
-        
-        {
             icao: "SPQT",
                 nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
                     lat: -3.783,
             lon: -73.3,
-            vis: "10 km a más",
-                temp: "28 °C",
-                    viento: "Noroeste / 06 KT",
+            vis: "8 km",
+                temp: "26 °C",
+                    viento: "Este / 06 KT",
                         nubosidad: "Nublado",
-                            fenomenos: "No hay fenómeno meteorológico"
+                            fenomenos: "Chubasco de lluvia"
         },
         
         {
@@ -1737,8 +1705,8 @@
                     lat: -5.2,
             lon: -80.6,
             vis: "10 km a más",
-                temp: "31 °C",
-                    viento: "Sur / 12 KT",
+                temp: "32 °C",
+                    viento: "Suroeste / 12 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1749,7 +1717,7 @@
                     lat: -5.583,
             lon: -78.767,
             vis: "10 km a más",
-                temp: "29 °C",
+                temp: "31 °C",
                     viento: "Variable / 04 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
@@ -1761,7 +1729,7 @@
                     lat: -5.883,
             lon: -76.117,
             vis: "10 km a más",
-                temp: "32 °C",
+                temp: "33 °C",
                     viento: "Norte / 04 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
@@ -1774,7 +1742,7 @@
             lon: -77.15,
             vis: "10 km a más",
                 temp: "28 °C",
-                    viento: "Sureste / 07 KT",
+                    viento: "Sureste / 05 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "Chubasco en la vecindad"
         },
@@ -1786,7 +1754,7 @@
             lon: -77.85,
             vis: "10 km a más",
                 temp: "18 °C",
-                    viento: "Noreste / 08 KT",
+                    viento: "Este / 09 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1797,8 +1765,8 @@
                     lat: -6.783,
             lon: -79.817,
             vis: "10 km a más",
-                temp: "29 °C",
-                    viento: "Sur / 12 KT",
+                temp: "28 °C",
+                    viento: "Sur / 14 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1810,7 +1778,7 @@
             lon: -76.367,
             vis: "10 km a más",
                 temp: "33 °C",
-                    viento: "Sureste / 08 KT",
+                    viento: "Sureste / 06 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1821,9 +1789,9 @@
                     lat: -7.133,
             lon: -78.483,
             vis: "10 km a más",
-                temp: "22 °C",
+                temp: "23 °C",
                     viento: "Noreste / 07 KT",
-                        nubosidad: "Despejado",
+                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1833,8 +1801,8 @@
                     lat: -7.167,
             lon: -76.717,
             vis: "10 km a más",
-                temp: "31 °C",
-                    viento: "Este / 04 KT",
+                temp: "32 °C",
+                    viento: "Sureste / 04 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1846,8 +1814,8 @@
             lon: -79.1,
             vis: "9 km",
                 temp: "24 °C",
-                    viento: "Sur / 12 KT",
-                        nubosidad: "Sin nubes de importancia",
+                    viento: "Sur / 10 KT",
+                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1857,8 +1825,8 @@
                     lat: -8.367,
             lon: -74.567,
             vis: "10 km a más",
-                temp: "31 °C",
-                    viento: "Este / 04 KT",
+                temp: "32 °C",
+                    viento: "Norte / 03 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1870,8 +1838,8 @@
             lon: -78.517,
             vis: "10 km a más",
                 temp: "23 °C",
-                    viento: "Sur / 16 KT",
-                        nubosidad: "Cielo cubierto",
+                    viento: "Sur / 14 KT",
+                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1882,7 +1850,7 @@
             lon: -76.0,
             vis: "10 km a más",
                 temp: "28 °C",
-                    viento: "Este / 03 KT",
+                    viento: "Norte / 03 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1894,7 +1862,7 @@
             lon: -77.6,
             vis: "10 km a más",
                 temp: "27 °C",
-                    viento: "Norte / 08 KT",
+                    viento: "Norte / 10 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1905,9 +1873,9 @@
                     lat: -9.867,
             lon: -76.2,
             vis: "10 km a más",
-                temp: "26 °C",
-                    viento: "Noreste / 26 KT",
-                        nubosidad: "Parcialmente nublado",
+                temp: "25 °C",
+                    viento: "Noreste / 25 KT",
+                        nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1918,7 +1886,7 @@
             lon: -73.767,
             vis: "10 km a más",
                 temp: "31 °C",
-                    viento: "Variable / 03 KT",
+                    viento: "Norte / 05 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1929,8 +1897,8 @@
                     lat: -11.333,
             lon: -74.55,
             vis: "10 km a más",
-                temp: "26 °C",
-                    viento: "Norte / 09 KT",
+                temp: "29 °C",
+                    viento: "Norte / 10 KT",
                         nubosidad: "Cielo cubierto",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1941,8 +1909,8 @@
                     lat: -11.767,
             lon: -75.467,
             vis: "10 km a más",
-                temp: "19 °C",
-                    viento: "Variable / 04 KT",
+                temp: "21 °C",
+                    viento: "Noroeste / 13 KT",
                         nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1954,7 +1922,7 @@
             lon: -77.117,
             vis: "10 km a más",
                 temp: "24 °C",
-                    viento: "Sur / 07 KT",
+                    viento: "Sur / 10 KT",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1965,8 +1933,8 @@
                     lat: -12.6,
             lon: -69.217,
             vis: "10 km a más",
-                temp: "31 °C",
-                    viento: "Oeste / 05 KT",
+                temp: "30 °C",
+                    viento: "Oeste / 03 KT",
                         nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -1977,9 +1945,9 @@
                     lat: -13.533,
             lon: -71.933,
             vis: "10 km a más",
-                temp: "22 °C",
-                    viento: "Noroeste / 09 KT",
-                        nubosidad: "Nublado",
+                temp: "21 °C",
+                    viento: "Noroeste / 10 KT",
+                        nubosidad: "Despejado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1989,8 +1957,8 @@
                     lat: -13.733,
             lon: -76.217,
             vis: "10 km a más",
-                temp: "25 °C",
-                    viento: "Oeste / 08 KT",
+                temp: "24 °C",
+                    viento: "Oeste / 10 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -2001,8 +1969,8 @@
                     lat: -14.85,
             lon: -74.95,
             vis: "10 km a más",
-                temp: "27 °C",
-                    viento: "Oeste / 06 KT",
+                temp: "28 °C",
+                    viento: "Noroeste / 04 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -2013,8 +1981,8 @@
                     lat: -15.467,
             lon: -70.15,
             vis: "10 km a más",
-                temp: "15 °C",
-                    viento: "Noroeste / 04 KT",
+                temp: "14 °C",
+                    viento: "Suroeste / 11 KT",
                         nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -2025,8 +1993,8 @@
                     lat: -16.333,
             lon: -71.567,
             vis: "10 km a más",
-                temp: "21 °C",
-                    viento: "Oeste / 08 KT",
+                temp: "22 °C",
+                    viento: "Oeste / 09 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
@@ -2037,9 +2005,9 @@
                     lat: -17.683,
             lon: -71.35,
             vis: "10 km a más",
-                temp: "20 °C",
+                temp: "19 °C",
                     viento: "Sur / 09 KT",
-                        nubosidad: "Parcialmente nublado",
+                        nubosidad: "Nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -2049,8 +2017,8 @@
                     lat: -18.05,
             lon: -70.267,
             vis: "10 km a más",
-                temp: "20 °C",
-                    viento: "Variable / 03 KT",
+                temp: "23 °C",
+                    viento: "Oeste / 03 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
