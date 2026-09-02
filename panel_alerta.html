@@ -820,7 +820,7 @@
 
             <div class="text-right monospace text-slate-400">
                 <p class="text-[9px] font-bold uppercase tracking-widest text-cyan-500/80">Sincronización</p>
-                <p class="text-lg font-bold text-white leading-none mt-1">02/09/2026 06:51</p>
+                <p class="text-lg font-bold text-white leading-none mt-1">02/09/2026 07:01</p>
             </div>
         </div>
     </header>
@@ -1025,6 +1025,26 @@
                         <tbody class="divide-y divide-current">
                             
                             <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
+                                data-icao="SPME">
+                                <td class="tech-cell font-black text-cyan-400 text-sm italic">SPME
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPME"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold text-white">10 km a más</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-3.55, -80.383, 'SPME')"
+                                        class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
+                                        Zoom
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
                                 data-icao="SPQT">
                                 <td class="tech-cell font-black text-cyan-400 text-sm italic">SPQT
                                 </td>
@@ -1078,6 +1098,26 @@
                                 <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-5.2, -80.6, 'SPUR')"
+                                        class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
+                                        Zoom
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
+                                data-icao="SPMS">
+                                <td class="tech-cell font-black text-cyan-400 text-sm italic">SPMS
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPMS"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold text-white">10 km a más</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-5.883, -76.117, 'SPMS')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
                                         Zoom
                                     </button>
@@ -1255,7 +1295,7 @@
                                     </div>
                                 </td>
                                 <td class="tech-cell font-bold text-white">10 km a más</td>
-                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">Chubasco en la vecindad</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-12.6, -69.217, 'SPTU')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
@@ -1298,6 +1338,26 @@
                                 <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
                                 <td class="tech-cell text-right">
                                     <button onclick="zoomToStation(-13.733, -76.217, 'SPSO')"
+                                        class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
+                                        Zoom
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row-hover monospace text-[12px] hover:bg-slate-800 transition-colors"
+                                data-icao="SPZA">
+                                <td class="tech-cell font-black text-cyan-400 text-sm italic">SPZA
+                                </td>
+                                <td class="tech-cell">
+                                    <div id="status-tag-SPZA"
+                                        class="px-2 py-0.5 rounded text-[10px] font-black text-white text-center uppercase tracking-tighter min-w-[60px]">
+                                        ---
+                                    </div>
+                                </td>
+                                <td class="tech-cell font-bold text-white">10 km a más</td>
+                                <td class="tech-cell italic opacity-80 text-slate-300">No hay fenómeno meteorológico</td>
+                                <td class="tech-cell text-right">
+                                    <button onclick="zoomToStation(-14.85, -74.95, 'SPZA')"
                                         class="px-3 py-1 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded text-[10px] font-black uppercase tracking-widest transition-all">
                                         Zoom
                                     </button>
@@ -1416,6 +1476,18 @@
         const airports = [
             
         {
+            icao: "SPME",
+                nombre: "Aeropuerto de Tumbes/Pedro Canga",
+                    lat: -3.55,
+            lon: -80.383,
+            vis: "10 km a más",
+                temp: "25 °C",
+                    viento: "Calma / 0",
+                        nubosidad: "Sin nubes bajo los 1500m",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
             icao: "SPQT",
                 nombre: "Aeropuerto de Iquitos/Intl. Coronel FAP Francisco Secada Vignett",
                     lat: -3.783,
@@ -1448,6 +1520,18 @@
                 temp: "22 °C",
                     viento: "Sur / 04 KT",
                         nubosidad: "Sin nubes bajo los 1500m",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPMS",
+                nombre: "Aeropuerto de Yurimaguas/Moises Benzaquen Rengifo",
+                    lat: -5.883,
+            lon: -76.117,
+            vis: "10 km a más",
+                temp: "35 °C",
+                    viento: "Noreste / 03 KT",
+                        nubosidad: "Parcialmente nublado",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
@@ -1554,9 +1638,9 @@
             lon: -69.217,
             vis: "10 km a más",
                 temp: "21 °C",
-                    viento: "Noreste / 03 KT",
+                    viento: "Este / 05 KT",
                         nubosidad: "Nublado",
-                            fenomenos: "No hay fenómeno meteorológico"
+                            fenomenos: "Chubasco en la vecindad"
         },
         
         {
@@ -1580,6 +1664,18 @@
                 temp: "20 °C",
                     viento: "Suroeste / 07 KT",
                         nubosidad: "Nublado",
+                            fenomenos: "No hay fenómeno meteorológico"
+        },
+        
+        {
+            icao: "SPZA",
+                nombre: "Aeropuerto de Nazca/Maria Reiche",
+                    lat: -14.85,
+            lon: -74.95,
+            vis: "10 km a más",
+                temp: "24 °C",
+                    viento: "Noroeste / 04 KT",
+                        nubosidad: "Sin nubes bajo los 1500m",
                             fenomenos: "No hay fenómeno meteorológico"
         },
         
